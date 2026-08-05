@@ -1,0 +1,2237 @@
+{
+  "bib": "paper/references.bib",
+  "bib_sha256": "2372ad746accedae1c9c5d5255915e2071cbd35b30185f0bfa8d17d7b4f3bdc2",
+  "duplicates": [],
+  "entries": [
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Adamou",
+            "Craster"
+          ],
+          "local": [
+            "Adamou",
+            "Craster"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Spectral methods for modelling guided waves in elastic media",
+          "local": "Spectral methods for modelling guided waves in elastic media",
+          "match": true
+        },
+        "year": {
+          "crossref": "2004",
+          "local": "2004",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Adamou",
+          "Craster"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Spectral methods for modelling guided waves in elastic media",
+        "year": "2004"
+      },
+      "doi": "10.1121/1.1777871",
+      "invalid_doi": false,
+      "key": "adamou2004spectral",
+      "local": {
+        "author_families": [
+          "Adamou",
+          "Craster"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Spectral methods for modelling guided waves in elastic media",
+        "year": "2004"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "BANYAGA",
+            "HURTUBISE"
+          ],
+          "local": [
+            "Banyaga",
+            "Hurtubise"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Ergodic Theory and Dynamical Systems",
+          "local": "Ergodic Theory and Dynamical Systems",
+          "match": true
+        },
+        "title": {
+          "crossref": "The Morse–Bott inequalities via a dynamical systems approach",
+          "local": "The {Morse--Bott} inequalities via a dynamical systems approach",
+          "match": true
+        },
+        "year": {
+          "crossref": "2009",
+          "local": "2009",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "BANYAGA",
+          "HURTUBISE"
+        ],
+        "container": "Ergodic Theory and Dynamical Systems",
+        "title": "The Morse–Bott inequalities via a dynamical systems approach",
+        "year": "2009"
+      },
+      "doi": "10.1017/s0143385708000928",
+      "invalid_doi": false,
+      "key": "banyaga2009inequalities",
+      "local": {
+        "author_families": [
+          "Banyaga",
+          "Hurtubise"
+        ],
+        "container": "Ergodic Theory and Dynamical Systems",
+        "title": "The {Morse--Bott} inequalities via a dynamical systems approach",
+        "year": "2009"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Banyaga",
+            "Hurtubise"
+          ],
+          "local": [
+            "Banyaga",
+            "Hurtubise"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Algebraic &amp; Geometric Topology",
+          "local": "Algebraic \\& Geometric Topology",
+          "match": true
+        },
+        "title": {
+          "crossref": "Cascades and perturbed Morse–Bott functions",
+          "local": "Cascades and perturbed {Morse--Bott} functions",
+          "match": true
+        },
+        "year": {
+          "crossref": "2013",
+          "local": "2013",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Banyaga",
+          "Hurtubise"
+        ],
+        "container": "Algebraic &amp; Geometric Topology",
+        "title": "Cascades and perturbed Morse–Bott functions",
+        "year": "2013"
+      },
+      "doi": "10.2140/agt.2013.13.237",
+      "invalid_doi": false,
+      "key": "banyaga2013cascades",
+      "local": {
+        "author_families": [
+          "Banyaga",
+          "Hurtubise"
+        ],
+        "container": "Algebraic \\& Geometric Topology",
+        "title": "Cascades and perturbed {Morse--Bott} functions",
+        "year": "2013"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Biot"
+          ],
+          "local": [
+            "Biot"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Physical Review",
+          "local": "Physical Review",
+          "match": true
+        },
+        "title": {
+          "crossref": "General Theorems on the Equivalence of Group Velocity and Energy Transport",
+          "local": "General Theorems on the Equivalence of Group Velocity and Energy Transport",
+          "match": true
+        },
+        "year": {
+          "crossref": "1957",
+          "local": "1957",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Biot"
+        ],
+        "container": "Physical Review",
+        "title": "General Theorems on the Equivalence of Group Velocity and Energy Transport",
+        "year": "1957"
+      },
+      "doi": "10.1103/physrev.105.1129",
+      "invalid_doi": false,
+      "key": "biot1957group",
+      "local": {
+        "author_families": [
+          "Biot"
+        ],
+        "container": "Physical Review",
+        "title": "General Theorems on the Equivalence of Group Velocity and Energy Transport",
+        "year": "1957"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Bossart",
+            "Fleury"
+          ],
+          "local": [
+            "Bossart",
+            "Fleury"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Physical Review Letters",
+          "local": "Physical Review Letters",
+          "match": true
+        },
+        "title": {
+          "crossref": "Extreme Spatial Dispersion in Nonlocally Resonant Elastic Metamaterials",
+          "local": "Extreme Spatial Dispersion in Nonlocally Resonant Elastic Metamaterials",
+          "match": true
+        },
+        "year": {
+          "crossref": "2023",
+          "local": "2023",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Bossart",
+          "Fleury"
+        ],
+        "container": "Physical Review Letters",
+        "title": "Extreme Spatial Dispersion in Nonlocally Resonant Elastic Metamaterials",
+        "year": "2023"
+      },
+      "doi": "10.1103/physrevlett.130.207201",
+      "invalid_doi": false,
+      "key": "bossart2023dispersion",
+      "local": {
+        "author_families": [
+          "Bossart",
+          "Fleury"
+        ],
+        "container": "Physical Review Letters",
+        "title": "Extreme Spatial Dispersion in Nonlocally Resonant Elastic Metamaterials",
+        "year": "2023"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Bott"
+          ],
+          "local": [
+            "Bott"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Annals of Mathematics",
+          "local": "The Annals of Mathematics",
+          "match": true
+        },
+        "title": {
+          "crossref": "Nondegenerate Critical Manifolds",
+          "local": "Nondegenerate Critical Manifolds",
+          "match": true
+        },
+        "year": {
+          "crossref": "1954",
+          "local": "1954",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Bott"
+        ],
+        "container": "The Annals of Mathematics",
+        "title": "Nondegenerate Critical Manifolds",
+        "year": "1954"
+      },
+      "doi": "10.2307/1969631",
+      "invalid_doi": false,
+      "key": "bott1954critical",
+      "local": {
+        "author_families": [
+          "Bott"
+        ],
+        "container": "The Annals of Mathematics",
+        "title": "Nondegenerate Critical Manifolds",
+        "year": "1954"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Brack",
+            "Meier",
+            "Tanaka"
+          ],
+          "local": [
+            "Brack",
+            "Meier",
+            "Tanaka"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Physics A: Mathematical and General",
+          "local": "Journal of Physics A: Mathematical and General",
+          "match": true
+        },
+        "title": {
+          "crossref": "Uniform trace formulae for<b><i>SU</i></b>(2) and<b><i>SO</i></b>(3) symmetry breaking",
+          "local": "Uniform trace formulae for {SU}(2) and {SO}(3) symmetry breaking",
+          "match": true
+        },
+        "year": {
+          "crossref": "1999",
+          "local": "1999",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Brack",
+          "Meier",
+          "Tanaka"
+        ],
+        "container": "Journal of Physics A: Mathematical and General",
+        "title": "Uniform trace formulae for<b><i>SU</i></b>(2) and<b><i>SO</i></b>(3) symmetry breaking",
+        "year": "1999"
+      },
+      "doi": "10.1088/0305-4470/32/2/009",
+      "invalid_doi": false,
+      "key": "brack1999uniform",
+      "local": {
+        "author_families": [
+          "Brack",
+          "Meier",
+          "Tanaka"
+        ],
+        "container": "Journal of Physics A: Mathematical and General",
+        "title": "Uniform trace formulae for {SU}(2) and {SO}(3) symmetry breaking",
+        "year": "1999"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Brack",
+            "Roccia"
+          ],
+          "local": [
+            "Brack",
+            "Roccia"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Physics A: Mathematical and Theoretical",
+          "local": "Journal of Physics A: Mathematical and Theoretical",
+          "match": true
+        },
+        "title": {
+          "crossref": "Closed orbits and spatial density oscillations in the circular billiard",
+          "local": "Closed orbits and spatial density oscillations in the circular billiard",
+          "match": true
+        },
+        "year": {
+          "crossref": "2009",
+          "local": "2009",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Brack",
+          "Roccia"
+        ],
+        "container": "Journal of Physics A: Mathematical and Theoretical",
+        "title": "Closed orbits and spatial density oscillations in the circular billiard",
+        "year": "2009"
+      },
+      "doi": "10.1088/1751-8113/42/35/355210",
+      "invalid_doi": false,
+      "key": "brack2009closed",
+      "local": {
+        "author_families": [
+          "Brack",
+          "Roccia"
+        ],
+        "container": "Journal of Physics A: Mathematical and Theoretical",
+        "title": "Closed orbits and spatial density oscillations in the circular billiard",
+        "year": "2009"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Bressloff"
+          ],
+          "local": [
+            "Bressloff"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Physica D: Nonlinear Phenomena",
+          "local": "Physica D: Nonlinear Phenomena",
+          "match": true
+        },
+        "title": {
+          "crossref": "Spatially periodic modulation of cortical patterns by long-range horizontal connections",
+          "local": "Spatially periodic modulation of cortical patterns by long-range horizontal connections",
+          "match": true
+        },
+        "year": {
+          "crossref": "2003",
+          "local": "2003",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Bressloff"
+        ],
+        "container": "Physica D: Nonlinear Phenomena",
+        "title": "Spatially periodic modulation of cortical patterns by long-range horizontal connections",
+        "year": "2003"
+      },
+      "doi": "10.1016/s0167-2789(03)00238-0",
+      "invalid_doi": false,
+      "key": "bressloff2003modulation",
+      "local": {
+        "author_families": [
+          "Bressloff"
+        ],
+        "container": "Physica D: Nonlinear Phenomena",
+        "title": "Spatially periodic modulation of cortical patterns by long-range horizontal connections",
+        "year": "2003"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Chapuis",
+            "Terrien",
+            "Royer"
+          ],
+          "local": [
+            "Chapuis",
+            "Terrien",
+            "Royer"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Excitation and focusing of Lamb waves in a multilayered anisotropic plate",
+          "local": "Excitation and focusing of {Lamb} waves in a multilayered anisotropic plate",
+          "match": true
+        },
+        "year": {
+          "crossref": "2010",
+          "local": "2010",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Chapuis",
+          "Terrien",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Excitation and focusing of Lamb waves in a multilayered anisotropic plate",
+        "year": "2010"
+      },
+      "doi": "10.1121/1.3263607",
+      "invalid_doi": false,
+      "key": "chapuis2010focusing",
+      "local": {
+        "author_families": [
+          "Chapuis",
+          "Terrien",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Excitation and focusing of {Lamb} waves in a multilayered anisotropic plate",
+        "year": "2010"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Creagh"
+          ],
+          "local": [
+            "Creagh"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Annals of Physics",
+          "local": "Annals of Physics",
+          "match": true
+        },
+        "title": {
+          "crossref": "Trace Formula for Broken Symmetry",
+          "local": "Trace Formula for Broken Symmetry",
+          "match": true
+        },
+        "year": {
+          "crossref": "1996",
+          "local": "1996",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Creagh"
+        ],
+        "container": "Annals of Physics",
+        "title": "Trace Formula for Broken Symmetry",
+        "year": "1996"
+      },
+      "doi": "10.1006/aphy.1996.0051",
+      "invalid_doi": false,
+      "key": "creagh1996broken",
+      "local": {
+        "author_families": [
+          "Creagh"
+        ],
+        "container": "Annals of Physics",
+        "title": "Trace Formula for Broken Symmetry",
+        "year": "1996"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Cross",
+            "Hohenberg"
+          ],
+          "local": [
+            "Cross",
+            "Hohenberg"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Reviews of Modern Physics",
+          "local": "Reviews of Modern Physics",
+          "match": true
+        },
+        "title": {
+          "crossref": "Pattern formation outside of equilibrium",
+          "local": "Pattern formation outside of equilibrium",
+          "match": true
+        },
+        "year": {
+          "crossref": "1993",
+          "local": "1993",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Cross",
+          "Hohenberg"
+        ],
+        "container": "Reviews of Modern Physics",
+        "title": "Pattern formation outside of equilibrium",
+        "year": "1993"
+      },
+      "doi": "10.1103/revmodphys.65.851",
+      "invalid_doi": false,
+      "key": "cross1993patterns",
+      "local": {
+        "author_families": [
+          "Cross",
+          "Hohenberg"
+        ],
+        "container": "Reviews of Modern Physics",
+        "title": "Pattern formation outside of equilibrium",
+        "year": "1993"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Glushkov",
+            "Glushkova",
+            "Eremin",
+            "Lammering"
+          ],
+          "local": [
+            "Glushkov",
+            "Glushkova",
+            "Eremin",
+            "Lammering"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Group velocity of cylindrical guided waves in anisotropic laminate composites",
+          "local": "Group velocity of cylindrical guided waves in anisotropic laminate composites",
+          "match": true
+        },
+        "year": {
+          "crossref": "2014",
+          "local": "2014",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Glushkov",
+          "Glushkova",
+          "Eremin",
+          "Lammering"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Group velocity of cylindrical guided waves in anisotropic laminate composites",
+        "year": "2014"
+      },
+      "doi": "10.1121/1.4829534",
+      "invalid_doi": false,
+      "key": "glushkov2014group",
+      "local": {
+        "author_families": [
+          "Glushkov",
+          "Glushkova",
+          "Eremin",
+          "Lammering"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Group velocity of cylindrical guided waves in anisotropic laminate composites",
+        "year": "2014"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Glushkov",
+            "Glushkova"
+          ],
+          "local": [
+            "Glushkov",
+            "Glushkova"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Sound and Vibration",
+          "local": "Journal of Sound and Vibration",
+          "match": true
+        },
+        "title": {
+          "crossref": "Multiple zero-group velocity resonances in elastic layered structures",
+          "local": "Multiple zero-group velocity resonances in elastic layered structures",
+          "match": true
+        },
+        "year": {
+          "crossref": "2021",
+          "local": "2021",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Glushkov",
+          "Glushkova"
+        ],
+        "container": "Journal of Sound and Vibration",
+        "title": "Multiple zero-group velocity resonances in elastic layered structures",
+        "year": "2021"
+      },
+      "doi": "10.1016/j.jsv.2021.116023",
+      "invalid_doi": false,
+      "key": "glushkov2021multiple",
+      "local": {
+        "author_families": [
+          "Glushkov",
+          "Glushkova"
+        ],
+        "container": "Journal of Sound and Vibration",
+        "title": "Multiple zero-group velocity resonances in elastic layered structures",
+        "year": "2021"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Hopcroft",
+            "Nix",
+            "Kenny"
+          ],
+          "local": [
+            "Hopcroft",
+            "Nix",
+            "Kenny"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Microelectromechanical Systems",
+          "local": "Journal of Microelectromechanical Systems",
+          "match": true
+        },
+        "title": {
+          "crossref": "What is the Young's Modulus of Silicon?",
+          "local": "What is the {Young's} Modulus of Silicon?",
+          "match": true
+        },
+        "year": {
+          "crossref": "2010",
+          "local": "2010",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Hopcroft",
+          "Nix",
+          "Kenny"
+        ],
+        "container": "Journal of Microelectromechanical Systems",
+        "title": "What is the Young's Modulus of Silicon?",
+        "year": "2010"
+      },
+      "doi": "10.1109/jmems.2009.2039697",
+      "invalid_doi": false,
+      "key": "hopcroft2010silicon",
+      "local": {
+        "author_families": [
+          "Hopcroft",
+          "Nix",
+          "Kenny"
+        ],
+        "container": "Journal of Microelectromechanical Systems",
+        "title": "What is the {Young's} Modulus of Silicon?",
+        "year": "2010"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Hussain",
+            "Ahmad"
+          ],
+          "local": [
+            "Hussain",
+            "Ahmad"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Lamb modes with multiple zero-group velocity points in an orthotropic plate",
+          "local": "{Lamb} modes with multiple zero-group velocity points in an orthotropic plate",
+          "match": true
+        },
+        "year": {
+          "crossref": "2012",
+          "local": "2012",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Hussain",
+          "Ahmad"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Lamb modes with multiple zero-group velocity points in an orthotropic plate",
+        "year": "2012"
+      },
+      "doi": "10.1121/1.4730891",
+      "invalid_doi": false,
+      "key": "hussain2012multiple",
+      "local": {
+        "author_families": [
+          "Hussain",
+          "Ahmad"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "{Lamb} modes with multiple zero-group velocity points in an orthotropic plate",
+        "year": "2012"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Karmazin",
+            "Kirillova",
+            "Seemann",
+            "Syromyatnikov"
+          ],
+          "local": [
+            "Karmazin",
+            "Kirillova",
+            "Seemann",
+            "Syromyatnikov"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Ultrasonics",
+          "local": "Ultrasonics",
+          "match": true
+        },
+        "title": {
+          "crossref": "A study of time harmonic guided Lamb waves and their caustics in composite plates",
+          "local": "A study of time harmonic guided {Lamb} waves and their caustics in composite plates",
+          "match": true
+        },
+        "year": {
+          "crossref": "2013",
+          "local": "2013",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Karmazin",
+          "Kirillova",
+          "Seemann",
+          "Syromyatnikov"
+        ],
+        "container": "Ultrasonics",
+        "title": "A study of time harmonic guided Lamb waves and their caustics in composite plates",
+        "year": "2013"
+      },
+      "doi": "10.1016/j.ultras.2012.06.012",
+      "invalid_doi": false,
+      "key": "karmazin2013caustics",
+      "local": {
+        "author_families": [
+          "Karmazin",
+          "Kirillova",
+          "Seemann",
+          "Syromyatnikov"
+        ],
+        "container": "Ultrasonics",
+        "title": "A study of time harmonic guided {Lamb} waves and their caustics in composite plates",
+        "year": "2013"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Karous",
+            "Dahmen",
+            "Bouhdima",
+            "Amor",
+            "Glorieux"
+          ],
+          "local": [
+            "Karous",
+            "Dahmen",
+            "Bouhdima",
+            "Ben Amor",
+            "Glorieux"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Canadian Journal of Physics",
+          "local": "Canadian Journal of Physics",
+          "match": true
+        },
+        "title": {
+          "crossref": "Multiple zero group velocity Lamb modes in an anisotropic plate: propagation along different crystallographic axes",
+          "local": "Multiple zero group velocity {Lamb} modes in an anisotropic plate: propagation along different crystallographic axes",
+          "match": true
+        },
+        "year": {
+          "crossref": "2019",
+          "local": "2019",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Karous",
+          "Dahmen",
+          "Bouhdima",
+          "Amor",
+          "Glorieux"
+        ],
+        "container": "Canadian Journal of Physics",
+        "title": "Multiple zero group velocity Lamb modes in an anisotropic plate: propagation along different crystallographic axes",
+        "year": "2019"
+      },
+      "doi": "10.1139/cjp-2018-0348",
+      "invalid_doi": false,
+      "key": "karous2019multiple",
+      "local": {
+        "author_families": [
+          "Karous",
+          "Dahmen",
+          "Bouhdima",
+          "Ben Amor",
+          "Glorieux"
+        ],
+        "container": "Canadian Journal of Physics",
+        "title": "Multiple zero group velocity {Lamb} modes in an anisotropic plate: propagation along different crystallographic axes",
+        "year": "2019"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Kiefer",
+            "Mezil",
+            "Prada"
+          ],
+          "local": [
+            "Kiefer",
+            "Mezil",
+            "Prada"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Science Advances",
+          "local": "Science Advances",
+          "match": true
+        },
+        "title": {
+          "crossref": "Beating resonance patterns and extreme power flux skewing in anisotropic elastic plates",
+          "local": "Beating resonance patterns and extreme power flux skewing in anisotropic elastic plates",
+          "match": true
+        },
+        "year": {
+          "crossref": "2023",
+          "local": "2023",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Kiefer",
+          "Mezil",
+          "Prada"
+        ],
+        "container": "Science Advances",
+        "title": "Beating resonance patterns and extreme power flux skewing in anisotropic elastic plates",
+        "year": "2023"
+      },
+      "doi": "10.1126/sciadv.adk6846",
+      "invalid_doi": false,
+      "key": "kiefer2023beating",
+      "local": {
+        "author_families": [
+          "Kiefer",
+          "Mezil",
+          "Prada"
+        ],
+        "container": "Science Advances",
+        "title": "Beating resonance patterns and extreme power flux skewing in anisotropic elastic plates",
+        "year": "2023"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Kiefer",
+            "Plestenjak",
+            "Gravenkamp",
+            "Prada"
+          ],
+          "local": [
+            "Kiefer",
+            "Plestenjak",
+            "Gravenkamp",
+            "Prada"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Computing zero-group-velocity points in anisotropic elastic waveguides: Globally and locally convergent methods",
+          "local": "Computing zero-group-velocity points in anisotropic elastic waveguides: Globally and locally convergent methods",
+          "match": true
+        },
+        "year": {
+          "crossref": "2023",
+          "local": "2023",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Kiefer",
+          "Plestenjak",
+          "Gravenkamp",
+          "Prada"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Computing zero-group-velocity points in anisotropic elastic waveguides: Globally and locally convergent methods",
+        "year": "2023"
+      },
+      "doi": "10.1121/10.0017252",
+      "invalid_doi": false,
+      "key": "kiefer2023computing",
+      "local": {
+        "author_families": [
+          "Kiefer",
+          "Plestenjak",
+          "Gravenkamp",
+          "Prada"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Computing zero-group-velocity points in anisotropic elastic waveguides: Globally and locally convergent methods",
+        "year": "2023"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Kiefer",
+            "Watzl",
+            "Burgholzer",
+            "Ryzy",
+            "Grünsteidl"
+          ],
+          "local": [
+            "Kiefer",
+            "Watzl",
+            "Burgholzer",
+            "Ryzy",
+            "Gr{\\\"u}nsteidl"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Applied Physics",
+          "local": "Journal of Applied Physics",
+          "match": true
+        },
+        "title": {
+          "crossref": "Electroelastic guided wave dispersion in piezoelectric plates: Spectral methods and laser-ultrasound experiments",
+          "local": "Electroelastic guided wave dispersion in piezoelectric plates: Spectral methods and laser-ultrasound experiments",
+          "match": true
+        },
+        "year": {
+          "crossref": "2025",
+          "local": "2025",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Kiefer",
+          "Watzl",
+          "Burgholzer",
+          "Ryzy",
+          "Grünsteidl"
+        ],
+        "container": "Journal of Applied Physics",
+        "title": "Electroelastic guided wave dispersion in piezoelectric plates: Spectral methods and laser-ultrasound experiments",
+        "year": "2025"
+      },
+      "doi": "10.1063/5.0250494",
+      "invalid_doi": false,
+      "key": "kiefer2025piezoelectric",
+      "local": {
+        "author_families": [
+          "Kiefer",
+          "Watzl",
+          "Burgholzer",
+          "Ryzy",
+          "Gr{\\\"u}nsteidl"
+        ],
+        "container": "Journal of Applied Physics",
+        "title": "Electroelastic guided wave dispersion in piezoelectric plates: Spectral methods and laser-ultrasound experiments",
+        "year": "2025"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Kiefer",
+            "Mezil",
+            "Prada"
+          ],
+          "local": [
+            "Kiefer",
+            "Mezil",
+            "Prada"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Physical Review Research",
+          "local": "Physical Review Research",
+          "match": true
+        },
+        "title": {
+          "crossref": "Extreme wave skewing and dispersion spectra of anisotropic elastic plates",
+          "local": "Extreme wave skewing and dispersion spectra of anisotropic elastic plates",
+          "match": true
+        },
+        "year": {
+          "crossref": "2025",
+          "local": "2025",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Kiefer",
+          "Mezil",
+          "Prada"
+        ],
+        "container": "Physical Review Research",
+        "title": "Extreme wave skewing and dispersion spectra of anisotropic elastic plates",
+        "year": "2025"
+      },
+      "doi": "10.1103/physrevresearch.7.l012043",
+      "invalid_doi": false,
+      "key": "kiefer2025skewing",
+      "local": {
+        "author_families": [
+          "Kiefer",
+          "Mezil",
+          "Prada"
+        ],
+        "container": "Physical Review Research",
+        "title": "Extreme wave skewing and dispersion spectra of anisotropic elastic plates",
+        "year": "2025"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Lamb"
+          ],
+          "local": [
+            "Lamb"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+          "local": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+          "match": true
+        },
+        "title": {
+          "crossref": "On waves in an elastic plate",
+          "local": "On waves in an elastic plate",
+          "match": true
+        },
+        "year": {
+          "crossref": "1917",
+          "local": "1917",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Lamb"
+        ],
+        "container": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+        "title": "On waves in an elastic plate",
+        "year": "1917"
+      },
+      "doi": "10.1098/rspa.1917.0008",
+      "invalid_doi": false,
+      "key": "lamb1917waves",
+      "local": {
+        "author_families": [
+          "Lamb"
+        ],
+        "container": "Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character",
+        "title": "On waves in an elastic plate",
+        "year": "1917"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Laurent",
+            "Royer",
+            "Prada"
+          ],
+          "local": [
+            "Laurent",
+            "Royer",
+            "Prada"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Wave Motion",
+          "local": "Wave Motion",
+          "match": true
+        },
+        "title": {
+          "crossref": "Temporal behavior of laser induced elastic plate resonances",
+          "local": "Temporal behavior of laser induced elastic plate resonances",
+          "match": true
+        },
+        "year": {
+          "crossref": "2014",
+          "local": "2014",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Laurent",
+          "Royer",
+          "Prada"
+        ],
+        "container": "Wave Motion",
+        "title": "Temporal behavior of laser induced elastic plate resonances",
+        "year": "2014"
+      },
+      "doi": "10.1016/j.wavemoti.2014.04.001",
+      "invalid_doi": false,
+      "key": "laurent2014temporal",
+      "local": {
+        "author_families": [
+          "Laurent",
+          "Royer",
+          "Prada"
+        ],
+        "container": "Wave Motion",
+        "title": "Temporal behavior of laser induced elastic plate resonances",
+        "year": "2014"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Maznev",
+            "Lomonosov",
+            "Hess",
+            "Kolomenskii"
+          ],
+          "local": [
+            "Maznev",
+            "Lomonosov",
+            "Hess",
+            "Kolomenskii"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The European Physical Journal B - Condensed Matter",
+          "local": "The European Physical Journal B - Condensed Matter",
+          "match": true
+        },
+        "title": {
+          "crossref": "Anisotropic effects in surface acoustic wave propagation from a point source in a crystal",
+          "local": "Anisotropic effects in surface acoustic wave propagation from a point source in a crystal",
+          "match": true
+        },
+        "year": {
+          "crossref": "2003",
+          "local": "2003",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Maznev",
+          "Lomonosov",
+          "Hess",
+          "Kolomenskii"
+        ],
+        "container": "The European Physical Journal B - Condensed Matter",
+        "title": "Anisotropic effects in surface acoustic wave propagation from a point source in a crystal",
+        "year": "2003"
+      },
+      "doi": "10.1140/epjb/e2003-00295-y",
+      "invalid_doi": false,
+      "key": "maznev2003anisotropic",
+      "local": {
+        "author_families": [
+          "Maznev",
+          "Lomonosov",
+          "Hess",
+          "Kolomenskii"
+        ],
+        "container": "The European Physical Journal B - Condensed Matter",
+        "title": "Anisotropic effects in surface acoustic wave propagation from a point source in a crystal",
+        "year": "2003"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Morales",
+            "Pathak",
+            "Lum",
+            "Kube",
+            "Murray",
+            "Stobbe"
+          ],
+          "local": [
+            "Morales",
+            "Pathak",
+            "Lum",
+            "Kube",
+            "Murray",
+            "Stobbe"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Applied Physics Letters",
+          "local": "Applied Physics Letters",
+          "match": true
+        },
+        "title": {
+          "crossref": "Acoustoelastic characterization of plates using zero group velocity Lamb modes",
+          "local": "Acoustoelastic characterization of plates using zero group velocity {Lamb} modes",
+          "match": true
+        },
+        "year": {
+          "crossref": "2024",
+          "local": "2024",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Morales",
+          "Pathak",
+          "Lum",
+          "Kube",
+          "Murray",
+          "Stobbe"
+        ],
+        "container": "Applied Physics Letters",
+        "title": "Acoustoelastic characterization of plates using zero group velocity Lamb modes",
+        "year": "2024"
+      },
+      "doi": "10.1063/5.0183620",
+      "invalid_doi": false,
+      "key": "morales2024acoustoelastic",
+      "local": {
+        "author_families": [
+          "Morales",
+          "Pathak",
+          "Lum",
+          "Kube",
+          "Murray",
+          "Stobbe"
+        ],
+        "container": "Applied Physics Letters",
+        "title": "Acoustoelastic characterization of plates using zero group velocity {Lamb} modes",
+        "year": "2024"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Almeida",
+            "Hannay"
+          ],
+          "local": [
+            "Ozorio de Almeida",
+            "Hannay"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Physics A: Mathematical and General",
+          "local": "Journal of Physics A: Mathematical and General",
+          "match": true
+        },
+        "title": {
+          "crossref": "Resonant periodic orbits and the semiclassical energy spectrum",
+          "local": "Resonant periodic orbits and the semiclassical energy spectrum",
+          "match": true
+        },
+        "year": {
+          "crossref": "1987",
+          "local": "1987",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Almeida",
+          "Hannay"
+        ],
+        "container": "Journal of Physics A: Mathematical and General",
+        "title": "Resonant periodic orbits and the semiclassical energy spectrum",
+        "year": "1987"
+      },
+      "doi": "10.1088/0305-4470/20/17/021",
+      "invalid_doi": false,
+      "key": "ozorio1987resonant",
+      "local": {
+        "author_families": [
+          "Ozorio de Almeida",
+          "Hannay"
+        ],
+        "container": "Journal of Physics A: Mathematical and General",
+        "title": "Resonant periodic orbits and the semiclassical energy spectrum",
+        "year": "1987"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Plestenjak",
+            "Kiefer",
+            "Gravenkamp"
+          ],
+          "local": [
+            "Plestenjak",
+            "Kiefer",
+            "Gravenkamp"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Computational Mechanics",
+          "local": "Computational Mechanics",
+          "match": true
+        },
+        "title": {
+          "crossref": "A Sylvester equation approach for the computation of zero-group-velocity points in waveguides",
+          "local": "A {Sylvester} equation approach for the computation of zero-group-velocity points in waveguides",
+          "match": true
+        },
+        "year": {
+          "crossref": "2025",
+          "local": "2025",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Plestenjak",
+          "Kiefer",
+          "Gravenkamp"
+        ],
+        "container": "Computational Mechanics",
+        "title": "A Sylvester equation approach for the computation of zero-group-velocity points in waveguides",
+        "year": "2025"
+      },
+      "doi": "10.1007/s00466-025-02656-8",
+      "invalid_doi": false,
+      "key": "plestenjak2025sylvester",
+      "local": {
+        "author_families": [
+          "Plestenjak",
+          "Kiefer",
+          "Gravenkamp"
+        ],
+        "container": "Computational Mechanics",
+        "title": "A {Sylvester} equation approach for the computation of zero-group-velocity points in waveguides",
+        "year": "2025"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Prada",
+            "Balogun",
+            "Murray"
+          ],
+          "local": [
+            "Prada",
+            "Balogun",
+            "Murray"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Applied Physics Letters",
+          "local": "Applied Physics Letters",
+          "match": true
+        },
+        "title": {
+          "crossref": "Laser-based ultrasonic generation and detection of zero-group velocity Lamb waves in thin plates",
+          "local": "Laser-based ultrasonic generation and detection of zero-group velocity Lamb waves in thin plates",
+          "match": true
+        },
+        "year": {
+          "crossref": "2005",
+          "local": "2005",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Prada",
+          "Balogun",
+          "Murray"
+        ],
+        "container": "Applied Physics Letters",
+        "title": "Laser-based ultrasonic generation and detection of zero-group velocity Lamb waves in thin plates",
+        "year": "2005"
+      },
+      "doi": "10.1063/1.2128063",
+      "invalid_doi": false,
+      "key": "prada2005laser",
+      "local": {
+        "author_families": [
+          "Prada",
+          "Balogun",
+          "Murray"
+        ],
+        "container": "Applied Physics Letters",
+        "title": "Laser-based ultrasonic generation and detection of zero-group velocity Lamb waves in thin plates",
+        "year": "2005"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Prada",
+            "Clorennec",
+            "Royer"
+          ],
+          "local": [
+            "Prada",
+            "Clorennec",
+            "Royer"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Local vibration of an elastic plate and zero-group velocity Lamb modes",
+          "local": "Local vibration of an elastic plate and zero-group velocity {Lamb} modes",
+          "match": true
+        },
+        "year": {
+          "crossref": "2008",
+          "local": "2008",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Local vibration of an elastic plate and zero-group velocity Lamb modes",
+        "year": "2008"
+      },
+      "doi": "10.1121/1.2918543",
+      "invalid_doi": false,
+      "key": "prada2008local",
+      "local": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Local vibration of an elastic plate and zero-group velocity {Lamb} modes",
+        "year": "2008"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Prada",
+            "Clorennec",
+            "Royer"
+          ],
+          "local": [
+            "Prada",
+            "Clorennec",
+            "Royer"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Wave Motion",
+          "local": "Wave Motion",
+          "match": true
+        },
+        "title": {
+          "crossref": "Power law decay of zero group velocity Lamb modes",
+          "local": "Power law decay of zero group velocity {Lamb} modes",
+          "match": true
+        },
+        "year": {
+          "crossref": "2008",
+          "local": "2008",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Royer"
+        ],
+        "container": "Wave Motion",
+        "title": "Power law decay of zero group velocity Lamb modes",
+        "year": "2008"
+      },
+      "doi": "10.1016/j.wavemoti.2007.11.005",
+      "invalid_doi": false,
+      "key": "prada2008power",
+      "local": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Royer"
+        ],
+        "container": "Wave Motion",
+        "title": "Power law decay of zero group velocity {Lamb} modes",
+        "year": "2008"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Prada",
+            "Clorennec",
+            "Murray",
+            "Royer"
+          ],
+          "local": [
+            "Prada",
+            "Clorennec",
+            "Murray",
+            "Royer"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Influence of the anisotropy on zero-group velocity Lamb modes",
+          "local": "Influence of the anisotropy on zero-group velocity {Lamb} modes",
+          "match": true
+        },
+        "year": {
+          "crossref": "2009",
+          "local": "2009",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Murray",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Influence of the anisotropy on zero-group velocity Lamb modes",
+        "year": "2009"
+      },
+      "doi": "10.1121/1.3167277",
+      "invalid_doi": false,
+      "key": "prada2009anisotropy",
+      "local": {
+        "author_families": [
+          "Prada",
+          "Clorennec",
+          "Murray",
+          "Royer"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Influence of the anisotropy on zero-group velocity {Lamb} modes",
+        "year": "2009"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Shuvalov",
+            "Poncelet"
+          ],
+          "local": [
+            "Shuvalov",
+            "Poncelet"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "International Journal of Solids and Structures",
+          "local": "International Journal of Solids and Structures",
+          "match": true
+        },
+        "title": {
+          "crossref": "On the backward Lamb waves near thickness resonances in anisotropic plates",
+          "local": "On the backward {Lamb} waves near thickness resonances in anisotropic plates",
+          "match": true
+        },
+        "year": {
+          "crossref": "2008",
+          "local": "2008",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Shuvalov",
+          "Poncelet"
+        ],
+        "container": "International Journal of Solids and Structures",
+        "title": "On the backward Lamb waves near thickness resonances in anisotropic plates",
+        "year": "2008"
+      },
+      "doi": "10.1016/j.ijsolstr.2008.02.004",
+      "invalid_doi": false,
+      "key": "shuvalov2008backward",
+      "local": {
+        "author_families": [
+          "Shuvalov",
+          "Poncelet"
+        ],
+        "container": "International Journal of Solids and Structures",
+        "title": "On the backward {Lamb} waves near thickness resonances in anisotropic plates",
+        "year": "2008"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Van Hove"
+          ],
+          "local": [
+            "Van Hove"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Physical Review",
+          "local": "Physical Review",
+          "match": true
+        },
+        "title": {
+          "crossref": "The Occurrence of Singularities in the Elastic Frequency Distribution of a Crystal",
+          "local": "The Occurrence of Singularities in the Elastic Frequency Distribution of a Crystal",
+          "match": true
+        },
+        "year": {
+          "crossref": "1953",
+          "local": "1953",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Van Hove"
+        ],
+        "container": "Physical Review",
+        "title": "The Occurrence of Singularities in the Elastic Frequency Distribution of a Crystal",
+        "year": "1953"
+      },
+      "doi": "10.1103/physrev.89.1189",
+      "invalid_doi": false,
+      "key": "vanhove1953singularities",
+      "local": {
+        "author_families": [
+          "Van Hove"
+        ],
+        "container": "Physical Review",
+        "title": "The Occurrence of Singularities in the Elastic Frequency Distribution of a Crystal",
+        "year": "1953"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Velichko",
+            "Wilcox"
+          ],
+          "local": [
+            "Velichko",
+            "Wilcox"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "The Journal of the Acoustical Society of America",
+          "local": "The Journal of the Acoustical Society of America",
+          "match": true
+        },
+        "title": {
+          "crossref": "Modeling the excitation of guided waves in generally anisotropic multilayered media",
+          "local": "Modeling the excitation of guided waves in generally anisotropic multilayered media",
+          "match": true
+        },
+        "year": {
+          "crossref": "2007",
+          "local": "2007",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Velichko",
+          "Wilcox"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Modeling the excitation of guided waves in generally anisotropic multilayered media",
+        "year": "2007"
+      },
+      "doi": "10.1121/1.2390674",
+      "invalid_doi": false,
+      "key": "velichko2007excitation",
+      "local": {
+        "author_families": [
+          "Velichko",
+          "Wilcox"
+        ],
+        "container": "The Journal of the Acoustical Society of America",
+        "title": "Modeling the excitation of guided waves in generally anisotropic multilayered media",
+        "year": "2007"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Wang",
+            "Chen",
+            "Kadic",
+            "Wang",
+            "Wegener"
+          ],
+          "local": [
+            "Wang",
+            "Chen",
+            "Kadic",
+            "Wang",
+            "Wegener"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Communications Materials",
+          "local": "Communications Materials",
+          "match": true
+        },
+        "title": {
+          "crossref": "Nonlocal interaction engineering of 2D roton-like dispersion relations in acoustic and mechanical metamaterials",
+          "local": "Nonlocal interaction engineering of {2D} roton-like dispersion relations in acoustic and mechanical metamaterials",
+          "match": true
+        },
+        "year": {
+          "crossref": "2022",
+          "local": "2022",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Wang",
+          "Chen",
+          "Kadic",
+          "Wang",
+          "Wegener"
+        ],
+        "container": "Communications Materials",
+        "title": "Nonlocal interaction engineering of 2D roton-like dispersion relations in acoustic and mechanical metamaterials",
+        "year": "2022"
+      },
+      "doi": "10.1038/s43246-022-00257-z",
+      "invalid_doi": false,
+      "key": "wang2022roton",
+      "local": {
+        "author_families": [
+          "Wang",
+          "Chen",
+          "Kadic",
+          "Wang",
+          "Wegener"
+        ],
+        "container": "Communications Materials",
+        "title": "Nonlocal interaction engineering of {2D} roton-like dispersion relations in acoustic and mechanical metamaterials",
+        "year": "2022"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Xie",
+            "Mezil",
+            "Otsuka",
+            "Tomoda",
+            "Laurent",
+            "Matsuda",
+            "Shen",
+            "Wright"
+          ],
+          "local": [
+            "Xie",
+            "Mezil",
+            "Otsuka",
+            "Tomoda",
+            "Laurent",
+            "Matsuda",
+            "Shen",
+            "Wright"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Nature Communications",
+          "local": "Nature Communications",
+          "match": true
+        },
+        "title": {
+          "crossref": "Imaging gigahertz zero-group-velocity Lamb waves",
+          "local": "Imaging gigahertz zero-group-velocity {Lamb} waves",
+          "match": true
+        },
+        "year": {
+          "crossref": "2019",
+          "local": "2019",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Xie",
+          "Mezil",
+          "Otsuka",
+          "Tomoda",
+          "Laurent",
+          "Matsuda",
+          "Shen",
+          "Wright"
+        ],
+        "container": "Nature Communications",
+        "title": "Imaging gigahertz zero-group-velocity Lamb waves",
+        "year": "2019"
+      },
+      "doi": "10.1038/s41467-019-10085-4",
+      "invalid_doi": false,
+      "key": "xie2019imaging",
+      "local": {
+        "author_families": [
+          "Xie",
+          "Mezil",
+          "Otsuka",
+          "Tomoda",
+          "Laurent",
+          "Matsuda",
+          "Shen",
+          "Wright"
+        ],
+        "container": "Nature Communications",
+        "title": "Imaging gigahertz zero-group-velocity {Lamb} waves",
+        "year": "2019"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Zhang",
+            "Barrett",
+            "Cloetens",
+            "Detlefs",
+            "Sanchez del Rio"
+          ],
+          "local": [
+            "Zhang",
+            "Barrett",
+            "Cloetens",
+            "Detlefs",
+            "Sanchez del Rio"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Journal of Synchrotron Radiation",
+          "local": "Journal of Synchrotron Radiation",
+          "match": true
+        },
+        "title": {
+          "crossref": "Anisotropic elasticity of silicon and its application to the modelling of X-ray optics",
+          "local": "Anisotropic elasticity of silicon and its application to the modelling of {X}-ray optics",
+          "match": true
+        },
+        "year": {
+          "crossref": "2014",
+          "local": "2014",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Zhang",
+          "Barrett",
+          "Cloetens",
+          "Detlefs",
+          "Sanchez del Rio"
+        ],
+        "container": "Journal of Synchrotron Radiation",
+        "title": "Anisotropic elasticity of silicon and its application to the modelling of X-ray optics",
+        "year": "2014"
+      },
+      "doi": "10.1107/s1600577514004962",
+      "invalid_doi": false,
+      "key": "zhang2014silicon",
+      "local": {
+        "author_families": [
+          "Zhang",
+          "Barrett",
+          "Cloetens",
+          "Detlefs",
+          "Sanchez del Rio"
+        ],
+        "container": "Journal of Synchrotron Radiation",
+        "title": "Anisotropic elasticity of silicon and its application to the modelling of {X}-ray optics",
+        "year": "2014"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    },
+    {
+      "comparison": {
+        "author_families": {
+          "crossref": [
+            "Zhang",
+            "Liu",
+            "Wang",
+            "He"
+          ],
+          "local": [
+            "Zhang",
+            "Liu",
+            "Wang",
+            "He"
+          ],
+          "match": true
+        },
+        "container": {
+          "crossref": "Nondestructive Testing and Evaluation",
+          "local": "Nondestructive Testing and Evaluation",
+          "match": true
+        },
+        "title": {
+          "crossref": "Zero group velocity Lamb waves for non-destructive testing of plate structures: a review of principles, applications, and prospects",
+          "local": "Zero group velocity {Lamb} waves for non-destructive testing of plate structures: a review of principles, applications, and prospects",
+          "match": true
+        },
+        "year": {
+          "crossref": "2026",
+          "local": "2026",
+          "match": true
+        }
+      },
+      "crossref": {
+        "author_families": [
+          "Zhang",
+          "Liu",
+          "Wang",
+          "He"
+        ],
+        "container": "Nondestructive Testing and Evaluation",
+        "title": "Zero group velocity Lamb waves for non-destructive testing of plate structures: a review of principles, applications, and prospects",
+        "year": "2026"
+      },
+      "doi": "10.1080/10589759.2025.2610729",
+      "invalid_doi": false,
+      "key": "zhang2026review",
+      "local": {
+        "author_families": [
+          "Zhang",
+          "Liu",
+          "Wang",
+          "He"
+        ],
+        "container": "Nondestructive Testing and Evaluation",
+        "title": "Zero group velocity {Lamb} waves for non-destructive testing of plate structures: a review of principles, applications, and prospects",
+        "year": "2026"
+      },
+      "missing_required": [],
+      "status": "core_metadata_verified"
+    }
+  ],
+  "generated_at": "2026-07-13T07:21:52.664615+00:00",
+  "online": true,
+  "schema_version": 1,
+  "summary": {
+    "duplicate_doi": 0,
+    "entries": 39,
+    "invalid_doi": 0,
+    "manual_needed": 0,
+    "mismatch": 0,
+    "missing_required": 0
+  }
+}

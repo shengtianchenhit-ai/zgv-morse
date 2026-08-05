@@ -1,0 +1,102 @@
+{
+  "exact": {
+    "branch_index": 1,
+    "curvature_a": 1.19686272507393,
+    "det_residual": 4.2168791772922093e-81,
+    "group_velocity": -8.06056901220076e-88,
+    "kappa0": 0.8042173193715181,
+    "omega0": 2.85175877496009
+  },
+  "single_element": [
+    {
+      "curvature": 1.1968627250971984,
+      "elements": 1,
+      "hermitian_defect": 3.0354375678465027e-17,
+      "k_zgv": 0.804217319371474,
+      "mass_orthogonality_defect": 5.863156142013524e-15,
+      "maximum_eigen_residual": 1.289664476578666e-13,
+      "minimum_relative_eigengap": 0.22289169323487085,
+      "omega_zgv": 2.8517587749600946,
+      "order": 12,
+      "relative_curvature_error": 1.9441056778889723e-11,
+      "relative_k_error": 5.480590011672869e-14,
+      "relative_omega_error": 1.5572467550530377e-15,
+      "rotational_frequency_defect": 2.117855586872128e-14
+    },
+    {
+      "curvature": 1.196862725118856,
+      "elements": 1,
+      "hermitian_defect": 2.3071944362163334e-17,
+      "k_zgv": 0.8042173193715055,
+      "mass_orthogonality_defect": 3.1323938000917513e-15,
+      "maximum_eigen_residual": 2.4516123405057086e-13,
+      "minimum_relative_eigengap": 0.22289169323517216,
+      "omega_zgv": 2.851758774960448,
+      "order": 16,
+      "relative_curvature_error": 3.753633552460803e-11,
+      "relative_k_error": 1.5599664264963076e-14,
+      "relative_omega_error": 1.2551408845727483e-13,
+      "rotational_frequency_defect": 1.8920548073892032e-13
+    },
+    {
+      "curvature": 1.196862724938896,
+      "elements": 1,
+      "hermitian_defect": 2.760720838790197e-17,
+      "k_zgv": 0.8042173193714981,
+      "mass_orthogonality_defect": 2.9202616464080867e-15,
+      "maximum_eigen_residual": 7.460993831790474e-13,
+      "minimum_relative_eigengap": 0.22289169323588673,
+      "omega_zgv": 2.8517587749595963,
+      "order": 20,
+      "relative_curvature_error": 1.1282347023612711e-10,
+      "relative_k_error": 2.4849022722950036e-14,
+      "relative_omega_error": 1.731658391618978e-13,
+      "rotational_frequency_defect": 3.263989198591732e-13
+    },
+    {
+      "curvature": 1.1968627251493966,
+      "elements": 1,
+      "hermitian_defect": 3.5451403582246376e-17,
+      "k_zgv": 0.8042173193716591,
+      "mass_orthogonality_defect": 3.4032485130993273e-15,
+      "maximum_eigen_residual": 1.8872839014191413e-12,
+      "minimum_relative_eigengap": 0.2228916932360687,
+      "omega_zgv": 2.8517587749619437,
+      "order": 24,
+      "relative_curvature_error": 6.305361537248455e-11,
+      "relative_k_error": 1.7532366032303635e-13,
+      "relative_omega_error": 6.499947955591379e-13,
+      "rotational_frequency_defect": 9.798196582787343e-13
+    },
+    {
+      "curvature": 1.1968627251769854,
+      "elements": 1,
+      "hermitian_defect": 1.5790533864987406e-17,
+      "k_zgv": 0.8042173193715313,
+      "mass_orthogonality_defect": 3.0987415415152255e-15,
+      "maximum_eigen_residual": 4.6854722498402175e-12,
+      "minimum_relative_eigengap": 0.22289169323371952,
+      "omega_zgv": 2.8517587749662043,
+      "order": 28,
+      "relative_curvature_error": 8.610456310387626e-11,
+      "relative_k_error": 1.6427965022394745e-14,
+      "relative_omega_error": 2.1440173323570224e-12,
+      "rotational_frequency_defect": 5.029907018810527e-13
+    }
+  ],
+  "two_element": {
+    "curvature": 1.1968627265407565,
+    "elements": 2,
+    "hermitian_defect": 1.5422059067705488e-17,
+    "k_zgv": 0.8042173193726854,
+    "mass_orthogonality_defect": 3.5196868002431447e-15,
+    "maximum_eigen_residual": 8.997834798458496e-12,
+    "minimum_relative_eigengap": 0.2228916932299347,
+    "omega_zgv": 2.8517587749585696,
+    "order": 28,
+    "relative_curvature_error": 1.22555946255202e-09,
+    "relative_k_error": 1.4514590272727593e-12,
+    "relative_omega_error": 5.332012889301601e-13,
+    "rotational_frequency_defect": 1.8434687086327688e-12
+  }
+}

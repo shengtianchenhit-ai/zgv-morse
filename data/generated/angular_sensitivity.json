@@ -1,0 +1,130 @@
+{
+  "arrays": {
+    "B": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    },
+    "B_fd": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    },
+    "V": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    },
+    "V0": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "V4": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "V8": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "V_fd": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    },
+    "V_reconstruction": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    },
+    "delta_c": {
+      "dtype": "float64",
+      "shape": [
+        12
+      ]
+    },
+    "epsilon": {
+      "dtype": "float64",
+      "shape": [
+        12
+      ]
+    },
+    "harmonic_amplitude": {
+      "dtype": "float64",
+      "shape": [
+        17
+      ]
+    },
+    "harmonic_order": {
+      "dtype": "int64",
+      "shape": [
+        17
+      ]
+    },
+    "physical_V4_shift": {
+      "dtype": "float64",
+      "shape": [
+        12
+      ]
+    },
+    "theta": {
+      "dtype": "float64",
+      "shape": [
+        64
+      ]
+    }
+  },
+  "artifact": "angular_sensitivity",
+  "cache_key": "c01d7917b7484c84f2047037d208a291fa08054e10b083e8c3383e0602f5544c",
+  "cache_schema_version": 1,
+  "code_hash": "ac9aa78bf0cbab8626253a93610ee5cddee2a6fa98a14dfdc28ac37c476ec44b",
+  "command": "python -m zgv_morse.workflows --stage sensitivity --profile full",
+  "config_hash": "b0489b361a19aa32184ceb9331b733fc49aefd6d6485021c645e2b6347cefe90",
+  "dimensionless_convention": "kappa=k*h, Omega=omega*h/c_T",
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "input_artifacts": {},
+  "metadata_sha256": "7d88c37e4aca6da72ea6125d29d994eb001154491189e9834d07a6dff9efcf91",
+  "output_sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b",
+  "profile": "full",
+  "schema_version": 1,
+  "source_hash": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82",
+  "stage": "sensitivity",
+  "tolerances": {
+    "configured_relative_sensitivity": 0.0001,
+    "maximum_eigen_residual": 7.691230760755085e-14,
+    "minimum_relative_eigengap": 0.2266791488309703,
+    "mirror_defect": 1.912359159916832e-14,
+    "non_cubic_leakage": 6.20927815105734e-13,
+    "periodicity_defect": 2.170486013142181e-14,
+    "relative_B_error": 2.190197844102567e-06,
+    "relative_V_error": 1.751628312142208e-08
+  },
+  "units": {
+    "B": "Omega per epsilon per kappa",
+    "B_fd": "Omega per epsilon per kappa",
+    "V": "Omega per epsilon",
+    "V0": "Omega per epsilon",
+    "V4": "Omega per epsilon",
+    "V8": "Omega per epsilon",
+    "V_fd": "Omega per epsilon",
+    "V_reconstruction": "Omega per epsilon",
+    "delta_c": "stiffness",
+    "epsilon": "1",
+    "harmonic_amplitude": "Omega per epsilon",
+    "harmonic_order": "integer",
+    "physical_V4_shift": "Omega",
+    "theta": "rad"
+  },
+  "uv_lock_hash": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+}

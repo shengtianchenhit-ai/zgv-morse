@@ -1,0 +1,231 @@
+\section{Methods}
+
+\subsection{Governing equations and nondimensionalization}
+
+We considered an infinite homogeneous elastic plate occupying
+\(\mathbb R^2\times[-h,h]\), with density \(\rho\), elasticity tensor
+\(C_{ijkl}\), and traction-free faces.  For a plane-wave component
+\(\boldsymbol u=\boldsymbol U(z)\exp[\mathrm i(k_xx+k_yy)-\mathrm
+i\omega t]\), the strong problem is
+\(\partial_j(C_{ijkl}\partial_lu_k)=\rho\,\partial_t^2u_i\), with
+\(\boldsymbol\sigma\boldsymbol n=0\) at \(z=\pm h\).  The reference
+isotropic solid has \(\lambda=2\), \(\mu=1\), \(\rho=1\), and \(h=1\).
+The shear speed is \(c_T=\sqrt{\mu/\rho}\); reported wavenumber, frequency,
+and time are \(\kappa=h k^{\rm phys}\),
+\(\Omega=h\omega^{\rm phys}/c_T\), and \(t=c_Tt^{\rm phys}/h\).
+Consequently, every plotted coordinate and fitted time is dimensionless.
+The signed parameter \(\varepsilon\) multiplies the declared cubic
+constitutive perturbation at fixed density; it is not a frequency shift.
+
+The isotropic symmetric branch was first computed from the desingularized
+Rayleigh--Lamb determinant, rather than from a plate approximation.  Its first
+\(S_1\)-ZGV root in the declared search window was obtained at 80-decimal
+working precision from the
+simultaneous determinant and radial-derivative equations.  Implicit
+differentiation supplied the radial curvature.  The selected root and
+curvature then served as independent regression targets for the
+thickness-resolved solver.  The full determinant construction,
+desingularization at the shear cutoff, and Morse--Bott Hessian calculation are
+given in Supplementary Section~\ref{sec:isotropic-rayleigh-lamb-derivation}.
+
+\subsection{Spectral solvers}
+
+The three displacement components were discretized only through the
+thickness by a Legendre--Gauss--Lobatto (GLL) spectral element method.  The
+weak form retains the face traction as its natural boundary term; no face
+degree of freedom is constrained and no penalty is added.  Stiffness and mass
+were assembled by collocated GLL quadrature in the Mandel strain convention.
+The production homogeneous-plate mesh uses one element on \([-h,h]\); a
+two-element mesh split at \(z=0\) is an independent assembly check.  The
+generalized Hermitian problem
+\(\boldsymbol K\boldsymbol u=\omega^2\boldsymbol M\boldsymbol u\) was solved
+for the lowest 12 modes with SciPy's generalized-Hermitian \texttt{gvx}
+driver.  Eigenvectors were mass normalized.  Matrix Hermiticity, mass
+orthogonality, and the normalized eigen residual were tested at every declared
+convergence order.
+
+All first and second derivatives of \(\boldsymbol K\) with respect to
+\((k_x,k_y)\) were assembled analytically from the wavevector-affine strain
+matrix.  Absolute frequency and gradient discrepancy estimators were the
+differences between answers at orders \(p\) and \(p+4\).  These inter-order
+quantities are empirical resolution indicators, not bounds on the unknown
+continuum errors.  The relative estimator used by the eigengap gate was the
+maximum of that nested-order eigenvalue discrepancy and the two eigen
+residuals.  The committed full profile uses order
+pairs 12/16 for the isotropic artifact, 10/14 for the critical-point, scaling,
+and Green artifacts, and 12/16 for the silicon stress test; convergence sweeps
+the pairs 6/10 through 14/18.  The sensitivity artifact uses order 10 and is
+checked by independent physical finite differences rather than a 10/14 pair.  The exact
+weak form, derivative matrices, residual definitions, and all fixed gates are
+specified in Supplementary Section~\ref{sec:spectral-numerics}.
+
+\subsection{Mode tracking and sensitivities}
+
+Parity identifies the symmetric branch in the independent isotropic validation.
+Production angular anchors were seeded by proximity to the exact target
+frequency and then continued by a mass-weighted modal assurance criterion.  Near a close pair,
+tracking used the complete connected eigenvalue cluster and its principal
+subspace overlap before phase alignment.  Eight endpoint-free angular anchors
+were constructed independently at orders \(p\) and \(p+4\); closure of the
+angular loop required both scalar MAC and the least principal cosine to be at
+least \(1-10^{-8}\).  Inward and outward radial rays were continued separately
+from each ring anchor.  Samples were rejected when the selected cluster
+touched the top of the 12-mode solve or when the relative eigengap was no more
+than ten times the relative eigenvalue discrepancy estimator.  This eigengap
+gate is a method hypothesis: no scalar sensitivity or Hessian was accepted
+through a numerically unresolved crossing.
+
+The generalized-eigenvalue sensitivity was evaluated at fixed mass norm by
+the Hellmann--Feynman contraction.  The angular function \(V(\theta)\) and its
+mean and fourth harmonic, \(V_0\) and \(V_4\), were computed on 64
+endpoint-free angles.  The mixed radial coefficient \(B\) retained the
+differentiated-mode contribution.  The mode derivative was obtained from a
+bordered reduced-resolvent system with the mass-gauge constraint, and both the
+equation and gauge residuals were required to be below \(10^{-8}\).  A centered
+full-wave difference in \(\varepsilon\) checked \(V(\theta)\), and a mixed
+\((\varepsilon,q)\) difference checked \(B(\theta)\), both with
+\(\Delta\varepsilon=\Delta q=0.0025\).  An independent tensor-product step sweep
+\(0.02,0.01,0.005,0.0025\) checked convergence.  Supplementary
+Section~\ref{sec:anisotropic-morse-derivation} gives the complete
+generalized-pencil algebra, rotated cubic contraction, normal form, and Morse
+splitting proof.
+
+\subsection{Critical-point search and annular consistency check}
+
+Critical points were searched only on the tracked branch inside the annulus
+\((1-f_A)k_0\leq|\boldsymbol k|\leq(1+f_A)k_0\), with \(f_A=0.15\).
+Every polar cell in which both radial and tangential gradient components
+bracketed zero supplied a seed.  Each seed was refined in Cartesian
+coordinates by \texttt{scipy.optimize.root} with the default Powell hybrid
+method, a Richardson Cartesian Hessian from steps \(h_H\) and \(h_H/2\) as
+Jacobian, and solver tolerance
+\(10^{-11}\).  A root outside the annulus or with a gradient residual exceeding
+its nested-order gradient-discrepancy estimator was rejected.  Roots were
+merged only within the propagated, capped position-resolution radius.
+
+The full calculation repeated the candidate search on \(5\times16\) and
+\(9\times32\) radial-by-angular grids.  The Hessian was Richardson extrapolated
+from centered gradient differences with full-profile step \(10^{-3}\); a
+classification was accepted only if its least absolute eigenvalue exceeded
+ten times the Hessian discrepancy estimate.  Counts, kinds, locations,
+frequencies, and Hessian eigenvalues had to agree under candidate-grid
+doubling.  An
+independent annular check sampled each boundary at 32 and 64 angles, required a
+gradient norm separated from its discrepancy estimate, stable boundary
+winding, angular increments below \(\pi/2\), and equality between outer-minus-inner
+winding and the sum of point indices.  The \(\varepsilon<0\) search was repeated
+on an angularly offset candidate grid.  This is a finite-resolution
+local-annulus consistency check, not an exhaustive continuum enumeration and
+not a global enumeration of every Lamb and shear-horizontal branch.  Index
+closure alone also cannot exclude an unresolved pair of
+opposite-index critical points between candidate-grid nodes; candidate-grid
+doubling, symmetry-offset repetition, and Hessian separation supply the
+additional controls used here.
+
+A separate finite-anisotropy stress test used crystal axes
+\(x\parallel[100]\), \(y\parallel[010]\), and \(z\parallel[001]\), so the
+plate normal was [001].  The constants \(C_{11}=165.7\), \(C_{12}=63.9\), and
+\(C_{44}=79.6\) GPa followed the published single-crystal elasticity record
+\citep{zhang2014silicon}.  The calculation normalized stiffness by \(C_{44}\),
+set \(\rho=h=1\), and reported frequency in
+\(\sqrt{C_{44}/\rho}/h\).  It exercised the search and annular consistency check
+under stronger constitutive contrast and was not used to validate the
+weak-\(\varepsilon\) theorem.
+
+\subsection{Green-function quadrature and fit masks}
+
+The positive-frequency response was projected onto the tracked branch for a
+normal impulsive source and top-face normal detector.  The modal amplitude
+was \(\mathrm i|u_z(h)|^2/(2\omega)\).  A Gaussian source factor with
+\(R/h=0.5\) and a fixed branch window
+\(\exp[-(q/\sigma)^8]b_\sigma(q)\), where \(q=|\boldsymbol k|-k_0\) and
+\(\sigma/k_0=0.15\), were applied.  The deterministic \(C^\infty\) taper
+\(b_\sigma\) equals one for \(|q|\leq1.25\sigma\), uses the standard flat
+\(\exp(-1/x)\) transition, and is exactly zero for
+\(|q|\geq1.5\sigma\).  Thus the integration interval
+\([-1.5\sigma,1.5\sigma]\) contains the complete compact support and has no
+endpoint contribution.  Direct integration used the Cartesian
+Fourier measure with radial polar Jacobian \(k_0+q\), an endpoint-free
+trapezoidal rule in angle, and composite
+Simpson quadrature in radius.  No Bessel function entered this full-wave
+quadrature.  The full profile rebuilt independent tracked surfaces on
+\(129\times32\), \(257\times64\), and \(513\times128\) grids for the uniform
+comparisons at \(\varepsilon\leq0.04\); the fixed \(\varepsilon=0.08\)
+comparison used twice as many angular nodes.
+For every response row, the stationary-point search used an annular half-width
+\(1.55\sigma=0.2325k_0\), strictly larger than the direct support
+\(1.5\sigma=0.225k_0\), on a \(15\times32\) candidate grid.  Boundary/index
+checks used 16 and 32 angular nodes.  Every resolved stationary point in this
+larger domain was evaluated with the same compact taper and included in the
+fixed-Morse sum; the domain, margin, point counts, and contribution counts are
+stored in the Green sidecar.
+The computed time axis was \(t_n=400+25n\), \(0\leq n\leq504\), for
+\(\varepsilon\in\{0.005,0.01,0.02,0.04,0.08\}\).
+
+Fit masks were fixed in code before response evaluation.  The early slope
+used \(\varepsilon=0.005\), \(t\geq1500\), and
+\(0.10\leq|\varepsilon V_4t|\leq0.30\).  The fixed-anisotropy late slope used
+complete half-open minimum--saddle modulation periods beginning at \(t=1500\),
+with at least three samples per period and four periods.  Ordinary least
+squares was applied to \(\log t\) and the logarithm of the predeclared RMS or
+demodulated amplitude.  The fitted intercepts were diagnostic only: the Bessel and
+exact-Morse comparisons used no fitted alignment of amplitude, phase, carrier
+frequency, or time.  The full response was accepted only if the three-grid
+complex error contracted and the accumulated inter-resolution
+phase-discrepancy estimator satisfied the declared
+\(t_{\max}\max|\delta\omega|\leq0.05\) rad acceptance test.  This estimator
+compares computed resolutions and does not bound the unknown continuum phase
+error.  Supplementary
+Section~\ref{sec:green-function-asymptotics} derives the normalized response
+and all asymptotic regimes; Supplementary Section~\ref{sec:spectral-numerics}
+specifies the quadrature, fit masks, cancellation exclusion, and error gates.
+
+\subsection{Reproducibility}
+
+Reference physical parameters and cross-stage acceptance limits are versioned
+in \path{config/reference.yaml}; stage-specific grids, masks, and thresholds
+are versioned in the workflow source and repeated in artifact sidecars.  The
+interpreter is pinned by \path{.python-version}, and dependency resolution is
+fixed by \path{uv.lock}.  The seven workflow stages write paired NPZ arrays and
+JSON sidecars containing array schemas, units, commands, input hashes, source
+and lock hashes, tolerances, measured diagnostics, and SHA-256 output hashes.
+Figures read only qualified artifacts, export their plotted source CSV files,
+and pass a strict geometry, provenance, and typography audit.
+
+The committed environment used uv 0.11.19, Python 3.12.13, NumPy 2.5.1, SciPy
+1.18.0, SymPy 1.14.0, Matplotlib 3.11.0, mpmath 1.3.0, and PyYAML 6.0.3.
+Supported Python versions and dependency ranges remain declared in
+\path{pyproject.toml}; the interpreter pin and lock file, not those ranges,
+define the verified Python environment.  PDF compilation used latexmk 4.88,
+pdfTeX 1.40.29, and BibTeX 0.99e from TeX Live 2026; these are external build
+prerequisites rather than Python dependencies.
+
+From the package root, the currently executable scientific rebuild is
+
+\begin{verbatim}
+uv sync --python 3.12.13 --frozen --all-extras
+uv run python scripts/reproduce_all.py \
+  --profile full --skip-paper
+uv run python scripts/export_manuscript_values.py
+\end{verbatim}
+
+The full-profile command first runs the complete test suite, then the
+isotropic, sensitivity, critical-point, scaling, Green, convergence, and
+silicon stages in isolated processes.  It validates each artifact immediately,
+validates the provenance manifest, rebuilds the six main and six supplementary
+figures and two generated tables, and performs strict figure QA.  The next
+command exports the evidence-checked manuscript macros.  The locked compiler
+then checks the recorded latexmk, pdfTeX, and BibTeX versions, builds the
+Supplement from \path{supplement.tex} before the main text from
+\path{main.tex} in two
+independently cleaned cycles, applies the strict final-log gate, rejects
+nondeterministic PDF metadata, and requires the two cycles to agree byte for
+byte:
+
+\begin{verbatim}
+uv run python scripts/compile_paper.py
+\end{verbatim}
+
+The supplement must be compiled first because the main document imports its
+label file.  The smoke profile is a runtime check only; it is not the source of
+committed numerical evidence.  Availability boundaries are stated below.

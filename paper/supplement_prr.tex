@@ -1,0 +1,75 @@
+%% =====================================================================
+%%  Supplemental Material for the PRR submission
+%%  APS REVTeX 4.2, single-column [preprint] layout.
+%%
+%%  Reuses every supplement wrapper (and therefore every canonical
+%%  derivation file under ../docs/derivations) unchanged.  Differences
+%%  from the original supplement.tex:
+%%    * revtex4-2 instead of article (amsthm dropped; the derivations
+%%      use only a plain {theorem} environment and no {proof}).
+%%    * APS-style S-prefixed numbering: Eq. (S1), Fig. S1, Table S1,
+%%      Theorem S1, Section SI.  The main text picks these up
+%%      automatically through xr-hyper/\externaldocument.
+%%    * "Supplemental Material" (APS terminology) in the title.
+%% =====================================================================
+\documentclass[aps,prresearch,preprint,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\input{shared_macros.tex}
+\input{generated/results_macros.tex}
+\input{figure_captions.tex}
+
+%% Plain theorem environment (numbered continuously: Theorem S1, S2, ...)
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{S\arabic{theorem}}
+
+%% APS Supplemental Material numbering: S-prefixes throughout.
+\renewcommand{\thesection}{S\Roman{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+
+\begin{document}
+
+\title{Supplemental Material for\\
+``A Coefficient- and Phase-Resolved Bridge across Noncommuting Limits of
+Lamb-Wave ZGV Splitting''}
+
+%% ===== Authors and affiliations: FILL IN before submission =========
+\author{Author One}
+\email{author.one@example.edu}
+\affiliation{Department of Mechanical Engineering, Example University,
+City 00000, Country}
+
+\author{Author Two}
+\affiliation{Department of Mechanical Engineering, Example University,
+City 00000, Country}
+%% ===================================================================
+
+%% No dated line, matching the main text.
+\date[]{}
+
+\maketitle
+
+\tableofcontents
+
+\input{supplement/01_exact_elasticity.tex}
+\input{supplement/02_perturbation_proofs.tex}
+\input{supplement/03_asymptotics.tex}
+\input{supplement/04_numerical_methods.tex}
+\input{supplement/05_convergence_and_robustness.tex}
+
+\end{document}

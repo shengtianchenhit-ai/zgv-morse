@@ -1,0 +1,387 @@
+{
+  "arrays": {
+    "B_fd_error": {
+      "dtype": "float64",
+      "shape": [
+        4
+      ]
+    },
+    "V4_fd_error": {
+      "dtype": "float64",
+      "shape": [
+        4
+      ]
+    },
+    "angular_resolution": {
+      "dtype": "int64",
+      "shape": [
+        3
+      ]
+    },
+    "curvature_error": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "eigen_residual": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "eigengap": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "hermitian_residual": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "interpolation_error": {
+      "dtype": "float64",
+      "shape": [
+        3
+      ]
+    },
+    "kappa0_error": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "mass_orthogonality": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "omega0_error": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ]
+    },
+    "phase_error": {
+      "dtype": "float64",
+      "shape": [
+        3
+      ]
+    },
+    "polynomial_order": {
+      "dtype": "int64",
+      "shape": [
+        5
+      ]
+    },
+    "quadrature_error": {
+      "dtype": "float64",
+      "shape": [
+        3
+      ]
+    },
+    "radial_resolution": {
+      "dtype": "int64",
+      "shape": [
+        3
+      ]
+    },
+    "response_sensitivity": {
+      "dtype": "float64",
+      "shape": [
+        3,
+        3
+      ]
+    },
+    "sensitivity_step": {
+      "dtype": "float64",
+      "shape": [
+        4
+      ]
+    },
+    "source_width": {
+      "dtype": "float64",
+      "shape": [
+        3
+      ]
+    },
+    "tracking_gap": {
+      "dtype": "float64",
+      "shape": [
+        11
+      ]
+    },
+    "tracking_kappa": {
+      "dtype": "float64",
+      "shape": [
+        11
+      ]
+    },
+    "tracking_mac": {
+      "dtype": "float64",
+      "shape": [
+        11
+      ]
+    },
+    "window_width": {
+      "dtype": "float64",
+      "shape": [
+        3
+      ]
+    }
+  },
+  "artifact": "convergence",
+  "cache_key": "4e71191ff60570c751b52411f80a9b078e00585d4b905e14a58659ed0937e7cf",
+  "cache_schema_version": 1,
+  "code_hash": "ac9aa78bf0cbab8626253a93610ee5cddee2a6fa98a14dfdc28ac37c476ec44b",
+  "command": "python -m zgv_morse.workflows --stage convergence --profile full",
+  "config_hash": "b0489b361a19aa32184ceb9331b733fc49aefd6d6485021c645e2b6347cefe90",
+  "dimensionless_convention": "kappa=k*h, Omega=omega*h/c_T",
+  "direct_measurement_provenance": {
+    "boundary_weight_tolerance": 0.005,
+    "maximum_reference_frequency_uncertainty": 1.223878776102083e-10,
+    "maximum_relative_frequency_uncertainty": 4.239458174542661e-11,
+    "minimum_anisotropic_relative_eigengap": 0.18171189281757696,
+    "reference_surface_shape": [
+      513,
+      128
+    ],
+    "response_sensitivity_measurement": "direct full-wave response RMS-norm ratios over 61 registered times",
+    "response_sensitivity_scope": "source/window response-norm robustness only; not evidence for the crossover exponents or Morse theorem",
+    "response_time": [
+      1500.0,
+      1575.0,
+      1650.0,
+      1725.0,
+      1800.0,
+      1875.0,
+      1950.0,
+      2025.0,
+      2100.0,
+      2175.0,
+      2250.0,
+      2325.0,
+      2400.0,
+      2475.0,
+      2550.0,
+      2625.0,
+      2700.0,
+      2775.0,
+      2850.0,
+      2925.0,
+      3000.0,
+      3075.0,
+      3150.0,
+      3225.0,
+      3300.0,
+      3375.0,
+      3450.0,
+      3525.0,
+      3600.0,
+      3675.0,
+      3750.0,
+      3825.0,
+      3900.0,
+      3975.0,
+      4050.0,
+      4125.0,
+      4200.0,
+      4275.0,
+      4350.0,
+      4425.0,
+      4500.0,
+      4575.0,
+      4650.0,
+      4725.0,
+      4800.0,
+      4875.0,
+      4950.0,
+      5025.0,
+      5100.0,
+      5175.0,
+      5250.0,
+      5325.0,
+      5400.0,
+      5475.0,
+      5550.0,
+      5625.0,
+      5700.0,
+      5775.0,
+      5850.0,
+      5925.0,
+      6000.0
+    ],
+    "robustness_epsilon": 0.02,
+    "widest_window_boundary_weight": 7.404699497933558e-12,
+    "widest_window_sigma_over_k0": 0.2
+  },
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "finite_difference_sweep": {
+    "B_axis_estimate_matrix": [
+      [
+        0.11240258974032358,
+        0.11239986721534034,
+        0.1123991915741307,
+        0.11239902250048672
+      ],
+      [
+        0.11239912932559104,
+        0.11239640719251653,
+        0.11239573203924991,
+        0.1123955633497431
+      ],
+      [
+        0.11239826395170738,
+        0.11239554127628892,
+        0.11239486886971406,
+        0.11239469837498461
+      ],
+      [
+        0.112398048346396,
+        0.11239532738738234,
+        0.112394649258718,
+        0.11239447855970752
+      ]
+    ],
+    "B_diagonal_estimate_matrix": [
+      [
+        0.03352179491017404,
+        0.03353805441641544,
+        0.033542124328045375,
+        0.03354314394243829
+      ],
+      [
+        0.03351948577978714,
+        0.033535747152591,
+        0.03353981831377695,
+        0.033540835979728456
+      ],
+      [
+        0.03351890864977669,
+        0.03353517041171372,
+        0.03353924262317065,
+        0.03354026024915413
+      ],
+      [
+        0.03351876474377846,
+        0.03353502687541976,
+        0.03353909776571129,
+        0.03354011511191857
+      ]
+    ],
+    "analytic_B_axis_diagonal": [
+      0.11239435444575037,
+      0.03354040737069557
+    ],
+    "epsilon_steps": [
+      0.02,
+      0.01,
+      0.005,
+      0.0025
+    ],
+    "radial_steps": [
+      0.02,
+      0.01,
+      0.005,
+      0.0025
+    ],
+    "relative_B_error_matrix": [
+      [
+        0.00017352378825489107,
+        5.110244075083497e-05,
+        4.376090986333274e-05,
+        4.61331706041983e-05
+      ],
+      [
+        0.00018295813135746843,
+        4.341542237666469e-05,
+        1.2773655676707454e-05,
+        1.0935392728140547e-05
+      ],
+      [
+        0.00018629803624857077,
+        4.578105360666174e-05,
+        1.0855717799978561e-05,
+        3.189258005384484e-06
+      ],
+      [
+        0.00018718725024324058,
+        4.661654452544227e-05,
+        1.1444741881869687e-05,
+        2.7070933361421506e-06
+      ]
+    ],
+    "sweep_design": "independent tensor-product epsilon and radial centered differences",
+    "tail_maximum_relative_B_error": 1.1444741881869687e-05
+  },
+  "input_artifacts": {
+    "sensitivity": {
+      "artifact": "angular_sensitivity",
+      "cache_key": "c01d7917b7484c84f2047037d208a291fa08054e10b083e8c3383e0602f5544c",
+      "output_sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+    }
+  },
+  "metadata_sha256": "60b7a048d5edbd70a3693046bf2dbf22f4f53d4458a2e51b331975bdc4e9c0d1",
+  "no_synthetic_convergence_values": true,
+  "output_sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e",
+  "polynomial_order_semantics": "reported fine GLL order p; each tracked evaluator compares p-4 and p",
+  "profile": "full",
+  "schema_version": 1,
+  "source_hash": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82",
+  "stage": "convergence",
+  "tolerances": {
+    "configured_curvature_match": 0.0001,
+    "configured_eigen_residual": 1e-10,
+    "configured_isotropic_match": 1e-07,
+    "configured_phase_error": 0.05,
+    "final_B_fd_relative_error": 2.7070933361421506e-06,
+    "final_V4_fd_relative_error": 2.9985810052031633e-07,
+    "final_relative_curvature_error": 5.858549872637201e-11,
+    "final_relative_kappa0_error": 6.2206535614537e-14,
+    "final_relative_omega0_error": 4.3602909141485054e-15,
+    "finest_accumulated_phase_error": 0.00020301723235860436,
+    "finest_interpolation_frequency_error": 3.359142963788031e-08,
+    "finest_quadrature_relative_error": 5.526412526322747e-08,
+    "maximum_eigen_residual": 2.5382210704946524e-13,
+    "maximum_hermitian_residual": 4.758411542034913e-17,
+    "maximum_mass_orthogonality": 2.2163386180886357e-15,
+    "minimum_eigengap": 0.22667914883103105,
+    "minimum_tracking_gap": 0.22010645505761745,
+    "minimum_tracking_mac": 0.9992743527227671
+  },
+  "units": {
+    "B_fd_error": "1",
+    "V4_fd_error": "1",
+    "angular_resolution": "1",
+    "curvature_error": "1",
+    "eigen_residual": "1",
+    "eigengap": "1",
+    "hermitian_residual": "1",
+    "interpolation_error": "c_T/h",
+    "kappa0_error": "1",
+    "mass_orthogonality": "1",
+    "omega0_error": "1",
+    "phase_error": "rad",
+    "polynomial_order": "1",
+    "quadrature_error": "1",
+    "radial_resolution": "1",
+    "response_sensitivity": "1",
+    "sensitivity_step": "1",
+    "source_width": "h",
+    "tracking_gap": "1",
+    "tracking_kappa": "1",
+    "tracking_mac": "1",
+    "window_width": "sigma/k0"
+  },
+  "uv_lock_hash": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+}

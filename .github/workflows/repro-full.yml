@@ -1,0 +1,50 @@
+name: reproducibility-full
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 1 * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  OPENBLAS_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  MPLBACKEND: Agg
+  PDF_REPRODUCTION_SCOPE: semantic-nonreference
+
+jobs:
+  full:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen --all-extras
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y --no-install-recommends cm-super latexmk texlive-fonts-recommended texlive-latex-extra texlive-science
+      - name: Record nonreference TeX toolchain
+        run: |
+          latexmk -version
+          pdflatex --version
+          bibtex --version
+      - run: uv run python scripts/reproduce_all.py --profile full --skip-paper
+      - run: uv run python scripts/export_manuscript_values.py
+      # This mutable Linux runner proves semantic PDF validity, not reference byte identity.
+      - run: uv run python scripts/compile_paper_semantic.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: first-paper-reproduction
+          if-no-files-found: error
+          path: |
+            data/generated
+            data/provenance_manifest.json
+            figures
+            build/paper
