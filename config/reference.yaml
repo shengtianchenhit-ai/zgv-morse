@@ -1,0 +1,30 @@
+schema_version: 1
+h: 1.0
+rho: 1.0
+lambda: 2.0
+mu: 1.0
+delta: 1.0
+epsilon_values:
+  - -0.08
+  - -0.04
+  - -0.02
+  - -0.01
+  - -0.005
+  - -0.0025
+  - 0.0025
+  - 0.005
+  - 0.01
+  - 0.02
+  - 0.04
+  - 0.08
+source_radius_over_h: 0.5
+window_sigma_over_k0: 0.15
+window_sensitivity: [0.10, 0.20]
+annulus_fraction: 0.15
+zgv_search_kappa: [0.20, 1.40]
+zgv_search_omega: [2.40, 3.60]
+eigen_residual_tolerance: 1e-10
+isotropic_match_tolerance: 1e-7
+curvature_match_tolerance: 1e-4
+sensitivity_match_tolerance: 1e-4
+phase_error_tolerance: 5e-2

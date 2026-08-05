@@ -1,0 +1,23 @@
+\section*{Data Availability}
+
+All data supporting the conclusions are present in the accompanying source
+tree.  Seven qualified artifact pairs---NPZ arrays plus JSON sidecars---and
+the auxiliary isotropic validation and convergence records reside in
+\path{data/generated}.  A separate source-data directory contains the
+machine-readable source data in CSV format plotted in every main and
+supplementary figure.  Generated manuscript
+tables and \path{data/provenance_manifest.json} are also included.  Artifact
+sidecars and the provenance manifest record SHA-256 hashes for qualified inputs
+and outputs.  At this pre-deposition stage, no external accession, repository
+DOI, or release-wide checksum manifest is available.
+
+\section*{Code Availability}
+
+The accompanying source tree contains all Python source, tests, the reference
+configuration, the interpreter pin, the exact dependency lock, figure scripts,
+and LaTeX sources required to regenerate the numerical artifacts, figures,
+tables, and PDFs.  The current full scientific route is
+\texttt{uv run python scripts/reproduce\_all.py --profile full --skip-paper};
+the evidence macros and two PDFs are then rebuilt by the explicit commands in
+Methods, with the supplement compiled before the main paper.  No proprietary
+solver or experimental data are required.

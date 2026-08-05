@@ -1,0 +1,496 @@
+% Canonical derivation source for the exact isotropic ZGV critical ring.
+% This file is a LaTeX fragment and is included by the Supplementary Information.
+
+\section{Exact isotropic Rayleigh--Lamb branch and its Morse--Bott ring}
+\label{sec:isotropic-rayleigh-lamb-derivation}
+
+We derive the symmetric Rayleigh--Lamb equation from the displacement
+potentials, retain the physical traction matrix before any algebraic
+division, and then construct the determinant used by the numerical solver.
+The plate occupies
+\(
+  \{(x,y,z):-h\leq z\leq h\}
+\)
+and is infinite in the in-plane coordinates.  Its density is \(\rho>0\),
+and its isotropic stiffness is specified by the Lam\'e moduli \(\lambda\)
+and \(\mu\), with
+\begin{equation}
+  c_L^2=\frac{\lambda+2\mu}{\rho},
+  \qquad
+  c_T^2=\frac{\mu}{\rho}.
+  \label{eq:isotropic-wave-speeds}
+\end{equation}
+We use the time convention \(\exp[-\mathrm{i}\omega t]\).  Isotropy lets us
+rotate any in-plane wave vector onto the \(x\) axis while deriving the scalar
+equation; the two-dimensional wave-vector dependence is restored at the end.
+
+\subsection{Helmholtz potentials and symmetric parity}
+
+In the sagittal \((x,z)\) plane, the displacement
+\(\mathbf{u}=(u_x,0,u_z)\) obeys Navier's equation
+\begin{equation}
+  \rho\,\partial_t^2\mathbf{u}
+  = (\lambda+\mu)\nabla(\nabla\mathbin{\cdot}\mathbf{u})
+    +\mu\nabla^2\mathbf{u}.
+  \label{eq:navier-isotropic}
+\end{equation}
+Introduce a longitudinal potential \(\phi\) and a sagittal shear potential
+\(\psi\) by
+\begin{equation}
+  \mathbf{u}
+  =\nabla\phi+\nabla\mathbin{\times}(\psi\,\mathbf{e}_y),
+  \qquad
+  u_x=\partial_x\phi-\partial_z\psi,
+  \qquad
+  u_z=\partial_z\phi+\partial_x\psi.
+  \label{eq:helmholtz-sagittal}
+\end{equation}
+The divergence of the curl term is zero and the curl of the gradient term is
+zero.  Taking the divergence and the sagittal curl of
+Eq.~\eqref{eq:navier-isotropic}, respectively, gives the two scalar wave
+equations
+\begin{equation}
+  \left(\nabla^2-c_L^{-2}\partial_t^2\right)\phi=0,
+  \qquad
+  \left(\nabla^2-c_T^{-2}\partial_t^2\right)\psi=0.
+  \label{eq:potential-wave-equations}
+\end{equation}
+For a factor \(\exp[\mathrm{i}(kx-\omega t)]\), define the longitudinal and
+shear thickness wavenumbers on their principal complex branches by
+\begin{equation}
+  p^2=\frac{\omega^2}{c_L^2}-k^2,
+  \qquad
+  s^2=\frac{\omega^2}{c_T^2}-k^2.
+  \label{eq:thickness-wavenumbers}
+\end{equation}
+The symmetric Lamb parity is
+\begin{equation}
+  u_x(x,-z)=u_x(x,z),
+  \qquad
+  u_z(x,-z)=-u_z(x,z).
+  \label{eq:symmetric-displacement-parity}
+\end{equation}
+Equation~\eqref{eq:helmholtz-sagittal} therefore requires an even
+longitudinal potential and an odd shear potential.  With physical potential
+amplitudes \(A\) and \(B\), the complete symmetric separated ansatz is
+\begin{equation}
+  \phi=A\cos(pz)\,\mathrm{e}^{\mathrm{i}(kx-\omega t)},
+  \qquad
+  \psi=B\sin(sz)\,\mathrm{e}^{\mathrm{i}(kx-\omega t)}.
+  \label{eq:symmetric-potentials}
+\end{equation}
+Suppressing the common exponential factor from now on, direct substitution
+gives
+\begin{align}
+  u_x(z)
+  &=\mathrm{i}kA\cos(pz)-sB\cos(sz),
+  \label{eq:symmetric-ux}\\
+  u_z(z)
+  &=-pA\sin(pz)+\mathrm{i}kB\sin(sz).
+  \label{eq:symmetric-uz}
+\end{align}
+The first expression is even and the second is odd, so the chosen potential
+parities reproduce Eq.~\eqref{eq:symmetric-displacement-parity} explicitly.
+
+\subsection{Face tractions and the original determinant}
+
+For an isotropic solid,
+\(
+  \boldsymbol{\sigma}
+  =\lambda(\nabla\mathbin{\cdot}\mathbf{u})\mathbf{I}
+   +2\mu\boldsymbol{\varepsilon}
+\), where
+\(
+  \boldsymbol{\varepsilon}
+  =(\nabla\mathbf{u}+\nabla\mathbf{u}^{\mathsf T})/2
+\).
+The derivatives of Eqs.~\eqref{eq:symmetric-ux} and
+\eqref{eq:symmetric-uz} give
+\begin{align}
+  \varepsilon_{xx}
+  &=-k^2A\cos(pz)-\mathrm{i}ksB\cos(sz),\\
+  \varepsilon_{zz}
+  &=-p^2A\cos(pz)+\mathrm{i}ksB\cos(sz),\\
+  2\varepsilon_{xz}
+  &=-2\mathrm{i}kpA\sin(pz)+(s^2-k^2)B\sin(sz).
+  \label{eq:symmetric-strains}
+\end{align}
+Consequently,
+\begin{equation}
+  \frac{\sigma_{xz}}{\mu}
+  =-2\mathrm{i}kpA\sin(pz)+(s^2-k^2)B\sin(sz).
+  \label{eq:shear-traction-through-thickness}
+\end{equation}
+For the normal stress, the shear-potential terms cancel from the dilatation,
+and hence
+\begin{align}
+  \sigma_{zz}
+  &=-\left[\lambda k^2+(\lambda+2\mu)p^2\right]
+       A\cos(pz)
+    +2\mathrm{i}\mu ksB\cos(sz).                    \label{eq:sigma-zz-first}\\
+  \lambda k^2+(\lambda+2\mu)p^2
+  &=\rho\omega^2-2\mu k^2
+    =\mu\left(\frac{\omega^2}{c_T^2}-2k^2\right)
+    =\mu(s^2-k^2),                                    \label{eq:normal-factor-reduction}\\
+  \frac{\sigma_{zz}}{\mu}
+  &=-(s^2-k^2)A\cos(pz)+2\mathrm{i}ksB\cos(sz).
+  \label{eq:normal-traction-through-thickness}
+\end{align}
+Here Eq.~\eqref{eq:normal-factor-reduction} uses both relations in
+Eq.~\eqref{eq:thickness-wavenumbers} and \(\rho c_T^2=\mu\).
+
+Traction freedom means \(\sigma_{xz}=\sigma_{zz}=0\) on each face.  At the
+upper face \(z=+h\), Eqs.~\eqref{eq:shear-traction-through-thickness} and
+\eqref{eq:normal-traction-through-thickness} become
+\begin{equation}
+  \underbrace{\begin{pmatrix}
+    -2\mathrm{i}kp\sin(ph) & (s^2-k^2)\sin(sh)\\
+    -(s^2-k^2)\cos(ph) & 2\mathrm{i}ks\cos(sh)
+  \end{pmatrix}}_{\displaystyle T_S(k,\omega)}
+  \begin{pmatrix}A\\B\end{pmatrix}=\mathbf{0}.
+  \label{eq:traction-plus}
+\end{equation}
+At the lower face \(z=-h\), oddness of \(\sigma_{xz}\) and evenness of
+\(\sigma_{zz}\) give the separate equations
+\begin{equation}
+  \begin{pmatrix}
+    2\mathrm{i}kp\sin(ph) & -(s^2-k^2)\sin(sh)\\
+    -(s^2-k^2)\cos(ph) & 2\mathrm{i}ks\cos(sh)
+  \end{pmatrix}
+  \begin{pmatrix}A\\B\end{pmatrix}=\mathbf{0}.
+  \label{eq:traction-minus}
+\end{equation}
+The first row of Eq.~\eqref{eq:traction-minus} is the negative of the first
+row of Eq.~\eqref{eq:traction-plus}, while the second rows coincide.
+Therefore either face supplies the same two independent scalar conditions,
+and satisfaction on one face enforces satisfaction on the other for a mode
+of the stated parity.
+
+Before any amplitude rescaling, the determinant of the physical traction
+matrix in Eq.~\eqref{eq:traction-plus} is
+\begin{align}
+  F_S(k,\omega)
+  &=\det T_S                                                        \notag\\
+  &=\left[-2\mathrm{i}kp\sin(ph)\right]
+    \left[2\mathrm{i}ks\cos(sh)\right]
+   -\left[(s^2-k^2)\sin(sh)\right]
+    \left[-(s^2-k^2)\cos(ph)\right]                                \notag\\
+  &=4k^2ps\cos(sh)\sin(ph)
+    +(s^2-k^2)^2\sin(sh)\cos(ph).
+  \label{eq:original-traction-determinant}
+\end{align}
+Thus \(F_S=0\) is the usual symmetric Rayleigh--Lamb equation wherever the
+chosen potential basis is nonsingular.
+
+\subsection{Desingularization and the shear cutoff}
+
+At the shear cutoff \(s=0\), the basis function
+\(B\sin(sz)\) collapses identically and both entries in the second column of
+\(T_S\) vanish.  The resulting factor of \(s\) in
+Eq.~\eqref{eq:original-traction-determinant} is therefore a basis
+normalization zero, not a physical dispersion condition.  Define the regular
+shear amplitude
+\begin{equation}
+  \widehat B=sB,
+  \qquad
+  B\sin(sz)=\widehat B\,\frac{\sin(sz)}{s}.
+  \label{eq:regular-shear-amplitude}
+\end{equation}
+For \(s\neq0\), the physical and regular amplitude vectors are related by
+\(
+  (A,B)^{\mathsf T}=\operatorname{diag}(1,s^{-1})
+  (A,\widehat B)^{\mathsf T}
+\).  Hence the regular traction matrix is
+\begin{align}
+  \widetilde T_S
+  &=T_S\operatorname{diag}(1,s^{-1}) \notag\\
+  &=\begin{pmatrix}
+    -2\mathrm{i}kp\sin(ph)
+      &(s^2-k^2)\dfrac{\sin(sh)}{s}\\[6pt]
+    -(s^2-k^2)\cos(ph)
+      &2\mathrm{i}k\cos(sh)
+  \end{pmatrix}.
+  \label{eq:regular-traction-matrix}
+\end{align}
+Taking its determinant entry by entry gives
+\begin{align}
+  D_S(k,\omega)
+  :=\det\widetilde T_S
+  &=(s^2-k^2)^2\frac{\sin(sh)}{s}\cos(ph)
+    +4k^2p\cos(sh)\sin(ph).
+  \label{eq:desingularized-determinant}
+\end{align}
+For \(s\neq0\), Eqs.~\eqref{eq:original-traction-determinant} and
+\eqref{eq:desingularized-determinant} satisfy exactly
+\begin{equation}
+  F_S=sD_S.
+  \label{eq:original-regular-determinant-relation}
+\end{equation}
+They therefore have identical roots away from the shear cutoff.  The regular
+matrix also defines the correct analytic continuation through that cutoff.
+
+Indeed, the even entire function multiplying the second potential has the
+Taylor series
+\begin{equation}
+  \frac{\sin(sh)}{s}
+  =h-\frac{s^2h^3}{3!}+\frac{s^4h^5}{5!}
+    -\frac{s^6h^7}{7!}+O(s^8),
+  \qquad s\longrightarrow0.
+  \label{eq:sine-ratio-series}
+\end{equation}
+Together with \(\cos(sh)=1-s^2h^2/2+O(s^4)\), this gives the finite matrix and
+determinant limits
+\begin{align}
+  \widetilde T_S\big|_{s=0}
+  &=\begin{pmatrix}
+    -2\mathrm{i}kp\sin(ph)&-k^2h\\
+    k^2\cos(ph)&2\mathrm{i}k
+  \end{pmatrix},                                                    \label{eq:regular-matrix-s-cutoff}\\
+  D_S\big|_{s=0}
+  &=k^4h\cos(ph)+4k^2p\sin(ph).                                    \label{eq:regular-determinant-s-cutoff}
+\end{align}
+At this cutoff \(\omega=c_Tk\) and
+\(
+  p^2=(c_T^2/c_L^2-1)k^2
+\); Eq.~\eqref{eq:regular-determinant-s-cutoff} is not identically zero.
+It retains a zero only when the two regular face-traction equations are
+linearly dependent, which is the physical condition.
+
+The other square root causes no loss of analyticity: \(\cos(ph)\) and
+\(p\sin(ph)\) are entire functions of \(p^2\), while
+\(\cos(sh)\) and \(\sin(sh)/s\) are entire functions of \(s^2\).
+Equation~\eqref{eq:thickness-wavenumbers} therefore supplies analytic
+continuation into evanescent regions.  For real \(k\) and \(\omega\), the
+continued determinant remains real even when \(p\) or \(s\) is purely
+imaginary.
+
+\subsection{Implicit dispersion derivatives}
+
+Let \((k_0,\omega_0)\) be a root of \(D_S\) with
+\begin{equation}
+  D_{S,\omega}(k_0,\omega_0)\neq0.
+  \label{eq:nonzero-frequency-derivative}
+\end{equation}
+The implicit-function theorem then supplies a unique smooth local branch
+\(\omega=\omega(k)\) satisfying
+\begin{equation}
+  D_S(k,\omega(k))=0.
+  \label{eq:implicit-dispersion-branch}
+\end{equation}
+In the following equations, every partial derivative of \(D_S\) is evaluated
+at \((k,\omega(k))\).  One total derivative of
+Eq.~\eqref{eq:implicit-dispersion-branch} gives
+\begin{align}
+  0
+  &=\frac{\mathrm{d}}{\mathrm{d}k}D_S(k,\omega(k))
+    =D_{S,k}+D_{S,\omega}\omega_k,                                  \label{eq:implicit-first-chain}\\
+  \omega_k
+  &=-\frac{D_{S,k}}{D_{S,\omega}}.                                  \label{eq:implicit-first-derivative}
+\end{align}
+Differentiating Eq.~\eqref{eq:implicit-first-chain} once more, including the
+dependence of each partial derivative on both arguments, yields
+\begin{align}
+  0
+  &=\frac{\mathrm{d}}{\mathrm{d}k}
+    \left(D_{S,k}+D_{S,\omega}\omega_k\right)                         \notag\\
+  &=\left(D_{S,kk}+D_{S,k\omega}\omega_k\right)
+   +\left(D_{S,\omega k}+D_{S,\omega\omega}\omega_k\right)\omega_k
+   +D_{S,\omega}\omega_{kk}                                         \notag\\
+  &=D_{S,kk}+2D_{S,k\omega}\omega_k
+    +D_{S,\omega\omega}\omega_k^2+D_{S,\omega}\omega_{kk},
+  \label{eq:implicit-second-chain}
+\end{align}
+where equality of mixed derivatives was used in the last line.  Solving this
+equation gives the general second derivative
+\begin{equation}
+  \omega_{kk}
+  =-\frac{D_{S,kk}+2D_{S,k\omega}\omega_k
+          +D_{S,\omega\omega}\omega_k^2}
+         {D_{S,\omega}}.
+  \label{eq:implicit-second-derivative}
+\end{equation}
+A zero-group-velocity point satisfies \(\omega_k(k_0)=0\).  Under
+Eq.~\eqref{eq:nonzero-frequency-derivative}, this is equivalent to
+\(D_{S,k}(k_0,\omega_0)=0\).  Substitution into
+Eq.~\eqref{eq:implicit-second-derivative} leaves the radial curvature
+\begin{equation}
+  a:=\omega_{kk}(k_0)
+  =-\left.\frac{D_{S,kk}}{D_{S,\omega}}
+    \right|_{(k_0,\omega_0)}.
+  \label{eq:zgv-curvature}
+\end{equation}
+Thus, with \(q=k-k_0\), Taylor's theorem gives
+\begin{equation}
+  \omega(k)=\omega_0+\frac{a}{2}q^2+O(q^3).
+  \label{eq:isotropic-radial-normal-form}
+\end{equation}
+
+For the selected first symmetric branch (the \(S_1\)-ZGV branch within the
+configured search window) and the nondimensional reference values
+\(
+  h=\rho=\mu=1
+\) and \(\lambda=2\), so that \(c_T=1\) and \(c_L=2\), the independent
+arbitrary-precision refinement of \(D_S=D_{S,k}=0\), seeded only by the
+float-valued branch search, is
+\begin{equation}
+  k_0=0.8042173193715181,
+  \qquad
+  \omega_0=2.8517587749600901,
+  \qquad
+  a=1.1968627250739301>0.
+  \label{eq:reference-isotropic-zgv-values}
+\end{equation}
+The executable check associated with this derivation differentiates
+Eq.~\eqref{eq:desingularized-determinant} at arbitrary precision, verifies
+\(D_S=D_{S,k}=0\), verifies \(D_{S,\omega}\neq0\), and compares all three
+values in Eq.~\eqref{eq:reference-isotropic-zgv-values} with both the Task-4
+solver and the generated reference artifact.  This is a separate
+high-precision refinement of the same exact scalar determinant; the
+independent thickness-resolved spectral cross-check is supplied by the
+numerical validation rather than claimed here.
+
+\subsection{Cartesian Hessian and the Morse--Bott ring}
+
+Restore the two-dimensional wave vector
+\(
+  \mathbf{k}=(k_x,k_y)
+\), and write
+\begin{equation}
+  r=|\mathbf{k}|=(k_x^2+k_y^2)^{1/2},
+  \qquad
+  \mathbf{e}_r=\frac{\mathbf{k}}{r},
+  \qquad
+  \mathbf{e}_\theta=(-e_{r,y},e_{r,x}).
+  \label{eq:polar-wavevector-basis}
+\end{equation}
+For \(r>0\), isotropy makes the selected branch radial:
+\(
+  \omega^{(0)}(\mathbf{k})=f(r)
+\), where \(f(k)=\omega(k)\) in the one-dimensional derivation above.  Since
+\begin{equation}
+  \partial_{k_i}r=\frac{k_i}{r},
+  \qquad
+  \partial_{k_j}\left(\frac{k_i}{r}\right)
+  =\frac{\delta_{ij}}{r}-\frac{k_i k_j}{r^3},
+  \label{eq:radial-coordinate-derivatives}
+\end{equation}
+the Cartesian gradient and Hessian follow component by component:
+\begin{align}
+  \partial_{k_i}\omega^{(0)}
+  &=f'(r)\frac{k_i}{r},                                               \label{eq:radial-cartesian-gradient}\\
+  \partial_{k_j}\partial_{k_i}\omega^{(0)}
+  &=f''(r)\frac{k_i k_j}{r^2}
+    +f'(r)\left(\frac{\delta_{ij}}{r}
+                 -\frac{k_i k_j}{r^3}\right).                        \label{eq:radial-cartesian-hessian-components}
+\end{align}
+In dyadic form this is
+\begin{equation}
+  \nabla_{\mathbf{k}}^2\omega^{(0)}
+  =f''(r)\,\mathbf{e}_r\mathbf{e}_r^{\mathsf T}
+   +\frac{f'(r)}{r}
+    \left(\mathbf{I}-\mathbf{e}_r\mathbf{e}_r^{\mathsf T}\right)
+  =f''(r)\,\mathbf{e}_r\mathbf{e}_r^{\mathsf T}
+   +\frac{f'(r)}{r}\,\mathbf{e}_\theta\mathbf{e}_\theta^{\mathsf T}.
+  \label{eq:radial-cartesian-hessian}
+\end{equation}
+Consequently the orthogonal polar basis diagonalizes the full Cartesian
+Hessian:
+\begin{equation}
+  \begin{pmatrix}\mathbf{e}_r&\mathbf{e}_\theta\end{pmatrix}^{\mathsf T}
+  \nabla_{\mathbf{k}}^2\omega^{(0)}
+  \begin{pmatrix}\mathbf{e}_r&\mathbf{e}_\theta\end{pmatrix}
+  =\begin{pmatrix}
+    f''(r)&0\\[2pt]
+    0&f'(r)/r
+  \end{pmatrix}.
+  \label{eq:radial-hessian-diagonalization}
+\end{equation}
+At \(r=k_0\), the ZGV conditions \(f'(k_0)=0\) and \(f''(k_0)=a\) reduce
+Eq.~\eqref{eq:radial-hessian-diagonalization} to
+\begin{equation}
+  \nabla_{\mathbf{k}}^2\omega^{(0)}\big|_{r=k_0}
+  =a\,\mathbf{e}_r\mathbf{e}_r^{\mathsf T},
+  \qquad
+  \operatorname{spec}
+  \left(\nabla_{\mathbf{k}}^2\omega^{(0)}\big|_{r=k_0}\right)
+  =\{a,0\}.
+  \label{eq:zgv-ring-hessian}
+\end{equation}
+
+We now state precisely when the rotationally generated ZGV circle is a
+Morse--Bott critical manifold.  The hypotheses separate the local scalar
+geometry from the spectral condition that makes a single elastic branch
+well defined.
+
+\begin{theorem}[Isotropic ZGV Morse--Bott ring]
+\label{thm:morse-bott-ring}
+Let a lossless homogeneous isotropic plate have a symmetric guided-wave
+eigenbranch in an open annulus about \(r=k_0>0\).  Assume:
+\begin{enumerate}
+  \item the eigenvalue is simple throughout that annulus and is separated
+        from every other Lamb and shear-horizontal eigenvalue by a uniform
+        positive mass-normalized eigengap;
+  \item the branch is \(C^3\) in \(\mathbf{k}\) and rotational invariance
+        gives \(\omega^{(0)}(\mathbf{k})=f(|\mathbf{k}|)\);
+  \item the regular determinant satisfies
+        \(D_S(k_0,\omega_0)=D_{S,k}(k_0,\omega_0)=0\) and
+        \(D_{S,\omega}(k_0,\omega_0)\neq0\); and
+  \item the radial curvature
+        \(a=-D_{S,kk}/D_{S,\omega}\) at \((k_0,\omega_0)\) is nonzero.
+\end{enumerate}
+Then, in a sufficiently small annular neighbourhood, the critical set of
+\(\omega^{(0)}\) is exactly
+\begin{equation}
+  \Gamma_0=\{\mathbf{k}\in\mathbb{R}^2:|\mathbf{k}|=k_0\}.
+  \label{eq:isotropic-critical-ring}
+\end{equation}
+Moreover, at every \(\mathbf{k}\in\Gamma_0\),
+\begin{equation}
+  \ker\nabla_{\mathbf{k}}^2\omega^{(0)}
+  =\operatorname{span}\{\mathbf{e}_\theta\}
+  =T_{\mathbf{k}}\Gamma_0,
+  \qquad
+  \left.\nabla_{\mathbf{k}}^2\omega^{(0)}\right|_{N_{\mathbf{k}}\Gamma_0}
+  =[a].
+  \label{eq:morse-bott-kernel-and-normal-form}
+\end{equation}
+Thus \(\Gamma_0\) is a one-dimensional nondegenerate Morse--Bott critical
+manifold.  If \(a>0\), it is a radial minimum manifold; if \(a<0\), it is a
+radial maximum manifold.
+\end{theorem}
+
+\paragraph{Proof.}
+The nonzero value of \(D_{S,\omega}\) gives a unique local scalar branch by
+the implicit-function theorem, and the simple uniformly gapped elastic
+eigenvalue identifies that scalar root with one smooth physical mode.  From
+Eq.~\eqref{eq:implicit-first-derivative},
+\(f'(k_0)=0\), while Eq.~\eqref{eq:zgv-curvature} gives
+\(f''(k_0)=a\neq0\).  Continuity of \(f''\) permits a sufficiently small
+\(\delta>0\) such that \(f''(r)\) has the sign of \(a\) whenever
+\(|r-k_0|<\delta\).  Equivalently, the fundamental theorem of calculus gives
+\begin{equation}
+  f'(r)=f'(k_0)+\int_{k_0}^{r}f''(\xi)\,\mathrm{d}\xi
+       =(r-k_0)\int_0^1 f''\bigl(k_0+\tau(r-k_0)\bigr)\,\mathrm{d}\tau.
+  \label{eq:local-critical-radius-factorization}
+\end{equation}
+The integral factor is nonzero in that interval, so \(f'(r)=0\) there if and
+only if \(r=k_0\).  Equation~\eqref{eq:radial-cartesian-gradient} then proves
+that the critical set in the annulus is exactly \(\Gamma_0\).
+
+For each point on the ring,
+Eq.~\eqref{eq:zgv-ring-hessian} maps \(\mathbf{e}_r\) to
+\(a\mathbf{e}_r\) and maps \(\mathbf{e}_\theta\) to zero.  Since \(a\neq0\),
+its kernel is precisely \(\operatorname{span}\{\mathbf{e}_\theta\}\), which
+is the tangent line to the circle, while the restriction to the radial
+normal line is the nonsingular one-by-one form \([a]\).  These are exactly
+the critical-set and normal-nondegeneracy conditions in the definition of a
+Morse--Bott function.  The sign of \(a\) supplies the final minimum/maximum
+classification. \(\square\)
+
+For the reference branch in Eq.~\eqref{eq:reference-isotropic-zgv-values},
+\(a>0\), so the normal Morse index is zero.  The tangential zero eigenvalue is
+not an accidental higher-order radial degeneracy: it is enforced by the
+continuous rotational symmetry.  The cases \(a=0\),
+\(D_{S,\omega}=0\), or a closing modal eigengap violate distinct hypotheses
+of Theorem~\ref{thm:morse-bott-ring} and require a higher-order or
+matrix-valued local reduction.

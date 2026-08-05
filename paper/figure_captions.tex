@@ -1,0 +1,245 @@
+% Central caption registry shared by the main paper and Supplementary Information.
+
+\newcommand{\FigureOneCaption}{Mechanism overview on the selected branch.
+\textbf{a}, Thin grey contours show the isotropic full-wave local-frequency
+surface, and the solid grey curve marks the continuous ZGV ring at the exact
+isotropic radius \(\kappa_0\).  \textbf{b}, Angular anomaly of the perturbation: the difference between
+the anisotropic and isotropic surfaces with its mean over angle removed at
+each radius.  The removed part is the angle-independent carrier shift,
+which moves the ring without breaking it, so the fourfold remainder shown
+here is the part that breaks it.  Troughs and crests are shaded in the
+minimum and saddle colours; the computed, independently refined minima
+(blue circles) and saddles (orange diamonds) fall on the troughs and
+crests respectively, within the declared local annulus.  Marker shape
+duplicates colour, and the panel regroups the two stored surfaces without
+introducing a new computation.  \textbf{c}, Conceptual summary of the
+change from a one-dimensional critical ring with generic \(t^{-1/2}\) decay to
+isolated Morse points with generic \(t^{-1}\) decay; this panel is explanatory
+rather than numerical, with the computed asymptotic slices tested in
+Fig.~\ref{fig:decay-crossover}.  This mechanism overview does not carry the
+numerical realization claim; the finite-resolution full-wave search,
+Cartesian Hessians, and stability checks are reported in
+Fig.~\ref{fig:morse-points}.  Wavevector components are normalized as
+\(k_xh\) and \(k_yh\), frequencies as \(\Omega=\omega h/c_T\), and panels
+\textbf{a} and \textbf{b} use common axes.  Source data:
+\texttt{data/source\_data/figure\_01}.}
+
+\newcommand{\FigureTwoCaption}{Independent numerical verification of the
+isotropic reference.  \textbf{a}, The solid curve is the independently
+discretized full-wave symmetric branch; the open orange circular symbol marks
+the exact Rayleigh--Lamb reference \((\kappa_0,\Omega_0)\).  \textbf{b}, The
+solid curve with circular markers is the local full-wave branch, whereas the
+dashed line is the coefficient prediction
+\(\Omega_0+a(\kappa-\kappa_0)^2/2\).  The positive curvature \(a\) is obtained
+from exact implicit differentiation, not from a fit to the plotted samples.
+\textbf{c}, Coloured marker--lines on the left axis report relative
+\(\kappa_0\), \(\Omega_0\), and curvature errors together with the normalized
+eigen residual, Hermitian defect, and mass-orthogonality defect; the
+short-dashed line on the right axis is the relative eigengap.  \textbf{d},
+Through-thickness profiles of the mass-normalized mode: solid, short-dashed,
+and long-dashed curves denote \(\lvert u_x\rvert\), \(\lvert u_y\rvert\), and
+\(\lvert u_z\rvert\), divided by their common global maximum.  The neutral
+dotted curve is the squared-displacement proxy \(\sum_i\lvert u_i\rvert^2\),
+normalized by its own maximum; it is neither a signed-parity nor a strain-energy
+diagnostic.  Here \(\kappa=kh\), \(\Omega=\omega h/c_T\), and \(z/h\) is the
+normalized thickness coordinate.  Source data:
+\texttt{data/source\_data/figure\_02}.}
+
+\newcommand{\FigureThreeCaption}{Full-elastic sensitivities for the declared
+weak cubic family.  \textbf{a}, The solid curve is the analytic full-elastic
+coefficient \(V(\theta)-V_0\), and the dashed curve is
+\(V_4\cos(4\theta)\).  A common radial offset is used only to render the polar
+plot, and the rings are drawn unlabelled; the outermost petal reaches
+\(\lvert V_4\rvert\) in units of \(\Omega/\varepsilon\), whose value is
+given in panel \textbf{c}.  \textbf{b}, Stems and circular markers show every
+stored harmonic amplitude \(\lvert V_m\rvert\) on a logarithmic scale; the
+\(m=4\) marker is highlighted and non-fourfold leakage is retained.
+\textbf{c}, Filled circles show the stored physical shift
+\(\varepsilon V_4\), while the dashed line shows \(Q_4\Delta_C\).  Their
+agreement checks the perturbation convention
+\(V_4=Q_4\Delta_C^{(1)}\) and
+\(\Delta_C=\varepsilon\Delta_C^{(1)}\), rather than providing an independent
+full-wave comparison.  \textbf{d}, Solid lines are the analytic full-elastic
+\(V\) and \(B=\partial_\kappa V\); open circles and squares are independent
+centered full-wave finite differences.  Agreement is quantified by the relative errors
+\(\lVert V_{\rm FD}-V\rVert_2/\lVert V\rVert_2\) and
+\(\lVert B_{\rm FD}-B\rVert_2/\lVert B\rVert_2\), which the build asserts
+to lie below the registered tolerance.  The inset gives the
+declared centered-difference step convergence of the relative \(V_4\) and
+\(B\) errors.  Source data: \texttt{data/source\_data/figure\_03}.}
+
+\newcommand{\FigureFourCaption}{Full-wave numerical realization of the local
+Morse splitting with eight resolved roots.  \textbf{a}, Grey contours show the isotropic full-wave surface,
+the solid grey curve marks the exact isotropic critical ring, and the two
+short-dashed circles delimit the declared annulus.  \textbf{b}, Filled and
+line contours show the anisotropic full-wave surface using the same levels as
+panel \textbf{a}; blue circles and orange diamonds are the stored refined
+minima and saddles, and the short-dashed circles again show the annular
+boundaries.  \textbf{c}, Cartesian Hessian eigenvalues are ordered by
+critical-point angle on a symmetric logarithmic axis.  Marker shape and colour
+identify Morse class, filled and open symbols denote \(\lambda_1\) and
+\(\lambda_2\), vertical bars give the declared Hessian-discrepancy estimate,
+and the shaded band spans the maximum such estimate about zero.
+\textbf{d}, Filled symbols joined by the solid guide line give the signed
+radial error
+\((\kappa_{\rm full}-\kappa_{\rm pert})/\kappa_0\); open symbols joined by the
+dashed guide line give the signed frequency error
+\((\Omega_{\rm full}-\Omega_{\rm pert})/\Omega_0\).  The perturbation values
+are first-order predictions, and neither guide line is a fit.  All surfaces
+and coordinates use the normalized \(kh\) and \(\omega h/c_T\) convention.
+Source data: \texttt{data/source\_data/figure\_04}.}
+
+\newcommand{\FigureFiveCaption}{Perturbation checks over the complete
+declared weak-anisotropy sequence.  \textbf{a}, Open circles are the
+full-wave minimum--saddle frequency splitting, and the dashed line is its
+first-order coefficient prediction.  The reported splitting slope is an
+unweighted log--log fit over every declared positive \(\lvert\varepsilon\rvert\),
+not a plot-selected range; no separate fitted line is drawn.  \textbf{b}, Blue
+circles and orange diamonds show the baseline-corrected full-wave radial shifts
+\(q_{\min}/\varepsilon\) and \(q_{\rm sad}/\varepsilon\), while the
+corresponding dashed lines are the coefficient limits
+\(-B(\theta_j)/a\).  The annotated radial slope is obtained from the
+uncompensated quantity \(\max(\lvert q_{\min}\rvert,\lvert q_{\rm sad}\rvert)\)
+over the same complete sequence.  \textbf{c}, Markers and connecting guide
+lines show the absolute full-wave minus first-order critical-frequency errors
+divided by \(\varepsilon^2\) for the minimum and saddle families.  The
+reported remainder slope is fitted to the maximum uncompensated error across
+the two families; the connecting lines are not fits.  \textbf{d}, Circle and
+diamond markers show the minimum and saddle angular orbits for opposite
+perturbation signs, demonstrating exchange of the axis and diagonal roles
+under \(\varepsilon\rightarrow-\varepsilon\).  Source data:
+\texttt{data/source\_data/figure\_05}.}
+
+\newcommand{\FigureSixCaption}{Two numerical asymptotic slices of the
+coefficient-resolved response \(G^+\), with \(t=t_{\rm phys}c_T/h\).
+\textbf{a}, Full-wave real parts and magnitudes, after removal of the shifted
+carrier \(\Omega_0+\varepsilon V_0\) and uniform scaling, collapse onto
+\(J_0(\tau)\), \(\tau=\varepsilon V_4t\), for the four declared uniform
+transition rows.  The comparison is performed without fitted alignment.
+\textbf{b}, Thin curves show the absolute complex error at all stored times;
+thick segments show the uniform transition window \(t\geq1500\),
+\(\lvert\tau\rvert\leq2\), including Bessel zeros.  \textbf{c}, Pale bands mark the two fitted
+intervals.  The early fit
+uses the raw \(\varepsilon=0.005\) magnitude, whereas the late fit uses four
+complete beat-period RMS values in the fixed-anisotropy
+\(\varepsilon=0.08\) row.
+These are two slices, not one numerical time trajectory; the proved
+growing-\(\lvert\tau\rvert\) overlap connects their coefficients and phases.
+\textbf{d}, Crossover markers are first downward crossings of magnitude
+\(0.9\) within a theory-centred bracket.  This is a theory-centred consistency
+diagnostic; panel \textbf{a} is the primary numerical test.  \textbf{e}, At
+\(\varepsilon=0.08\), the full integral and exact-Hessian Morse sum are compared
+over \(1500\leq t\leq10200\); open markers denote cancellation samples with
+coherence below \(0.30\).  \textbf{f}, Exact minimum and saddle frequencies
+mark the critical-frequency features.  Their separation is
+\(2\lvert\varepsilon V_4\rvert\) and the modulation magnitude is
+\(\lvert\varepsilon V_4\rvert\).  Source data:
+\texttt{data/source\_data/figure\_06}.}
+
+\newcommand{\SupplementaryFigureOneCaption}{Polynomial-order and assembly
+cross-checks for the selected isotropic branch.  \textbf{a}, Solid
+marker--lines give relative errors in the exact Rayleigh--Lamb reference
+\(\kappa_0\) (blue circles), \(\Omega_0\) (orange squares), and curvature
+\(a\) (dark-blue diamonds) on logarithmic axes.  Each reported fine GLL order
+\(p\) pairs a tracked evaluator at \(p-4\) with its independent diagnostic at
+\(p\); the machine-precision plateaux need not be monotone.  \textbf{b}, The
+same colours and markers show an independently reconstructed one-element
+spectrum, while the coloured stars at the final order report the independent
+two-element result.  \textbf{c}, At the shared final order, grey circles and
+dark-blue stars compare the one- and two-element errors for all three
+quantities.  The declared gates are relative \(\kappa_0\) and \(\Omega_0\)
+errors below \(10^{-7}\), relative curvature error below \(10^{-4}\), eigen
+residual below \(10^{-10}\), and relative eigengap greater than ten times the
+larger of that residual and machine precision.  These are local discretization
+and mesh-split diagnostics, not a proof for the complete spectrum.  Source
+data: \texttt{data/source\_data/supplementary}.}
+
+\newcommand{\SupplementaryFigureTwoCaption}{Quadrature, interpolation, and
+phase-discrepancy convergence for the declared response window.  All panels use
+the nested angular--radial grids \((N_\theta,N_q)=(16,65),(32,129),(64,257)\)
+and a \((128,513)\) reference surface; solid curves with circular markers and
+logarithmic ordinates show directly computed diagnostics.  \textbf{a}, Blue
+circles give the RMS norm of the coarse-minus-reference demodulated complex
+full-wave response divided by the reference-response RMS over the declared
+time samples.  \textbf{b}, Blue circles give the maximum absolute frequency
+error after periodic-angular and cubic-radial interpolation of each coarse
+surface onto the reference grid.  \textbf{c}, Orange circles give the
+accumulated inter-resolution phase-discrepancy estimator at the declared
+maximum time, including interpolation and coarse/reference nested-order
+frequency differences; the black short-dashed line is the declared acceptance
+threshold of \(0.05\) rad.  The finest
+quadrature error is required to be at most \(0.05\), and successive quadrature
+and interpolation ratios at most one half.  These empirical estimators test
+consistency across computed resolutions; they do not bound the unknown
+continuum error or imply infinite-time phase accuracy.  Source data:
+\texttt{data/source\_data/supplementary}.}
+
+\newcommand{\SupplementaryFigureThreeCaption}{Local branch-tracking and
+simple-eigenvalue diagnostics.  \textbf{a}, The solid blue curve with circles
+is the mass-weighted modal assurance criterion relative to the \(\kappa_0\)
+anchor over the declared local wavenumber window; the acceptance threshold
+is \(0.99\).  \textbf{b}, The solid orange curve with diamonds is the relative
+eigengap of the same tracked branch over that window.  \textbf{c}, On a
+logarithmic ordinate, black circles and a solid line report the eigengap and
+dark-blue squares and a solid line report the normalized eigen residual over
+the polynomial-order sweep.  Acceptance requires residual below \(10^{-10}\)
+and gap greater than ten times the larger of residual and machine precision.
+Together these computed quantities support branch continuity and separation
+only near the selected ZGV point; they neither identify the branch globally
+nor certify unrelated modes.  Source data:
+\texttt{data/source\_data/supplementary}.}
+
+\newcommand{\SupplementaryFigureFourCaption}{Independent finite-difference
+closure of the analytic generalized-eigenvalue sensitivities.  The horizontal
+step axes in panels \textbf{a} and \textbf{b} are reversed so refinement runs
+from left to right.  \textbf{a}, Blue circles and a solid line show the
+centered-difference relative error in \(V_4\) versus
+\(\Delta\varepsilon\).  \textbf{b}, Orange circles and a solid line show the
+paired-step diagonal error in \(B\), defined as the Euclidean relative error
+of the two-component vector at \(\theta=0\) and \(\pi/4\) when
+\(\Delta\varepsilon=\Delta q\).  \textbf{c}, The logarithmically coloured
+tensor-product heatmap reports the same vector error for every pair
+\((\Delta\varepsilon,\Delta q)\); darker cells denote larger error and printed
+annotations give the numerical values.  The sensitivity tolerance is \(10^{-4}\):
+the final two \(V_4\) steps and the finest two-by-two \(B\) block satisfy it.
+These full-wave centered differences are independent of the analytic
+sensitivity formula, although they use the same full-wave eigensolver; they
+are not fitted data.  Source data:
+\texttt{data/source\_data/supplementary}.}
+
+\newcommand{\SupplementaryFigureFiveCaption}{Sensitivity of the computed
+response norm to the declared source and spectral window class.  Each ratio
+uses the RMS of the demodulated complex full-wave response over the declared
+time samples at \(\varepsilon=0.02\), normalized by the baseline
+\((R/h,\sigma/k_0)=(0.5,0.15)\).  \textbf{a}, The annotated heatmap covers
+three source radii and three super-Gaussian widths; the diverging colour scale
+is centered on the normalized baseline value one.  \textbf{b}, Solid curves
+with circular markers show the same ratios against \(R/h\), with colour
+distinguishing \(\sigma/k_0\); the black horizontal line is the declared
+baseline.  The separately computed widest-window boundary weight is required
+to remain below the truncation gate \(5\times10^{-3}\).  This sweep supports
+response-norm robustness within the displayed source--window class only.  It
+does not establish source independence and is not evidence for either the
+crossover exponents or the Morse theorem.  Source data:
+\texttt{data/source\_data/supplementary}.}
+
+\newcommand{\SupplementaryFigureSixCaption}{Finite-anisotropy silicon stress
+test outside the weak-anisotropy theorem, for a [001] plate with
+\(C_{11}=165.7\), \(C_{12}=63.9\), and \(C_{44}=79.6\,\mathrm{GPa}\)
+(material source \texttt{doi:10.1107/S1600577514004962}).  \textbf{a}, Filled
+blue shading and blue contour lines show the full-wave local-frequency surface
+normalized as \(\Omega=\omega h/\sqrt{C_{44}/\rho}\); blue circles and orange
+diamonds mark four refined minima and four saddles within the declared
+annulus.  The shading is not a
+separate quantitative colour scale.  \textbf{b}, Points are ordered by stored
+index; orange circles and a solid line show the Cartesian Hessian eigenvalue
+\(\lambda_1\), blue squares and a solid line show \(\lambda_2\), and the black
+line marks zero.  Here marker identity denotes eigenvalue rather than Morse
+class: both values are positive at minima and have opposite signs at saddles.
+\textbf{c}, On a logarithmic axis, blue circles and a solid line give the
+relative tracking gap, while orange diamonds and a solid line give the
+stationarity residual \(\lVert\nabla_{\boldsymbol{k}}\Omega\rVert\); this panel
+does not display the separately evaluated annular-boundary consistency check.
+This is a finite-anisotropy stress test of the numerical search and local
+classification only, not evidence for the weak-anisotropy theorem.  Source
+data: \texttt{data/source\_data/supplementary}.}

@@ -1,0 +1,2834 @@
+{
+  "artifacts": {
+    "angular_sensitivity": {
+      "path": "generated/angular_sensitivity.npz",
+      "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b",
+      "sidecar": "generated/angular_sensitivity.json",
+      "sidecar_sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+    },
+    "convergence": {
+      "path": "generated/convergence.npz",
+      "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e",
+      "sidecar": "generated/convergence.json",
+      "sidecar_sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+    },
+    "critical_points": {
+      "path": "generated/critical_points.npz",
+      "sha256": "f315fe407816946e34e8fbd8fbbc58708887b23507ca51b8a37432fee133661d",
+      "sidecar": "generated/critical_points.json",
+      "sidecar_sha256": "141d2044d5d6d567a567963fb55aeadd5236358a302ba4379dc7d4f8df2c995b"
+    },
+    "green_crossover": {
+      "path": "generated/green_crossover.npz",
+      "sha256": "598698ca62b61ba00c0cd741bb8fb9ad187c18d41cf284b3b728f0ce1fe221b7",
+      "sidecar": "generated/green_crossover.json",
+      "sidecar_sha256": "0370b95f03f474ade3aeee3e6d10eb08551731e2d2faffb1e02d3dac88f04ee9"
+    },
+    "isotropic_zgv": {
+      "path": "generated/isotropic_zgv.npz",
+      "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d",
+      "sidecar": "generated/isotropic_zgv.json",
+      "sidecar_sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+    },
+    "perturbation_scaling": {
+      "path": "generated/perturbation_scaling.npz",
+      "sha256": "ce9575aede3f98ca6a6ddb51c645929673220fc0ce867be325627e5d7eba1768",
+      "sidecar": "generated/perturbation_scaling.json",
+      "sidecar_sha256": "bde6e8e9296bc276179128ba485d0fb68006f3d3b9ae57e14ff0091b9ffaed8d"
+    },
+    "silicon_stress_test": {
+      "path": "generated/silicon_stress_test.npz",
+      "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb",
+      "sidecar": "generated/silicon_stress_test.json",
+      "sidecar_sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+    }
+  },
+  "figures": {
+    "figure_01_geometry_mechanism": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/critical_points.json",
+          "sha256": "141d2044d5d6d567a567963fb55aeadd5236358a302ba4379dc7d4f8df2c995b"
+        },
+        {
+          "path": "data/generated/critical_points.npz",
+          "sha256": "f315fe407816946e34e8fbd8fbbc58708887b23507ca51b8a37432fee133661d"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_01_geometry_mechanism.pdf",
+          "sha256": "dd97f292c289bf3317f9bd835bb30eb87b4e5c6150d0583488c3b98305ec9c51"
+        },
+        "png": {
+          "path": "figures/main/figure_01_geometry_mechanism.png",
+          "sha256": "e8c591a797567fed815ccb04befbe73da3efad81aca090da6ccce44a220015f5"
+        },
+        "svg": {
+          "path": "figures/main/figure_01_geometry_mechanism.svg",
+          "sha256": "a0846c247f85fd290ac58b329f5b50e5589254e000ebac09c1aef67e02e761b8"
+        },
+        "tiff": {
+          "path": "figures/main/figure_01_geometry_mechanism.tiff",
+          "sha256": "a522c0c010b95dc5cf99ab00b320c6f094e853563625628946a2131d3e1634d4"
+        }
+      },
+      "script": "scripts/make_figure_01.py",
+      "script_sha256": "1de2fe83b7b2f0520f06b350a341292939455333e3cdc8834e5d227fbf2f0fed",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_01/panel_a_ring.csv",
+          "sha256": "b722f838c7bbd6b2f6746ebcd5bab566bc74bc611864a57dc8bdcb28c3a318db"
+        },
+        {
+          "path": "data/source_data/figure_01/panel_b_points.csv",
+          "sha256": "828e333e871718d980adf89d6077113a9c38e2e241a619798d6abcb222cf2d18"
+        },
+        {
+          "path": "data/source_data/figure_01/panel_b_surface.csv",
+          "sha256": "df1d1928799cd22278fb8355e695ea380473e766b44e8fbae1e0fbd65ec889c6"
+        }
+      ],
+      "theory_refs": [
+        "thm:morse-bott-ring",
+        "thm:cubic-morse-splitting",
+        "thm:uniform-bessel-crossover",
+        "thm:fixed-anisotropy-decay"
+      ]
+    },
+    "figure_02_isotropic_zgv": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_02_isotropic_zgv.pdf",
+          "sha256": "154cb21689c579aff49f145e081494ed619770c18ee413c9febb701dfdc0389c"
+        },
+        "png": {
+          "path": "figures/main/figure_02_isotropic_zgv.png",
+          "sha256": "7721a6e676fe429041224014db29b6f06f547b48f4fdb6281c3dd232a1541833"
+        },
+        "svg": {
+          "path": "figures/main/figure_02_isotropic_zgv.svg",
+          "sha256": "f5e1b00dea8686a4c34199343e924eb0cdd9323c20942156adc10b55e1fab1c3"
+        },
+        "tiff": {
+          "path": "figures/main/figure_02_isotropic_zgv.tiff",
+          "sha256": "11f8c47bb80636621f4da7efde40d977056b74e129ada6bfbd50cf0bdd6c1841"
+        }
+      },
+      "script": "scripts/make_figure_02.py",
+      "script_sha256": "514ae3281e4c8946592a24f84f80aacce3879789d0bdb32bd32bf1aaebd57088",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_02/panel_a_branches.csv",
+          "sha256": "a5ed3f5f163d3a16cd3256e7108f942adb3485bfdfb94665c74b5787bc140470"
+        },
+        {
+          "path": "data/source_data/figure_02/panel_b_local_quadratic.csv",
+          "sha256": "d87e7fde88c8b513a6a5f0264210091785f35de45422457b9ae0101f883277ac"
+        },
+        {
+          "path": "data/source_data/figure_02/panel_c_convergence.csv",
+          "sha256": "b95c1f0176a7cc1161c88591cc4e301ae1c32a1a029e9f08a071e0df8be1290f"
+        },
+        {
+          "path": "data/source_data/figure_02/panel_d_mode_profile.csv",
+          "sha256": "883006c915574dbd03924780ff4c238fab2c767132b07bcad2d272977e00216d"
+        }
+      ],
+      "theory_refs": [
+        "thm:morse-bott-ring"
+      ]
+    },
+    "figure_03_angular_sensitivity": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_03_angular_sensitivity.pdf",
+          "sha256": "f7add115086acfcb8a4d148f0917f0ee03f5e369ce57ee662b00c9542b774e4d"
+        },
+        "png": {
+          "path": "figures/main/figure_03_angular_sensitivity.png",
+          "sha256": "62ef2a4e6a7beed4e97e83f00794164bed746e5cdb26aada25e10e4c0d9ab8aa"
+        },
+        "svg": {
+          "path": "figures/main/figure_03_angular_sensitivity.svg",
+          "sha256": "4eb9839a2c6f1fcb4051aef727efd24501adc99049a43c8997b59d0523ea8a9e"
+        },
+        "tiff": {
+          "path": "figures/main/figure_03_angular_sensitivity.tiff",
+          "sha256": "37489cfc4cd6171135f20ff755a23527f2300f7cc8b1b4a5bceaf6ca2681f31f"
+        }
+      },
+      "script": "scripts/make_figure_03.py",
+      "script_sha256": "25e75a2b48b4d7bb5b3e6ca270cac8de06a1899df99773e12c6006b919b8d72a",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_03/panel_a_polar.csv",
+          "sha256": "4c5f0355e2cf9dae1e4b2d8926d4d9e76a9c939740515bb8e5342f2925f3b788"
+        },
+        {
+          "path": "data/source_data/figure_03/panel_b_harmonics.csv",
+          "sha256": "9d3b9aacf1158f930edf600d84408db23188b35241cae1bc8e26cefb608996b6"
+        },
+        {
+          "path": "data/source_data/figure_03/panel_c_physical_shift.csv",
+          "sha256": "65b044836c80fcf365dd64fd246d684f844e238bca14ada52ca73f2ba5424e1e"
+        },
+        {
+          "path": "data/source_data/figure_03/panel_d_angular_fd.csv",
+          "sha256": "bcfcb2b0b735b76c8a063253361dd284c5babc5dc9b811c26051cb60211cb2dd"
+        },
+        {
+          "path": "data/source_data/figure_03/panel_d_step_convergence.csv",
+          "sha256": "b0d229e5628c80445c460dfa04acbee3bcbfff9746b776369ec7c7b9e40eb55c"
+        }
+      ],
+      "theory_refs": [
+        "thm:anisotropic-normal-form",
+        "thm:cubic-morse-splitting"
+      ]
+    },
+    "figure_04_morse_points": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/critical_points.json",
+          "sha256": "141d2044d5d6d567a567963fb55aeadd5236358a302ba4379dc7d4f8df2c995b"
+        },
+        {
+          "path": "data/generated/critical_points.npz",
+          "sha256": "f315fe407816946e34e8fbd8fbbc58708887b23507ca51b8a37432fee133661d"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_04_morse_points.pdf",
+          "sha256": "d0a93698c82bd4be4ca55dd95b47c5d25dd36c5b2b9b7c1b93be55e46984fe8e"
+        },
+        "png": {
+          "path": "figures/main/figure_04_morse_points.png",
+          "sha256": "d18dbb7bfbcb95224959a50fc297e82cf8e5f108e55ed0a03f669ca594eafccf"
+        },
+        "svg": {
+          "path": "figures/main/figure_04_morse_points.svg",
+          "sha256": "ace67603d6f8fbd18b6aaa03977986c62147c801a665bed9cdd2e9a6343fbb63"
+        },
+        "tiff": {
+          "path": "figures/main/figure_04_morse_points.tiff",
+          "sha256": "83bab7e7cea1cedad4f97b87a897c83d547ef1113b9a19e11835e11a31002067"
+        }
+      },
+      "script": "scripts/make_figure_04.py",
+      "script_sha256": "65b3b613b82af1087ea1b31867ce50d4a883336c94ec8f9006b29957782a15d5",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_04/panel_a_isotropic_surface.csv",
+          "sha256": "547983b1ad435f4f2a5b69d7b59cfce9185d5f67306a0fe4d8101cde62139055"
+        },
+        {
+          "path": "data/source_data/figure_04/panel_b_anisotropic_surface.csv",
+          "sha256": "d9cc56d3f1ad7ab70916eb5b88d7268c9e66a6e440da916c391a805b76cd4bc7"
+        },
+        {
+          "path": "data/source_data/figure_04/panel_b_points.csv",
+          "sha256": "83d2d8c9a6affa85bae84dec27dcda8a7abda49dd08929de2c809a59b323784a"
+        },
+        {
+          "path": "data/source_data/figure_04/panel_c_hessian.csv",
+          "sha256": "366739d6c72d3a075b6fc0300373e785d875e0e77858049d6c77a456872c8cc5"
+        },
+        {
+          "path": "data/source_data/figure_04/panel_d_prediction_errors.csv",
+          "sha256": "e33638c6b457dfa01b7587d86758e48cad2c43e88d4b8cbc88a7a8df7beba9a5"
+        }
+      ],
+      "theory_refs": [
+        "thm:cubic-morse-splitting"
+      ]
+    },
+    "figure_05_perturbation_scaling": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/perturbation_scaling.json",
+          "sha256": "bde6e8e9296bc276179128ba485d0fb68006f3d3b9ae57e14ff0091b9ffaed8d"
+        },
+        {
+          "path": "data/generated/perturbation_scaling.npz",
+          "sha256": "ce9575aede3f98ca6a6ddb51c645929673220fc0ce867be325627e5d7eba1768"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_05_perturbation_scaling.pdf",
+          "sha256": "d6939a522001b73f28e2059d271b31991a36bd700fb3249fcb6646f12111734f"
+        },
+        "png": {
+          "path": "figures/main/figure_05_perturbation_scaling.png",
+          "sha256": "df3bdcea1385890b19e836f3ffc3ec6cfa71e48e122e54d6d198f2b3935cff57"
+        },
+        "svg": {
+          "path": "figures/main/figure_05_perturbation_scaling.svg",
+          "sha256": "b4c99ed006ebcb9b84700e085a0ce700ca155cffeae03f3f6209d4cc98e4d435"
+        },
+        "tiff": {
+          "path": "figures/main/figure_05_perturbation_scaling.tiff",
+          "sha256": "7e0053dd6344907fcfc04acbf688bc8b6b332cda069457a0c0b50f56aeed35ef"
+        }
+      },
+      "script": "scripts/make_figure_05.py",
+      "script_sha256": "a9a06cc88466d1b72a41c67c39123d2804f69fc520e6b313bc9f55186715c656",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_05/panel_a_splitting.csv",
+          "sha256": "7d36fb4b48b012a89d551fe60ac556b94a82054700234b8788a0964038afaf51"
+        },
+        {
+          "path": "data/source_data/figure_05/panel_b_compensated_radial_shift.csv",
+          "sha256": "08d0fc690770b3dca6481836ac1c8ef49c2cb42314bda5e53ab283a30c496cd3"
+        },
+        {
+          "path": "data/source_data/figure_05/panel_c_frequency_remainder.csv",
+          "sha256": "9129b22e582b5bb797e78e5abe51e027f4bf1792f8d20372e53a01084fa9b8a2"
+        },
+        {
+          "path": "data/source_data/figure_05/panel_d_role_reversal.csv",
+          "sha256": "1349de80d80d1746df0de188ee2e1a790ffc2a2c8912ff7ea323cd0e5b7d5046"
+        }
+      ],
+      "theory_refs": [
+        "thm:anisotropic-normal-form",
+        "thm:cubic-morse-splitting"
+      ]
+    },
+    "figure_06_decay_crossover": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/green_crossover.json",
+          "sha256": "0370b95f03f474ade3aeee3e6d10eb08551731e2d2faffb1e02d3dac88f04ee9"
+        },
+        {
+          "path": "data/generated/green_crossover.npz",
+          "sha256": "598698ca62b61ba00c0cd741bb8fb9ad187c18d41cf284b3b728f0ce1fe221b7"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/main/figure_06_decay_crossover.pdf",
+          "sha256": "05440fc55a0c23c811be4b2eb49f5c8996c0b1aca2af269f74df27097727081b"
+        },
+        "png": {
+          "path": "figures/main/figure_06_decay_crossover.png",
+          "sha256": "9f36cb97e0d08fbe8c3735eab7c7be0ea3a6e8dad6e4b7b435aa533dbbbee879"
+        },
+        "svg": {
+          "path": "figures/main/figure_06_decay_crossover.svg",
+          "sha256": "2768f8afb5884e949e1ea043ada7b65253191fcfe25be22607dbb9832c8b0aa8"
+        },
+        "tiff": {
+          "path": "figures/main/figure_06_decay_crossover.tiff",
+          "sha256": "f116968c5402e2eb3e965e3ba9dca6415d724e34f0733bf84896052c9e373a49"
+        }
+      },
+      "script": "scripts/make_figure_06.py",
+      "script_sha256": "e83564475786aa7ecf7a297837dfc5c53ca04b93467706c4800042a61fe08f4a",
+      "source_data": [
+        {
+          "path": "data/source_data/figure_06/panel_a_collapse.csv",
+          "sha256": "5e25a918725fe05c3a46806ae596e67ace24bc61b0ebd40bc219a67e4efb733a"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_b_absolute_error.csv",
+          "sha256": "002027a5f71ea0321113448db705a3d3adf29f88df887bad26d7587bb8e74354"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_c_envelopes.csv",
+          "sha256": "8e5d72dbbb1680db41815f9af62cc1b971b487265df412d27170bb2274e22081"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_c_late_fit.csv",
+          "sha256": "d08861e107c76c6e9f9ad7cae15dfa5269ca020ff1320b04840cfb9d12e8298b"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_d_crossover.csv",
+          "sha256": "d7cb12e7aacd493269cbfbcad24add3dcc283ac3f06819e19a3ca98d337fd77d"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_e_fixed_morse.csv",
+          "sha256": "955b3fcc0393ba79927164a9808e75bc15c6e3fbc2c5ebd54c0901ae757c03f1"
+        },
+        {
+          "path": "data/source_data/figure_06/panel_f_frequency_features.csv",
+          "sha256": "78ccb8a061cb09a63287ca729dabcd29313055377e1677ec9e23b286c59b1dbd"
+        }
+      ],
+      "theory_refs": [
+        "thm:uniform-bessel-crossover",
+        "thm:fixed-anisotropy-decay"
+      ]
+    },
+    "figure_s01_polynomial_two_element": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s01_polynomial_two_element.pdf",
+          "sha256": "f49c085e3fc882d3c3857bd295733d8a72e98926322dd73ffd7a5b472ae03046"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s01_polynomial_two_element.png",
+          "sha256": "100b9c7028ca8c91a973ae61c1eddde88d746cfa666ca9f819f7dca893b0efe0"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s01_polynomial_two_element.svg",
+          "sha256": "79e1fbe9a1a7cc03f24c5d4ed564ac428d7c1fe32788a6dd5e2377a69b958c68"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s01_polynomial_two_element.tiff",
+          "sha256": "8d04576e7c93a91f710e8a088beff62dd2f51caba15a27447725e897100730a5"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s01_panel_a_polynomial.csv",
+          "sha256": "b95c1f0176a7cc1161c88591cc4e301ae1c32a1a029e9f08a071e0df8be1290f"
+        },
+        {
+          "path": "data/source_data/supplementary/s01_panel_b_independent.csv",
+          "sha256": "2de0df3a2aaecff07ae55e9e8c9252d9b07659c685c5adc59ed6c1e53256fa09"
+        },
+        {
+          "path": "data/source_data/supplementary/s01_panel_c_two_element.csv",
+          "sha256": "2f5860dbee1ce7d5aece9ef9fac7d367fd6432643dc833a1e483492857278ef0"
+        }
+      ],
+      "theory_refs": [
+        "thm:morse-bott-ring"
+      ]
+    },
+    "figure_s02_quadrature_phase": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s02_quadrature_phase.pdf",
+          "sha256": "ef1c2abbe4ef1b17ea30bd5edb1869583bdca39ea57a6daa12cb0bf2cd73b06f"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s02_quadrature_phase.png",
+          "sha256": "9d16d773bbb89e96ef7dfa0e2b455263569e68174f75a09b8528f0ae79069a12"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s02_quadrature_phase.svg",
+          "sha256": "6312840b9c6ff064f866667ab36352c2fe0705b43f8301574216332dc5ab2c69"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s02_quadrature_phase.tiff",
+          "sha256": "0f69dc77e615bef41153baa94d05333ea31af1c51a1fd8c3c853b7fd699ac37b"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s02_panel_a_quadrature.csv",
+          "sha256": "9ae8a1569c3305dfe5d66ee5ec6d1a82f4f7e50cd0c3fe6212f25661b8781504"
+        },
+        {
+          "path": "data/source_data/supplementary/s02_panel_b_dispersion.csv",
+          "sha256": "39b81cf48a275d9e89f1bac60859128845ae933181dfcfbfb3f514188ca4ed4c"
+        },
+        {
+          "path": "data/source_data/supplementary/s02_panel_c_phase.csv",
+          "sha256": "ea8fd24b2b7c776b706d9ca21c8a764f109ac20b7f60bc37ba1b919395df6308"
+        }
+      ],
+      "theory_refs": [
+        "thm:uniform-bessel-crossover",
+        "thm:fixed-anisotropy-decay"
+      ]
+    },
+    "figure_s03_mode_tracking": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s03_mode_tracking.pdf",
+          "sha256": "2fdbcb357dda63d1e626df84c49b82293792c3a41f6d96a4f95edf4d8e2e2bde"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s03_mode_tracking.png",
+          "sha256": "83e5ed1cd5dd62500634d0c560156389b85b8a7514cc0806383fb6b31657d07b"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s03_mode_tracking.svg",
+          "sha256": "01bc6f988b592d3e19d153edcab92514e33e5cc9af07912e1f0c0ef1a86793f7"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s03_mode_tracking.tiff",
+          "sha256": "d3093ab041b2749eb5f7a230ec351e82bad9dfde2a789b2cefc871ea47a82f4f"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s03_panel_a_mac.csv",
+          "sha256": "f8d49c0e3848f800507d2fce9a0319a40cc5889d223848b54d24af212e36ba72"
+        },
+        {
+          "path": "data/source_data/supplementary/s03_panel_b_tracking_gap.csv",
+          "sha256": "d552034a7462653f114ab287d18da23f8fdcbe8c63e81857bc22734f464f194a"
+        },
+        {
+          "path": "data/source_data/supplementary/s03_panel_c_gap_residual.csv",
+          "sha256": "3ca04a0d42c15df39edd7cba823168180bb86d6edb0514721f819f7ee0f0593e"
+        }
+      ],
+      "theory_refs": [
+        "thm:morse-bott-ring",
+        "thm:anisotropic-normal-form"
+      ]
+    },
+    "figure_s04_fd_convergence": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s04_fd_convergence.pdf",
+          "sha256": "e7c1da8402d3d2fee72242f947fc79de0dd52e58b225443b8fba6ec2ae335ed9"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s04_fd_convergence.png",
+          "sha256": "adb77f6fdd6bc0005ce1450f5bdedd87a9847800c2ea661f674d7ae7615c7950"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s04_fd_convergence.svg",
+          "sha256": "58a5bc3056ed86b6b5227ae4859f76b0ff6c99b55d06d9727d73f7c185df6c31"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s04_fd_convergence.tiff",
+          "sha256": "5e77da56fbd261450b97a3590c7dd9150051b1c96444e9a8f907b00f03d00d1c"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s04_panel_a_v4.csv",
+          "sha256": "e8e5e3c9620200d9b85ef21622b6c41ed116c708999ea0f3643fc647e6c53d2b"
+        },
+        {
+          "path": "data/source_data/supplementary/s04_panel_b_b_diagonal.csv",
+          "sha256": "884eac836248296bae343d64d3442cb8d617846b1777913bccefd0c8d0b77436"
+        },
+        {
+          "path": "data/source_data/supplementary/s04_panel_c_b_matrix.csv",
+          "sha256": "f3a392272680145de29240ad932aa3921d5506246821d28e19750405b2b2119e"
+        }
+      ],
+      "theory_refs": [
+        "thm:anisotropic-normal-form",
+        "thm:cubic-morse-splitting"
+      ]
+    },
+    "figure_s05_source_window_sensitivity": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s05_source_window_sensitivity.pdf",
+          "sha256": "de17885a92042f766e05905883b218468f20fcc105972d4e6b70c3106ccc13c7"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s05_source_window_sensitivity.png",
+          "sha256": "c1346545ee793c3eab922339c07a5c256eafd085888416d559ed78b811098a04"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s05_source_window_sensitivity.svg",
+          "sha256": "ed8fa779946ad6f0408c2ea28e348ca915a2f8b42044c8fbd96c38e13d788d7e"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s05_source_window_sensitivity.tiff",
+          "sha256": "233eb9a0ec096e339ae29965d2f07e18145e4eff80507fda1973bf5ba39629e7"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s05_panel_a_heatmap.csv",
+          "sha256": "8504162c9536037597cb91561e7e5a991334d9ced2f85864cb6314c5d5c241de"
+        },
+        {
+          "path": "data/source_data/supplementary/s05_panel_b_profiles.csv",
+          "sha256": "8504162c9536037597cb91561e7e5a991334d9ced2f85864cb6314c5d5c241de"
+        }
+      ],
+      "theory_refs": [
+        "thm:uniform-bessel-crossover"
+      ]
+    },
+    "figure_s06_silicon_stress_test": {
+      "inputs": [
+        {
+          "path": "config/reference.yaml",
+          "sha256": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.json",
+          "sha256": "1b6a36ca19e5dcfe4c12d5407c73411c5bfd93867c5db7457a0a3a6a46ab2981"
+        },
+        {
+          "path": "data/generated/angular_sensitivity.npz",
+          "sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+        },
+        {
+          "path": "data/generated/convergence.json",
+          "sha256": "3338ef705b2b11bbbe94a200ed89e8df91d8b513393e67cdf03df1870a7a45a9"
+        },
+        {
+          "path": "data/generated/convergence.npz",
+          "sha256": "1f61c65fc56fc075c5fade9ac699f902458e5dc9135739628715c78e6e9af41e"
+        },
+        {
+          "path": "data/generated/isotropic_convergence.csv",
+          "sha256": "e23a63b57d0fac5cef663f76505183aec92e95c6a98e9d4c697167b484cd3728"
+        },
+        {
+          "path": "data/generated/isotropic_validation.json",
+          "sha256": "7c57d2685d8c65bd5e1a7ad095232856f515e5f6a474db4925ca38786bd6d27b"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.json",
+          "sha256": "7ce596abe599423b343bbb8227ae352a6b3f0bf0b98bf4d3197a693e258567d9"
+        },
+        {
+          "path": "data/generated/isotropic_zgv.npz",
+          "sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.json",
+          "sha256": "ac72773933783ac43636d5fba3743c0f9223d48e5e1ddf6d575f1390077b3510"
+        },
+        {
+          "path": "data/generated/silicon_stress_test.npz",
+          "sha256": "f813b98091aa9037a4fb324eb8cb15e349ae0080921935f5dcbbd6d49e4821cb"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "f5b3ffb5f76adbfde84972ef26bbab0138741886642561fbdd3a10f897e01b72"
+        },
+        {
+          "path": "scripts/validate_isotropic.py",
+          "sha256": "0a30d98a92d119ec72e37f5919b4d3d0755bea08c707b0cef86493ea6744b53e"
+        },
+        {
+          "path": "src/zgv_morse/__init__.py",
+          "sha256": "9080542d789a719e6752dc75094e02ed3fa0dd6bc613cf5d26bffdfe410e6e29"
+        },
+        {
+          "path": "src/zgv_morse/artifact_schema.py",
+          "sha256": "dc6db13fb216a056192a61037c221bace20572bdca462dee002398e64514d15c"
+        },
+        {
+          "path": "src/zgv_morse/artifacts.py",
+          "sha256": "e1469cb40dbe95082f01546b6f6168e205497bac72e64d620e4b2c66eb8a39ef"
+        },
+        {
+          "path": "src/zgv_morse/asymptotics.py",
+          "sha256": "bd03f04c0492899f48afe751f6e29ec14737e681d75aa5026ef596d413663139"
+        },
+        {
+          "path": "src/zgv_morse/config.py",
+          "sha256": "36c5781483f68357e133c63deacbc1249b3f6ab7ed73bd8d17ea79beebf88c49"
+        },
+        {
+          "path": "src/zgv_morse/critical_points.py",
+          "sha256": "097ecbf445bdfb0e4070aa494dbf2c755924f64c0b30246050218d59d590450e"
+        },
+        {
+          "path": "src/zgv_morse/dispersion.py",
+          "sha256": "7595f0a52970b016e766bc07906b01ede1b80532123f7745a929336bb62cd399"
+        },
+        {
+          "path": "src/zgv_morse/elasticity.py",
+          "sha256": "7a5dcc9bf20de0b99a9ec8012c36e7d5d9a08b5d6b40139514ea3d7e4e08f2e5"
+        },
+        {
+          "path": "src/zgv_morse/figures/__init__.py",
+          "sha256": "05b035c591cf7f47e9b58489cc916e6f5974c3a52bd9e37f8b2db76e4716fa35"
+        },
+        {
+          "path": "src/zgv_morse/figures/common.py",
+          "sha256": "abd406c1584496a03f1ee3a303c8b540b9fdd4aec5ce94784e68b4f1550973f1"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure01_geometry.py",
+          "sha256": "0b89d4add5dd97842feccea77e216d494ef7ecb981f8cc3ef9f3235f93bb2d3f"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure02_isotropic.py",
+          "sha256": "8671ca5153f9eee64e07a0e624d8070d561db7686d7895a3a2027ce6ecc999f9"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure03_sensitivity.py",
+          "sha256": "c88dc741e4fa8af2d90a0d687c80ac405ddf365d417881ab3d72e40dad6b9975"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure04_morse.py",
+          "sha256": "c581bc77639020babb7ce912c44f78200883ffbd856f0349ea88ebd525dec4c5"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure05_scaling.py",
+          "sha256": "40ba80d47c4d566e13970b1e08504b8e361fa11ba6787bb89195a1ffb7b29ec6"
+        },
+        {
+          "path": "src/zgv_morse/figures/figure06_crossover.py",
+          "sha256": "eceeb07db85cd2ffb8fdda3699749567c479aef58cddcb0040ceb3cb4bf352ce"
+        },
+        {
+          "path": "src/zgv_morse/figures/supplementary.py",
+          "sha256": "557e6c3a6d4eafb5c336af871b26a3e3cdf93657857777e2058eb004456e7ea2"
+        },
+        {
+          "path": "src/zgv_morse/gll.py",
+          "sha256": "9d60b622cf6abda8fd790421a4e5cb3982e23a1d5a9b93de74a176a59f7e3825"
+        },
+        {
+          "path": "src/zgv_morse/green_response.py",
+          "sha256": "d5287b363688ba5ab99e842cf5f6007a5bdbada5b2b75d8c7e944621199659fe"
+        },
+        {
+          "path": "src/zgv_morse/mode_tracking.py",
+          "sha256": "0b5d6c3e04d377552049d4924dc75b638e6338e8b8f06cf37dedfda4b2d315cc"
+        },
+        {
+          "path": "src/zgv_morse/perturbation.py",
+          "sha256": "6cc011c6a4bc1ef578f6eb05f378ee7487b52c16b00ac31262666f04f0ee9fad"
+        },
+        {
+          "path": "src/zgv_morse/provenance.py",
+          "sha256": "1afb7f9da0cb16218e8271d5e789f4aa38451361c91db6350adb39c69eb4367c"
+        },
+        {
+          "path": "src/zgv_morse/rayleigh_lamb.py",
+          "sha256": "937b510ccfa07eaf99706a3e91698e1fcb354aa6867d546422e357e7afba4222"
+        },
+        {
+          "path": "src/zgv_morse/spectral_plate.py",
+          "sha256": "58ae54bea9c1123544829180bca518ffed19875b08df999cf0bac7ae1959bbcd"
+        },
+        {
+          "path": "src/zgv_morse/validation.py",
+          "sha256": "e3df290080a05200be7d972a2bc8ed8ecab5300894788c98fab49e83660ff4f9"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__init__.py",
+          "sha256": "943fcab199b983babaeaef928833fbf8de4fb2c325f5f86eb286f062b2591366"
+        },
+        {
+          "path": "src/zgv_morse/workflows/__main__.py",
+          "sha256": "5261206b3fee67edabb6067e9ce9c401fe86bd45f47705adfa8b585f24a9b073"
+        },
+        {
+          "path": "src/zgv_morse/workflows/common.py",
+          "sha256": "de1963e457bcc9f900ff256dd5586b780affcb85e4ecc3174b6e25a221e365df"
+        },
+        {
+          "path": "src/zgv_morse/workflows/convergence.py",
+          "sha256": "cebd740f71c0aaf797429a626cb1a59eca926d7fbe8fc21d79c68ed3c5b9abbf"
+        },
+        {
+          "path": "src/zgv_morse/workflows/critical_points.py",
+          "sha256": "d1aee72dcaaff432bcfb15f94074719ea632ef277d4c1c604d432e2157356985"
+        },
+        {
+          "path": "src/zgv_morse/workflows/green.py",
+          "sha256": "68d1a5fc3ffb40bc0f61209254190759c786b400d418d768d5bb334cbcfa9684"
+        },
+        {
+          "path": "src/zgv_morse/workflows/isotropic.py",
+          "sha256": "181a602f9450a6e25baf486b9cb82648c1baa8896ae2b3ee8bcc432be85c8ca7"
+        },
+        {
+          "path": "src/zgv_morse/workflows/scaling.py",
+          "sha256": "56055955e472937b536e7cbbabfe2071da1c50f1e736571a2b7c8a317a43efab"
+        },
+        {
+          "path": "src/zgv_morse/workflows/sensitivity.py",
+          "sha256": "ab688b65edaf61d57ceaa48c1848608b6116847ab627cba186c138f43e2f2ac1"
+        },
+        {
+          "path": "src/zgv_morse/workflows/silicon.py",
+          "sha256": "e311b5f1d00347595e571ee84d4b6c3fb6e8ed48a1f4af0dc70b2a514a0d8dc6"
+        },
+        {
+          "path": "src/zgv_morse/zgv.py",
+          "sha256": "bb956418e89793cffd7c9a7c4d82e24cd07271a0616b692a4603dd0ebd525e5e"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+        }
+      ],
+      "outputs": {
+        "pdf": {
+          "path": "figures/supplementary/figure_s06_silicon_stress_test.pdf",
+          "sha256": "66e0b382a2ef3b10df87bf441e7519b697a35def83a769b20ac9904d1957bfa7"
+        },
+        "png": {
+          "path": "figures/supplementary/figure_s06_silicon_stress_test.png",
+          "sha256": "47d449dded0dcf45c88e6d06f27076109d716db53494bb77e130ae5e333a7875"
+        },
+        "svg": {
+          "path": "figures/supplementary/figure_s06_silicon_stress_test.svg",
+          "sha256": "c228e76cdb02d4f525351af9e247066a61f4bc9d07f26838325076de78a59af6"
+        },
+        "tiff": {
+          "path": "figures/supplementary/figure_s06_silicon_stress_test.tiff",
+          "sha256": "0d06d28ca89329db5d74cd75b0fefa679f6634964f3e7d6c627271d074f47d2d"
+        }
+      },
+      "script": "scripts/make_supplementary_figures.py",
+      "script_sha256": "839b4bb6cd0a739933fb42ed8904d79c5a970325f573d0684ce2bfa4d3c2eb58",
+      "source_data": [
+        {
+          "path": "data/source_data/supplementary/s06_material_record.csv",
+          "sha256": "b646d867326affd285df3897f8e577f5c3a3cac5cc7efe3e22a0f26656ea229e"
+        },
+        {
+          "path": "data/source_data/supplementary/s06_panel_a_points.csv",
+          "sha256": "87db82aa16eaf90148a368192596dbfa0f4a58e6db8f54e63efbb5f1eecf1546"
+        },
+        {
+          "path": "data/source_data/supplementary/s06_panel_a_surface.csv",
+          "sha256": "54bc2afaf31c2a09f3d4c73810b8b14bac856f183dff0a2f2616f09dfc34b9c5"
+        },
+        {
+          "path": "data/source_data/supplementary/s06_panel_b_hessian.csv",
+          "sha256": "63ca20ba4e024f7dc33bc4df727a7aff1c56ca9a1037c6b4646d4a81125a3829"
+        },
+        {
+          "path": "data/source_data/supplementary/s06_panel_c_diagnostics.csv",
+          "sha256": "9f417fd1996b0d1e7eae18ba538078054f2540d8b18a25b081ab3f9ffa43ea7f"
+        }
+      ],
+      "theory_refs": [
+        "thm:cubic-morse-splitting"
+      ]
+    }
+  },
+  "schema_version": 2
+}

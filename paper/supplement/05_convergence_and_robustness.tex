@@ -1,0 +1,75 @@
+\section{Generated convergence records and robustness figures}
+\label{sec:supplement-convergence-robustness}
+
+This section collects the generated records that accompany the executable
+numerical specification in Supplementary Section~\ref{sec:spectral-numerics}.
+The tables are regenerated from qualified artifacts and the registered
+configuration; the figures read only the same artifacts and export the plotted
+arrays to \path{data/source_data/supplementary}.  They are evidence for
+discretization, phase, branch-tracking, differentiation, source-window, and
+finite-anisotropy robustness within the declared ranges, not replacements for
+the hypotheses of the perturbation and stationary-phase theorems.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Independent isotropic one-element and two-element convergence
+  record.  The errors are relative to the high-precision Rayleigh--Lamb ZGV
+  root; the residual and eigengap use the definitions in Supplementary
+  Section~\ref{sec:spectral-numerics}.}
+  \label{tab:supplement-convergence}
+  \resizebox{\textwidth}{!}{\input{generated/table_s01_convergence.tex}}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Registered reference parameters, numerical tolerances, and the
+  material record used only for the silicon stress test.  Dimensionless
+  entries are read from the registered YAML configuration; the silicon constants
+  retain their source identifier in the generated table.}
+  \label{tab:supplement-parameters}
+  \resizebox{0.86\textwidth}{!}{\input{generated/table_s02_parameters.tex}}
+\end{table}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s01_polynomial_two_element.pdf}
+  \caption{\SupplementaryFigureOneCaption}
+  \label{fig:supplement-01}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s02_quadrature_phase.pdf}
+  \caption{\SupplementaryFigureTwoCaption}
+  \label{fig:supplement-02}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s03_mode_tracking.pdf}
+  \caption{\SupplementaryFigureThreeCaption}
+  \label{fig:supplement-03}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s04_fd_convergence.pdf}
+  \caption{\SupplementaryFigureFourCaption}
+  \label{fig:supplement-04}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s05_source_window_sensitivity.pdf}
+  \caption{\SupplementaryFigureFiveCaption}
+  \label{fig:supplement-05}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/supplementary/figure_s06_silicon_stress_test.pdf}
+  \caption{\SupplementaryFigureSixCaption}
+  \label{fig:supplement-06}
+\end{figure}
+
+\clearpage

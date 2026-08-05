@@ -1,0 +1,212 @@
+{
+  "arrays": {
+    "gradient_residual": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "hessian_eigenvalues": {
+      "dtype": "float64",
+      "shape": [
+        8,
+        2
+      ]
+    },
+    "kappa": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "kind": {
+      "dtype": "<U7",
+      "shape": [
+        8
+      ]
+    },
+    "kx": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "kx_grid": {
+      "dtype": "float64",
+      "shape": [
+        26
+      ]
+    },
+    "kx_pred": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "ky": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "ky_grid": {
+      "dtype": "float64",
+      "shape": [
+        26
+      ]
+    },
+    "ky_pred": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "morse_index": {
+      "dtype": "int64",
+      "shape": [
+        8
+      ]
+    },
+    "omega": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "omega_aniso_grid": {
+      "dtype": "float64",
+      "shape": [
+        26,
+        26
+      ]
+    },
+    "omega_iso_grid": {
+      "dtype": "float64",
+      "shape": [
+        26,
+        26
+      ]
+    },
+    "omega_pred": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    },
+    "theta": {
+      "dtype": "float64",
+      "shape": [
+        8
+      ]
+    }
+  },
+  "artifact": "critical_points",
+  "cache_key": "e8c1cd79f2a7efefb0ab127eea2c068709abb805cc00ec7e9c982e82c9b1c2cb",
+  "cache_schema_version": 1,
+  "code_hash": "ac9aa78bf0cbab8626253a93610ee5cddee2a6fa98a14dfdc28ac37c476ec44b",
+  "command": "python -m zgv_morse.workflows --stage critical_points --profile full",
+  "config_hash": "b0489b361a19aa32184ceb9331b733fc49aefd6d6485021c645e2b6347cefe90",
+  "dimensionless_convention": "kappa=k*h, Omega=omega*h/c_T",
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "input_artifacts": {
+    "sensitivity": {
+      "artifact": "angular_sensitivity",
+      "cache_key": "c01d7917b7484c84f2047037d208a291fa08054e10b083e8c3383e0602f5544c",
+      "output_sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+    }
+  },
+  "metadata_sha256": "626dd504db02a5146f9f5ebfe7ea5aa30ed6b08afa9cde805b3fa2fc2968900e",
+  "output_sha256": "f315fe407816946e34e8fbd8fbbc58708887b23507ca51b8a37432fee133661d",
+  "profile": "full",
+  "schema_version": 1,
+  "sign_reversal_certificate": {
+    "negative_count": 8,
+    "negative_epsilon": -0.02,
+    "negative_kinds": [
+      "minimum",
+      "saddle",
+      "minimum",
+      "saddle",
+      "minimum",
+      "saddle",
+      "minimum",
+      "saddle"
+    ],
+    "negative_theta": [
+      0.0,
+      0.7853981633972386,
+      1.5707963267969023,
+      2.3561944901733343,
+      3.1415926535852754,
+      3.9269908169981504,
+      4.7123889803757315,
+      5.49778714376107
+    ],
+    "positive_count": 8,
+    "positive_epsilon": 0.02,
+    "positive_kinds": [
+      "saddle",
+      "minimum",
+      "saddle",
+      "minimum",
+      "saddle",
+      "minimum",
+      "saddle",
+      "minimum"
+    ],
+    "positive_theta": [
+      0.0,
+      0.785398163438207,
+      1.5707963268032483,
+      2.3561944901978973,
+      3.1415926535979573,
+      3.9269908169737144,
+      4.712388980384321,
+      5.497787143781408
+    ],
+    "roles_exchanged_at_same_angles": true
+  },
+  "source_hash": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82",
+  "stage": "critical_points",
+  "tolerances": {
+    "epsilon": 0.02,
+    "maximum_gradient_residual": 2.044826397098636e-13,
+    "maximum_grid_frequency_uncertainty": 9.616165641546104e-10,
+    "minimum_hessian_to_uncertainty": 5960.603075821106,
+    "negative_candidate_grid_frequency_difference": 4.916067553040193e-13,
+    "negative_candidate_grid_hessian_difference": 3.465479014863604e-10,
+    "negative_candidate_grid_position_difference": 1.2834242343272452e-11,
+    "negative_maximum_boundary_gradient_uncertainty": 3.2889488487159167e-10,
+    "negative_minimum_boundary_gradient": 0.13477502218269877,
+    "positive_candidate_grid_frequency_difference": 2.4646951146678475e-13,
+    "positive_candidate_grid_hessian_difference": 5.433239726182482e-10,
+    "positive_candidate_grid_position_difference": 3.712994000861301e-11,
+    "positive_maximum_boundary_gradient_uncertainty": 3.425832436479932e-10,
+    "positive_minimum_boundary_gradient": 0.13120294985464745
+  },
+  "units": {
+    "gradient_residual": "Omega per kappa",
+    "hessian_eigenvalues": "Omega per kappa squared",
+    "kappa": "1",
+    "kind": "classification",
+    "kx": "1",
+    "kx_grid": "1",
+    "kx_pred": "1",
+    "ky": "1",
+    "ky_grid": "1",
+    "ky_pred": "1",
+    "morse_index": "integer",
+    "omega": "1",
+    "omega_aniso_grid": "1",
+    "omega_iso_grid": "1",
+    "omega_pred": "1",
+    "theta": "rad"
+  },
+  "uv_lock_hash": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+}

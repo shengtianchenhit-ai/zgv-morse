@@ -1,0 +1,103 @@
+\section{Full-Wave Numerical Verification}
+
+\subsection{Convergence and resolution checks}
+
+Within the declared local annulus and on the tracked branch, the isotropic
+coordinates and curvature passed the predeclared order-convergence gates.
+The eigenpairs and continuation history separately passed the residual,
+orthogonality, overlap, and eigengap gates.  The independently computed values
+remained consistent with
+\(\kappa_0=\ZGVKappa\), \(\Omega_0=\ZGVOmega\), and
+\(a=\ZGVCurvature\), while Fig.~\ref{fig:isotropic-zgv} exposes the full
+order sequence rather than only its finest member.  This evidence concerns the
+selected local branch and does not assert completeness for the dispersion
+spectrum outside the configured window.
+
+No coordinate match was accepted alone.  A converged row also had to satisfy
+the normalized residual of Eq.~\eqref{eq:normalized-eigen-residual}, the mass
+orthogonality defect, the mass-weighted overlap of Eq.~\eqref{eq:mass-mac}, and
+the relative separation gate in Eq.~\eqref{eq:eigengap-rejection}.  The
+generated Supplementary convergence table reports the final one- and
+two-element values beside their declared gates.  Algorithm~\ref{alg:mode-tracking}
+supplied the branch history, so apparent coordinate agreement after a branch
+switch could not pass this joint check \citep{adamou2004spectral,kiefer2023computing}.
+
+The anisotropic evidence closed a distinct joint gate.  Centered
+full-anisotropic differences checked \(V_4=\VFour\) and the differentiated-mode
+equation, while Hessian discrepancy estimates and candidate-grid refinement
+checked the \(\MorseMinimumCount\)-minimum and
+\(\MorseSaddleCount\)-saddle set in
+Figs.~\ref{fig:angular-sensitivity} and \ref{fig:morse-points}.  The two
+resolution routes are defined in Eqs.~\eqref{eq:differentiated-mode-solve}
+and \eqref{eq:critical-point-uncertainty}.  Boundary noncriticality and the
+index identity of Eq.~\eqref{eq:annular-index-certificate} then closed the
+declared local annulus.  Together these checks support a resolved local set
+on one branch, not a global enumeration or laboratory evidence.
+
+\subsection{Response and phase accuracy}
+
+For the declared joint-limit rows and the separate fixed-anisotropy row,
+independent full-wave polar-grid refinements converged while the maximum
+accumulated inter-resolution phase-discrepancy estimator remained
+\(\MaxPhaseError\), below its declared acceptance threshold.  Each production
+grid rebuilt and retracked its own spectral surface
+before applying the Cartesian-measure quadrature in
+Eq.~\eqref{eq:polar-green-quadrature}.  The nested subsampling stored in the
+auxiliary convergence artifact is therefore a diagnostic only, not a
+substitute for these independent production surfaces.
+
+The accumulated inter-resolution phase-discrepancy estimator in
+Eq.~\eqref{eq:phase-error-certificate} combines the local nested-order
+frequency difference with the common-node difference between successive polar
+grids.  It restricts the accepted reported window by comparing computed
+resolutions; without a continuum enclosure, it does not bound the unknown
+continuum phase error.  Figure~\ref{fig:decay-crossover} shows that the complex
+response and fixed-anisotropy comparison passed this same declared consistency
+gate.
+
+The masks fixed before response evaluation in Eq.~\eqref{eq:fit-masks} gave an
+early decay slope
+\(\EarlyDecaySlope\) and a late decay slope \(\LateDecaySlope\).  The early
+fit uses only the smallest perturbation row before angular stationary points
+are resolved, whereas the late fit uses complete half-open root-mean-square
+modulation bins in the fixed-anisotropy row.  The fitted log--log intercept is
+a nuisance parameter for exponent estimation; it is not an adjustment of the
+transition or exact-Morse response curves, which use no fitted alignment.
+
+\subsection{Source and window robustness}
+
+The declared robustness sweep varied the Gaussian source radius only within
+its declared range.  A separate sweep varied the width of the local window in
+wavenumber.  The response norm changed by a bounded amount, while the baseline
+normalization and localization at the widest window boundary were preserved.
+Every declared pair was evaluated from the stored branch surface.  This check
+concerns source and truncation sensitivity, rather than a new decay exponent or
+critical-point completeness.  The full sweep and its boundary-weight
+diagnostic are reported in the Supplementary Information.
+
+The baseline row is included in both one-parameter sweeps, so every reported
+difference has a common normalization.  The window check also bounds the
+weighted contribution at the radial endpoints, limiting the possibility that
+the response trend is created by abrupt branch truncation.  These controls
+support the interpretation of Fig.~\ref{fig:decay-crossover} without replacing
+the asymptotic hypotheses or the independent phase-discrepancy check.
+
+\subsection{Silicon stress test}
+
+A separate calculation for a \([0\,0\,1]\)-cut silicon plate recovered an
+alternating local minimum--saddle set with resolved Cartesian Hessians and noncritical
+annular boundaries, serving only as a finite-anisotropy stress test.  The
+calculation repeats the tracked-branch search and the winding procedure of
+Eq.~\eqref{eq:annular-index-certificate}, but physical silicon lies outside the
+controlled weak-anisotropy sequence used for the coefficient and remainder
+claims \citep{prada2009anisotropy,kiefer2023beating}.
+
+Accordingly, this result is reported as numerical robustness of the search,
+classification, and boundary-check machinery under a materially larger
+constitutive contrast.  It supplies neither evidence for the weak-parameter
+scaling laws nor a count over the complete silicon dispersion surface.  The
+local alternating organization is consistent with earlier anisotropic ZGV
+computations, while the claims of this study remain attached to the declared
+perturbative family and its explicitly tracked branch.
+The corresponding contours, refined points, Hessian inertia, and boundary
+margin are reported in the Supplementary Information.

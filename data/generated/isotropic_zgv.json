@@ -1,0 +1,114 @@
+{
+  "arrays": {
+    "branch_labels": {
+      "dtype": "<U29",
+      "shape": [
+        1
+      ]
+    },
+    "curvature_a": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "kappa": {
+      "dtype": "float64",
+      "shape": [
+        81
+      ]
+    },
+    "kappa0": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "local_omega": {
+      "dtype": "float64",
+      "shape": [
+        41
+      ]
+    },
+    "local_q": {
+      "dtype": "float64",
+      "shape": [
+        41
+      ]
+    },
+    "local_quadratic": {
+      "dtype": "float64",
+      "shape": [
+        41
+      ]
+    },
+    "mode_squared_displacement": {
+      "dtype": "float64",
+      "shape": [
+        17
+      ]
+    },
+    "mode_u": {
+      "dtype": "complex128",
+      "shape": [
+        17,
+        3
+      ]
+    },
+    "mode_z": {
+      "dtype": "float64",
+      "shape": [
+        17
+      ]
+    },
+    "omega0": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "omega_symmetric": {
+      "dtype": "float64",
+      "shape": [
+        1,
+        81
+      ]
+    }
+  },
+  "artifact": "isotropic_zgv",
+  "cache_key": "4c50a3a6a6f0c7ef1d232a5219733c7b4d7767c35f134c5f2c674c6bfed14422",
+  "cache_schema_version": 1,
+  "code_hash": "ac9aa78bf0cbab8626253a93610ee5cddee2a6fa98a14dfdc28ac37c476ec44b",
+  "command": "python -m zgv_morse.workflows --stage isotropic --profile full",
+  "config_hash": "b0489b361a19aa32184ceb9331b733fc49aefd6d6485021c645e2b6347cefe90",
+  "dimensionless_convention": "kappa=k*h, Omega=omega*h/c_T",
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "input_artifacts": {},
+  "metadata_sha256": "e789bf66aacb5a445b1537d36acf822b92f9983736bbaaa7b4101cd5f557e4ab",
+  "output_sha256": "f4bf20e188a88d89f1a03ffe980a48861cffb4c732f05a09730f12ab4682921d",
+  "profile": "full",
+  "schema_version": 1,
+  "source_hash": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82",
+  "stage": "isotropic",
+  "tolerances": {
+    "configured_isotropic_match": 1e-07,
+    "maximum_frequency_uncertainty": 6.09734485124136e-13,
+    "minimum_relative_eigengap": 0.2011319449413683,
+    "relative_isotropic_frequency": 8.627147022993828e-14
+  },
+  "units": {
+    "branch_labels": "label",
+    "curvature_a": "1",
+    "kappa": "1",
+    "kappa0": "1",
+    "local_omega": "1",
+    "local_q": "1",
+    "local_quadratic": "1",
+    "mode_squared_displacement": "squared-displacement proxy",
+    "mode_u": "mass-normalized",
+    "mode_z": "h",
+    "omega0": "1",
+    "omega_symmetric": "1"
+  },
+  "uv_lock_hash": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+}

@@ -1,0 +1,1077 @@
+% Reproducible spectral numerics and declared resolution controls.
+% This is a fragment included by the manuscript; it intentionally has no preamble.
+
+\section{Thickness-resolved spectral numerics and error control}
+\label{sec:spectral-numerics}
+
+This section fixes the discrete weak form, branch tracking, perturbation
+solves, critical-point resolution checks, response quadrature, and acceptance
+rules used by every numerical artifact.  The objective is reproducibility:
+each symbol is tied below to a code interface, a qualified configuration
+field, or a qualified artifact field.
+
+\subsection{GLL element map and traction-free weak form}
+
+We use the same nondimensionalization as in
+Sec.~\ref{sec:isotropic-rayleigh-lamb-derivation}: \(h\) is the half-thickness,
+\(z\in[-h,h]\), \(k=h k^{\rm phys}\), and
+\(\omega=h\omega^{\rm phys}/c_T\).  A separated displacement has the form
+
+\[
+ \boldsymbol u(x,y,z,t)=\boldsymbol U(z)
+ \exp\{\mathrm i(k_x x+k_y y)-\mathrm i\omega t\}.
+\]
+
+On element \(e=[z_e^-,z_e^+]\), let \(p\) be the polynomial degree and
+\(\{\xi_j,w_j\}_{j=0}^{p}\) the \(p+1\) Legendre--Gauss--Lobatto (GLL)
+nodes and weights returned by \texttt{gll\_nodes\_weights}.  The physical
+map, Jacobian, weights, and derivative matrix are
+
+\begin{equation}
+ \begin{aligned}
+ z_e(\xi)&=\frac{z_e^-+z_e^+}{2}
+            +\frac{z_e^+-z_e^-}{2}\xi,\qquad -1\leq\xi\leq1,\\
+ J_e&=\frac{z_e^+-z_e^-}{2},\qquad
+ w_{ej}=J_e w_j,\qquad D_e=J_e^{-1}D .
+ \end{aligned}
+ \label{eq:gll-element-map}
+\end{equation}
+
+Here \(D\) is the barycentric matrix produced by
+\texttt{differentiation\_matrix}.
+
+The routine \texttt{build\_gll\_mesh}
+shares the interface node of adjacent elements and maps the local
+connectivities to node-major triples
+\((U_x,U_y,U_z)\).  Thus one element on \([-h,h]\) is the production
+discretization for a homogeneous plate, while a split mesh with bounds
+\((-h,0,h)\) supplies an independent assembly check.
+
+For test function \(\boldsymbol V\), integration by parts in \(z\) gives
+
+\begin{equation}
+ \int_{-h}^{h}\!\boldsymbol\varepsilon(\boldsymbol V)^*
+ :\mathsf C:\boldsymbol\varepsilon(\boldsymbol U)\,dz
+ =\omega^2\int_{-h}^{h}\!\rho\,\boldsymbol V^*\!\cdot
+ \boldsymbol U\,dz
+ +\sum_{z\in\{-h,h\}}
+ \boldsymbol V(z)^*\!\cdot[\boldsymbol\sigma(z)\boldsymbol n(z)] .
+ \label{eq:spectral-weak-form}
+\end{equation}
+
+No displacement degree of freedom is constrained at either face.  The
+boundary term vanishes precisely when
+
+\begin{equation}
+ \bigl.\boldsymbol\sigma\boldsymbol n\bigr|_{z=\pm h}=0
+ \quad\text{is the natural traction-free boundary condition.}
+ \label{eq:natural-traction-boundary}
+\end{equation}
+
+\begin{equation}
+ \boldsymbol\varepsilon_{\mathrm M}
+ =(\varepsilon_{xx},\varepsilon_{yy},\varepsilon_{zz},
+ \sqrt2\varepsilon_{yz},\sqrt2\varepsilon_{xz},
+ \sqrt2\varepsilon_{xy})^{\mathsf T}.
+ \label{eq:mandel-convention}
+\end{equation}
+
+This Mandel convention makes the Euclidean product equal to the tensor
+contraction, \(\boldsymbol\varepsilon_{\mathrm M}^*
+\mathsf C_{\mathrm M}\boldsymbol\varepsilon_{\mathrm M}\).  With nodal
+interpolant \(\mathsf N_j\), the strain matrix at a quadrature node is
+\(\mathsf B=\mathsf B_0+k_x\mathsf B_x+k_y\mathsf B_y\).  The element
+and assembled matrices used by \texttt{assemble\_plate\_matrices} are
+
+\[
+ \begin{aligned}
+ \mathsf K_e&=\sum_{j=0}^{p}w_{ej}\mathsf B_j^*
+ \mathsf C_{\mathrm M}\mathsf B_j,\\
+ \mathsf M_e&=\sum_{j=0}^{p}w_{ej}\rho\mathsf N_j^*\mathsf N_j,\\
+ \mathsf K&=\mathop{\mathrm{assemble}}_e\mathsf K_e,\qquad
+ \mathsf M=\mathop{\mathrm{assemble}}_e\mathsf M_e .
+ \end{aligned}
+\]
+
+Consistent collocated GLL quadrature is used for stiffness and mass.  Because
+the cardinal basis is evaluated at the same GLL nodes, the assembled mass is
+diagonal.  This is quadrature-induced mass lumping; no separate
+post-assembly lumping or penalty term is applied.  The reported Hermitian defect is
+\(\|\mathsf K-\mathsf K^*\|_F/\|\mathsf K\|_F\).  Constitutive input is
+rejected unless its minor and major symmetries hold and its Mandel matrix is
+positive definite.
+
+\subsection{Matrix derivatives and eigensystem diagnostics}
+
+Because \(\mathsf B\) is affine in \((k_x,k_y)\), the five derivative
+matrices are assembled analytically at the same quadrature nodes by the
+wavevector-derivative assembler:
+
+\begin{equation}
+ \begin{aligned}
+ \mathsf K_i&=\sum_{e,j}w_{ej}
+ (\mathsf B_i^*\mathsf C_{\mathrm M}\mathsf B
+ +\mathsf B^*\mathsf C_{\mathrm M}\mathsf B_i),\\
+ \mathsf K_{ii}&=2\sum_{e,j}w_{ej}
+ \mathsf B_i^*\mathsf C_{\mathrm M}\mathsf B_i,\\
+ \mathsf K_{xy}&=\sum_{e,j}w_{ej}
+ (\mathsf B_x^*\mathsf C_{\mathrm M}\mathsf B_y
+ +\mathsf B_y^*\mathsf C_{\mathrm M}\mathsf B_x),
+ \qquad i\in\{x,y\},\quad \partial_{k_i}\mathsf M=0.
+ \end{aligned}
+ \label{eq:wavevector-matrix-derivatives}
+\end{equation}
+
+The generalized Hermitian problem
+\(\mathsf K\boldsymbol u_n=\lambda_n\mathsf M\boldsymbol u_n\),
+\(\lambda_n=\omega_n^2\), is solved by \texttt{solve\_plate\_modes}.
+The solver uses SciPy's generalized Hermitian \texttt{gvx} driver for the
+lowest twelve modes and requires a positive-definite mass.  It rejects
+\(\lambda_{\min}<-\tau_-\), while values in \([-\tau_-,0]\) are clipped to
+zero, where
+\[
+ \tau_-=10^3\epsilon_{\rm mach}
+ \max\!\left(\frac{\|\mathsf K\|_2}{\lambda_{\min}(\mathsf M)},
+ \operatorname{tiny}_{64}\right).
+\]
+Every eigenvector is explicitly mass normalized.
+\(\operatorname{tiny}_{64}\) denotes the smallest positive normal binary64
+number.  For the selected mode the code's normalized residual is
+
+\begin{equation}
+ r=\frac{\|\mathsf Ku-\lambda\mathsf Mu\|_2}
+ {\max\{\|\mathsf Ku\|_2+\|\lambda\mathsf Mu\|_2,
+ \operatorname{tiny}_{64}\}}
+ \quad\text{(normalized residual)}.
+ \label{eq:normalized-eigen-residual}
+\end{equation}
+
+\begin{equation}
+ d_M=\|\mathsf U^*\mathsf M\mathsf U-\mathsf I\|_F
+ \quad\text{(mass orthogonality defect)}.
+ \label{eq:mass-orthogonality-defect}
+\end{equation}
+
+\begin{equation}
+ \operatorname{MAC}_M(u,v)
+ =\frac{|u^*\mathsf Mv|^2}{(u^*\mathsf Mu)(v^*\mathsf Mv)}.
+ \label{eq:mass-mac}
+\end{equation}
+
+\paragraph{Mode tracking.}
+For two nonzero vectors, \texttt{mass\_mac} evaluates
+Eq.~\eqref{eq:mass-mac}.  The continuation rule is
+\begin{equation}
+ \boxed{\begin{aligned}
+ &\text{predict the eigenvalue and maximize the previous-subspace projection;}\\
+ &\text{form the connected close-eigenvalue cluster and test its overlap;}\\
+ &\text{require scalar mass MAC or squared cluster overlap, then phase align;}\\
+ &\text{retain both the selected vector and the complete cluster basis.}
+ \end{aligned}}
+ \label{alg:mode-tracking}
+\end{equation}
+
+If \(s_{\min}\) is the smallest principal cosine between the previous and
+current mass-orthonormal cluster bases, a step with threshold \(\eta\) passes
+when
+\[
+ \operatorname{MAC}_M\geq\eta
+ \quad\text{or}\quad s_{\min}^{\,2}\geq\eta .
+\]
+The scalar/squared-subspace threshold is \(\eta=0.2\) in the generic tracker
+and \(\eta=0.8\) in the registered robustness sweeps.  The connected-cluster
+relative eigenvalue threshold is \(10^{-3}\).
+
+\texttt{RingAnchoredSpectralEvaluator} constructs eight
+endpoint-free angular anchors independently at orders \(p\) and \(p+4\),
+requires angular closure scalar MAC and the unsquared principal cosine each
+to be at least \(1-10^{-8}\),
+then continues monotonically away from \(q=0\) on separate inward and outward
+rays.  It also rejects a cluster touching the top of the twelve computed
+modes.  The relative eigengap returned by the tracker is
+
+\begin{equation}
+ \begin{aligned}
+ g_{\rm rel}
+ &=\min_{m\ne n}\frac{|\lambda_m-\lambda_n|}
+ {\max(|\lambda_n|,|\lambda_m|,1)},\\
+ g_{\rm rel}&>10\,\delta\lambda_{\rm rel}.
+ \end{aligned}
+ \label{eq:eigengap-rejection}
+\end{equation}
+
+A sample that fails the second line is rejected by the eigengap gate.
+
+Here
+\[
+ \delta\lambda_{\rm rel}=
+ \max\!\left\{
+ \frac{|\lambda^{(p+4)}-\lambda^{(p)}|}
+ {\max(|\lambda^{(p+4)}|,|\lambda^{(p)}|,1)},
+ r^{(p)},r^{(p+4)}
+ \right\}.
+\]
+The same nested-order pair defines absolute frequency and gradient discrepancy
+estimators as the differences between the two tracked answers.  These
+inter-order estimators quantify resolution sensitivity; without a continuum
+enclosure or a posteriori theorem, they are not upper bounds on the unknown
+continuum errors.
+This gate is essential: every derivative formula below assumes a simple,
+spectrally isolated branch.
+
+\subsection{Sensitivities and critical-point resolution checks}
+
+Let \(r\) denote the radial wavenumber and let \(\epsilon\) multiply the
+cubic constitutive perturbation at fixed density.  At unit mass norm,
+\(\lambda_p=u^*\mathsf K_pu\).  The radial mode derivative is found by the
+bordered reduced-resolvent system implemented in
+\texttt{radial\_frequency\_sensitivity}:
+
+\begin{equation}
+ (\mathsf K-\lambda\mathsf M)u_p
+ =-(\mathsf K_p-\lambda_p\mathsf M)u,
+ \qquad u^*\mathsf Mu_p=0,\qquad
+ \lambda_p=u^*\mathsf K_pu .
+ \label{eq:differentiated-mode-solve}
+\end{equation}
+
+Row and constraint scalings are applied before the dense solve; the original
+equation and gauge are then checked with relative residual \(10^{-8}\).  The
+mixed sensitivity includes both the direct matrix derivative and the mode
+derivative,
+
+\[
+ \lambda_{r\epsilon}
+ =u^*\mathsf K_{r\epsilon}u
+ +2\operatorname{Re}(u^*\mathsf K_\epsilon u_r),\qquad
+ V=\frac{\lambda_\epsilon}{2\omega},\qquad
+ B=\frac{\lambda_{r\epsilon}}{2\omega}
+ -\frac{\lambda_\epsilon\lambda_r}{4\omega^3}.
+\]
+
+For the primary sensitivity artifact, the matrix perturbations are constructed
+at each angle from the exactly linear cubic family as
+\[
+ \mathsf K_\epsilon=
+ \frac{\mathsf K(+0.25)-\mathsf K(-0.25)}{0.5},\qquad
+ \mathsf K_{r\epsilon}=
+ \frac{\mathsf K_r(+0.25)-\mathsf K_r(-0.25)}{0.5}.
+\]
+The full profile uses order \(10\), 64 endpoint-free angles, and a single
+centered physical check with \(\Delta\epsilon=\Delta q=0.0025\); the smoke
+profile uses order \(8\), 32 angles, and \(0.005\).  On an \(N_\theta\)-point
+grid the reported cubic coefficient is the discrete Fourier coefficient
+\[
+ V_4=\frac{2}{N_\theta}\sum_{j=0}^{N_\theta-1}
+ V(\theta_j)\cos(4\theta_j),
+\]
+and \(V_0=N_\theta^{-1}\sum_jV(\theta_j)\).  The primary artifact accepts
+only when the relative vector errors of both \(V\) and \(B\), compared with
+that single centered full-wave check, are below the configured field
+\begin{center}
+\texttt{config/reference.yaml::sensitivity\_match\_tolerance}.
+\end{center}
+
+The separate convergence artifact supplies step-refinement evidence.  It uses
+the tensor-product centered grid
+\(\Delta\epsilon,\Delta q\in\{0.02,0.01,0.005,0.0025\}\), checks the last two
+rows/columns against the same tolerance, and requires improvement relative to
+the coarsest row/column.  Thus only this independent sweep varies both step
+sizes; it does not differentiate the perturbation implementation against
+itself.
+
+\begin{equation}
+ \boxed{\begin{aligned}
+ &\text{seed every sign-changing polar cell;}\\
+ &\text{solve }\nabla_{\boldsymbol k}\omega=0\text{ and deduplicate;}\\
+ &\text{classify the Cartesian Hessian;}\\
+ &\text{check both annular boundaries and the index sum.}
+ \end{aligned}}
+ \label{alg:critical-point-search}
+\end{equation}
+
+The production implementation is the registered critical-point locator.  Its
+search annulus is
+\[
+ A=\{\boldsymbol k:(1-f_A)k_0\leq|\boldsymbol k|
+ \leq(1+f_A)k_0\}.
+\]
+Here \(f_A\) is \texttt{config/reference.yaml::annulus\_fraction}.  On a polar
+candidate grid, the Cartesian gradient is resolved into radial and tangential
+components.  Every cell across which both components bracket zero supplies a
+seed.  SciPy's \texttt{scipy.optimize.root} follows each seed with its default
+Powell hybrid method (\texttt{method=hybr}).  The finite-difference Cartesian
+Hessian is supplied as the Jacobian, with solver tolerance
+\(10^{-11}\).  Candidates outside \(A\) or with gradient residual larger
+than their nested-order gradient-discrepancy estimator are rejected.  An unresolved
+Hessian is not silently discarded: classification raises an error and fails
+the resolution-check stage.  Remaining roots are merged only when their
+separation does not exceed \(d_{\rm merge}\), where
+\[
+ \begin{aligned}
+ b_0&=5\times10^{-9}\max(k_0,1),\\
+ b_{\max}&=\max\{b_0,\min(0.05\,\Delta_A,0.01\,k_0)\},\\
+ b_{12}&=\max\{b_0,\delta k_{{\rm lin},1}+\delta k_{{\rm lin},2}\},\\
+ d_{\rm merge}&=\min(b_{12},b_{\max}),
+ \end{aligned}
+\]
+where \(\Delta_A\) is the annular half-width.
+
+The full workflow uses a \(5\times16\) candidate grid and independently
+repeats the search on \(9\times32\).  Counts, kinds, positions, frequencies,
+and Hessian eigenvalues must agree within the following propagated bounds.
+For matched coarse/fine roots, define
+\[
+ \begin{aligned}
+ d_k&=\|\boldsymbol k_c-\boldsymbol k_f\|_2,\\
+ u_k&=\frac{\delta g_c}{\min_\ell|\lambda_\ell(H_c)|}
+     +\frac{\delta g_f}{\min_\ell|\lambda_\ell(H_f)|},\\
+ H_{\max}&=\max_{\nu\in\{c,f\}}\max_\ell|\lambda_\ell(H_\nu)|,\\
+ d_H&=\max_\ell|\lambda_\ell(H_c)-\lambda_\ell(H_f)|.
+ \end{aligned}
+\]
+The comparison passes only if
+\[
+ \begin{aligned}
+ d_k&\leq\max(5\times10^{-9}k_0,u_k),\\
+ |\omega_c-\omega_f|
+ &\leq\delta\omega_c+\delta\omega_f
+       +\tfrac12 H_{\max}d_k^2,\\
+ d_H&\leq\delta H_c+\delta H_f.
+ \end{aligned}
+\]
+These candidate-grid bounds are distinct from the capped deduplication radius
+used within either search.  The
+full critical-point profile uses Hessian step \(10^{-3}\); the smoke profile
+uses \(2\times10^{-3}\).  Both use \(N_b=32\) and \(2N_b=64\) boundary
+samples for the final annular consistency check.  The Green workflow repeats
+the accepted search on the \(15\times32\) response-support domain specified
+below; the silicon workflow uses \(9\times32\).  Both use boundary levels
+\(16/32\); their Hessian steps are \(10^{-3}\) (full Green) and
+\(3\times10^{-3}\) (silicon), respectively.  The
+negative-\(\epsilon\) search is additionally rotated by \(\pi/16\), so its
+success is not caused by placing candidate cells on the positive-\(\epsilon\)
+symmetry rays.  The recorded position scale follows from the linearized
+gradient equation:
+
+\begin{equation}
+ \delta k_{\rm lin}:=
+ \frac{\delta g}{\min_\ell|\lambda_\ell(H)|}
+ =\|H^{-1}\|_2\,\delta g,
+ \qquad H=\nabla_{\boldsymbol k}^2\omega .
+ \label{eq:critical-point-uncertainty}
+\end{equation}
+
+Equation~\eqref{eq:critical-point-uncertainty} is a local resolution scale,
+not a nonlinear interval enclosure.  Its interpretation requires a
+nondegenerate Hessian that remains stable over the displacement.  Here
+\(\delta g\) is the code field \texttt{gradient\_uncertainty}.  The root
+residual is checked separately and must not exceed \(\delta g\); a
+conservative first-order displacement estimate under the linearized Hessian
+would replace \(\delta g\) by
+\(\delta g+\|\nabla_{\boldsymbol k}\omega\|_2\).
+
+The Hessian is a Richardson extrapolation of centered differences of the
+full-wave gradient.  Its uncertainty is the fine-versus-Richardson
+difference plus the two nested-order gradient uncertainties propagated
+through the stencil.  Classification is accepted only if the smallest
+absolute Hessian eigenvalue exceeds ten times this uncertainty.  A minimum
+or maximum has gradient index \(+1\), whereas a saddle has gradient index
+\(-1\).  Despite the legacy artifact field name
+\texttt{critical\_points.morse\_index}, it stores this Poincar\'e gradient
+index, not the Morse index (the number of negative Hessian eigenvalues).
+The pointwise \texttt{gradient\_uncertainty} drives acceptance and uncertainty
+propagation but is not stored as a critical-point array; the sidecar stores
+the boundary maxima and the artifact stores
+\texttt{critical\_points.gradient\_residual}.
+
+\begin{equation}
+ \operatorname{wind}_{\partial A}(\nabla_k\omega)
+ =\sum_{k_j\in A}\operatorname{ind}(k_j),
+ \quad\text{and the boundary winding index closes.}
+ \label{eq:annular-index-certificate}
+\end{equation}
+
+The independent routine \texttt{verify\_annular\_exhaustion} samples both
+annular boundaries with \(N_b\) and \(2N_b\) endpoint-free angles.  It
+requires (i) the minimum boundary-gradient norm to exceed ten times the
+maximum gradient uncertainty, (ii) equal coarse and fine boundary winding,
+(iii) every fine angular increment of the gradient direction to be less than
+\(\pi/2\), and (iv) the outer-minus-inner boundary winding to equal the sum
+of accepted Poincar\'e indices.  Thus the boundary winding and the root index
+closes on both resolutions.  This is a finite-resolution boundary/index
+consistency check: by itself it cannot exclude an unresolved, mutually canceling
+critical-point pair in the annular interior.  Candidate-grid doubling,
+symmetry-offset repetition, and Hessian separation provide the additional
+acceptance checks used here.  The perturbative eight-point prediction is
+stored for comparison, but its prediction error is not a root-acceptance
+gate.
+
+\subsection{Polar Green quadrature, fit masks, and phase accuracy}
+
+The endpoint-free grid is \(\theta_j=2\pi j/N_\theta\).  The production Green
+workflow exploits verified \(C_{4v}\) covariance: its
+\texttt{\_CachedCubicSymmetryFactory} maps every angle to
+\[
+ r_\theta=\theta\bmod\frac{\pi}{2},\qquad
+ \theta_{\rm can}=\min\!\left(r_\theta,\frac{\pi}{2}-r_\theta\right)
+\]
+and rounds \(\theta_{\rm can}\) and the radial cache key to 14 decimal
+places.  It reuses samples at equal
+\((\theta_{\rm can},\operatorname{sign}q,k_0+q)\).  Each canonical ray starts
+fresh inward and outward ring-anchored spectral continuations at \(q=0\).
+Symmetry-equivalent rays therefore reuse the
+canonical full-wave value; they are not recomputed as independent solves.
+Every refinement level owns a separate cache, so no coarse-grid result is
+used as a fine-grid answer.
+
+At a surface node the phase-invariant normal-impulse modal factor is
+
+\[
+ A(q,\theta)=\frac{\mathrm i}{2\omega(q,\theta)}
+ \left|u_z(z=h;q,\theta)\right|^2 .
+\]
+
+Let \(A^{(p)}\) and \(A^{(p+4)}\) denote the two spectral-order amplitudes.
+The full-wave radial-evaluator factory requires
+\[
+ |A^{(p+4)}-A^{(p)}|
+ \leq10^{-12}+10^{-2}\max(|A^{(p+4)}|,|A^{(p)}|).
+\]
+At \(q=0\), independently created inward and outward anchors must also agree:
+\[
+ \begin{aligned}
+ |\omega_{\rm in}-\omega_{\rm out}|
+ &\leq\delta\omega_{\rm in}+\delta\omega_{\rm out}
+ +32\epsilon_{\rm mach}\max(\omega_{\rm in},\omega_{\rm out},1),\\
+ |A_{\rm in}-A_{\rm out}|
+ &\leq\delta A_{\rm in}+\delta A_{\rm out}
+ +32\epsilon_{\rm mach}\max(|A_{\rm in}|,|A_{\rm out}|,1).
+ \end{aligned}
+\]
+
+The Gaussian source and the local super-Gaussian branch window are fixed,
+not fitted:
+
+\[
+ S(k)=\exp[-(Rk/2)^2],\qquad
+ W(q)=\exp[-(q/\sigma)^8]b_\sigma(q).
+\]
+
+The ratio \(R/h\) is mapped to
+\begin{center}
+\texttt{config/reference.yaml::source\_radius\_over\_h}.
+\end{center}
+The ratio \(\sigma/k_0\) is mapped to
+\begin{center}
+\texttt{config/reference.yaml::window\_sigma\_over\_k0}.
+\end{center}
+
+The deterministic \(C^\infty\) taper \(b_\sigma\) equals one for
+\(|q|\leq1.25\sigma\), follows the standard flat \(\exp(-1/x)\) transition,
+and vanishes identically for \(|q|\geq1.5\sigma\).  The radial interval
+\([-1.5\sigma,1.5\sigma]\) therefore contains the complete support, contains
+exactly one \(q=0\) node, keeps \(k_0+q>0\), and has no endpoint term.  The
+endpoint-free trapezoidal rule in
+\(\theta\) and composite Simpson rule in \(q\) evaluate the Cartesian
+Fourier measure without using a Bessel approximation:
+
+\begin{equation}
+ \begin{aligned}
+ F_{\ell j}&=(k_0+q_\ell)S(k_0+q_\ell)W(q_\ell)A_{\ell j},\\
+ G_h(t)&=\frac{\operatorname{Simpson}_{q_\ell}}{(2\pi)^2}
+ \left[\frac{2\pi}{N_\theta}
+ \sum_{j=0}^{N_\theta-1}F_{\ell j}
+ e^{-\mathrm i\omega_{\ell j}t}\right],\\
+ \widetilde G_h(t)&=e^{\mathrm i\omega_{\rm c}t}G_h(t),
+ \qquad \omega_{\rm c}=\omega_0+\epsilon V_0 .
+ \end{aligned}
+ \label{eq:polar-green-quadrature}
+\end{equation}
+
+The registered-grid integration interface exposes the generic three-level
+construction.  The production Green workflow rebuilds
+each level as an independent full-wave tracked surface, while retaining exact
+nested nodes for discrepancy evaluation.  It uses two distinct registered
+three-grid sequences:
+
+\[
+ \begin{array}{c|ccc}
+ \text{uniform-crossover rows }(\epsilon\ne0.08)
+   &129\times32&257\times64&513\times128\\
+ \text{fixed-anisotropy row }(\epsilon=0.08)
+   &129\times64&257\times128&513\times256
+ \end{array}
+\]
+
+The fixed-Morse comparison searches the tracked branch on
+\(|q|\leq1.55\sigma=0.2325k_0\), which strictly contains the direct support
+\(|q|\leq1.5\sigma=0.225k_0\) with margin \(0.05\sigma\).  It uses a
+\(15\times32\) candidate grid and 16/32-node boundary/index checks.  Every
+resolved stationary point in this search domain is multiplied by the same
+\(b_\sigma\) and included in the Morse sum.  The sidecar records the two
+domains, margin, boundary checks, point counts, and contribution counts for
+each \(\epsilon\).
+
+The dimensions are radial-by-angular.  Separate caches are created at every
+level, so refinement does not reuse a coarse numerical frequency as a fine
+answer.  By contrast, the full-profile convergence artifact's auxiliary
+robustness study constructs a \(513\times128\) reference surface and uses
+nested subsampling to \(65\times16\), \(129\times32\), and
+\(257\times64\).  The smoke profile uses a \(257\times128\) reference and
+\(33\times16\), \(65\times32\), and \(129\times64\) subsamples.  This
+auxiliary study measures quadrature and interpolation convergence; it is not
+substituted for the independent full-wave production grids.
+
+The auxiliary responses use the same 61 times
+\(t_m=1500+75m\), \(0\leq m\leq60\).  If \(G_\ell\) is the response from
+subsampled level \(\ell\) and \(G_{\rm ref}\) is the reference response, then
+\[
+ \|f\|_{t,{\rm RMS}}=
+ \left[M_t^{-1}\sum_m|f(t_m)|^2\right]^{1/2},
+ \qquad
+ Q_\ell=\frac{\|G_\ell-G_{\rm ref}\|_{t,{\rm RMS}}}
+ {\|G_{\rm ref}\|_{t,{\rm RMS}}}.
+\]
+The stored \(Q_\ell\) field is
+\texttt{convergence.quadrature\_error}.
+To measure frequency interpolation, each level first receives a periodic
+cubic spline in \(\theta\), evaluated at every reference angle; an ordinary
+cubic spline in \(q\) is then evaluated at every reference radial node.
+Writing the resulting surface as
+\(\mathcal I_q\mathcal I_\theta\omega_\ell\), the stored error is
+\[
+ \begin{aligned}
+ I_\ell&=\max_{(q,\theta)\in\mathcal G_{\rm ref}}
+ |e_\ell(q,\theta)|,\\
+ e_\ell&=\mathcal I_q\mathcal I_\theta\omega_\ell-\omega_{\rm ref}.
+ \end{aligned}
+\]
+The stored field is \texttt{convergence.interpolation\_error}.
+Thus the angular-periodic interpolation precedes the radial interpolation;
+the order is part of the method.
+
+Let \(G_0,G_1,G_2\) be the demodulated responses on three successive
+production grids.  Their RMS complex differences
+\(E_j=\|G_{j+1}-G_j\|_{\rm RMS}\) must decrease unless the fine discrepancy
+is below the roundoff floor
+\[
+ E_{\rm round}=64\epsilon_{\rm mach}
+ \max(\|G_2\|_{\rm RMS},1).
+\]
+The final discrepancy must satisfy
+
+\[
+ E_1\leq10^{-8}+0.05\|G_2\|_{\rm RMS},\qquad
+ E_1/E_0\leq0.5
+\]
+
+whenever the rate lies above the absolute/roundoff floor.  The auxiliary
+surface study separately requires decreasing quadrature and interpolation
+errors, refinement ratios at most \(0.5\), and a finest relative quadrature
+error below \(0.05\).
+
+The decay exponents are extracted only from preregistered masks.  With
+\(\tau=\epsilon V_4t\),
+
+\begin{equation}
+ \begin{aligned}
+ M_{\rm early}(\epsilon,t)
+ &=\mathbf 1_{\{\epsilon=\epsilon_{\rm first}\}}
+   \mathbf 1_{\{t\geq1500\}}
+   \mathbf 1_{\{0.10\leq|\tau|\leq0.30\}},\\
+ M_{\rm late}(\epsilon,t)
+ &=\mathbf 1_{\{\epsilon=0.08\}}
+   \sum_{b}\mathbf 1_{[t_b,t_b+T_{\rm ms})}(t),\\
+ T_{\rm ms}&=2\pi/|\omega_{\rm saddle}-\omega_{\rm min}|,
+ \qquad t_0=1500 .
+ \end{aligned}
+ \label{eq:fit-masks}
+\end{equation}
+
+These two arrays are stored as
+\texttt{green\_crossover.fit\_window\_early} and
+\texttt{green\_crossover.fit\_window\_late}.
+Here \(\epsilon_{\rm first}=0.005\) in the committed full profile and
+\(\epsilon_{\rm first}=0.01\) in the smoke profile; operationally the code
+uses \texttt{row\_index == 0}.  The early mask must contain at least ten
+positive-amplitude samples.  The
+call \texttt{fit\_power\_law} performs ordinary least squares on
+\((\log t,\log|G|)\) and fits both the diagnostic decay slope and a nuisance
+log--log intercept.  That intercept is used only for slope estimation.  The
+separate full-wave/asymptotic comparison applies no fitted alignment of
+amplitude, phase, carrier frequency, or time.  For the
+late mask, each beat bin is half-open, contains at least
+three time samples, and is retained only when the complete interval lies in
+the computed time axis.  The fit uses at least four such bins, their geometric
+time centers, and the direct-response RMS in each bin.  The independent
+fixed-Morse comparison uses \(1500\leq t\leq10200\), excluding only samples
+whose exact-Morse phasor coherence is below
+\texttt{\_MORSE\_COHERENCE\_THRESHOLD} \(=0.30\).  Uniform collapse is checked
+only for \(\epsilon\leq0.04\), \(t\geq1500\), and
+\(|\tau|\leq\texttt{\_UNIFORM\_TAU\_MAXIMUM}=2.0\); the
+\(\epsilon=0.08\) fixed-Morse row is excluded from that first-order gate.
+The fixed-Morse RMS and maximum discrepancies are normalized by the
+exact-Morse RMS over the retained noncancellation mask; the cancellation-region
+RMS uses the same denominator.  The uniform-collapse diagnostic is the
+maximum complex absolute error between
+\texttt{green\_crossover.scaled\_response} and
+\texttt{green\_crossover.J0} on its registered mask.
+
+The operational crossover is the first downward crossing of scaled-response
+magnitude \(0.9\), linearly interpolated between adjacent time samples within
+\([0.5t_{\rm pred},1.5t_{\rm pred}]\).  Absence of such a crossing fails the
+stage.  Because the search bracket is centred on the theoretical
+\(t_{\rm pred}\propto|\epsilon V_4|^{-1}\), the fitted log slope of crossover
+time versus \(\epsilon\) is a theory-centred consistency diagnostic rather
+than independent evidence for inverse-rate scaling.  The complex Bessel
+collapse is the primary numerical test.
+
+Two production accumulated inter-resolution phase-discrepancy estimators are
+enforced as acceptance tests.  The direct full-wave estimator combines (i)
+each surface's nested spectral order-\(p\)/order-\(p+4\) frequency difference
+and (ii) the common-node frequency difference between adjacent polar grids.
+The exact-Morse estimator uses the largest nested-order frequency difference
+among its eight resolved critical-point contributions.  Both call
+\texttt{assert\_phase\_accuracy}, which enforces
+
+\begin{equation}
+ t_{\max}\max|\delta\omega|\le0.05 .
+ \label{eq:phase-error-certificate}
+\end{equation}
+
+The right-hand side is the configured field
+\begin{center}
+\texttt{config/reference.yaml::phase\_error\_tolerance}.
+\end{center}
+For a grid pair the
+\(\max|\delta\omega|\) in Eq.~\eqref{eq:phase-error-certificate} is the
+maximum of its common-node discrepancy and the two adjacent surfaces' largest
+local spectral discrepancies.  The stored
+\texttt{green\_crossover.phase\_error} is the larger of the direct-grid and
+exact-Morse accumulated discrepancy estimators.  Its legacy field name does
+not turn this quantity into a continuum error bound.
+
+The auxiliary convergence artifact uses a distinct interpolation discrepancy
+estimator,
+\[
+ \Delta\phi_\ell=t_{\max}
+ \left(\delta\omega_{{\rm interp},\ell}
+ +\max\delta\omega_{{\rm local},\ell}
+ +\max\delta\omega_{{\rm local},{\rm ref}}\right).
+\]
+Only its finest level is gated against the same \(0.05\) budget.  This
+diagnostic is not substituted for either production estimator.
+In short, the declared comparison has no fitted alignment and no
+response-derived fitting window.
+
+\subsection{Declared configuration and fixed acceptance thresholds}
+
+The following list is the complete live top-level configuration registry.
+No numerical value used by the workflows is silently supplied by this
+document.
+
+{\small
+\begin{itemize}
+\item \texttt{config/reference.yaml::schema\_version}: contract version one.
+\item \texttt{config/reference.yaml::h}: half-thickness \(h=1\).
+\item \texttt{config/reference.yaml::rho}: density \(\rho=1\).
+\item \texttt{config/reference.yaml::lambda}:\\
+Lam\'e modulus \(\lambda=2\), loaded as \texttt{ReferenceConfig.lam}.
+\item \texttt{config/reference.yaml::mu}: shear modulus \(\mu=1\).
+\item \texttt{config/reference.yaml::delta}: unit cubic perturbation amplitude.
+\item \texttt{config/reference.yaml::epsilon\_values}: ordered nonzero signed
+perturbations from \(-0.08\) to \(0.08\).
+\item \texttt{config/reference.yaml::source\_radius\_over\_h}: \(R/h=0.5\).
+\item \texttt{config/reference.yaml::window\_sigma\_over\_k0}:
+\(\sigma/k_0=0.15\).
+\item \texttt{config/reference.yaml::window\_sensitivity}: widths \(0.10\)
+and \(0.20\) for robustness reruns.
+\item \texttt{config/reference.yaml::annulus\_fraction}: \(f_A=0.15\).
+\item \texttt{config/reference.yaml::zgv\_search\_kappa}:
+\(0.20\leq\kappa\leq1.40\).
+\item \texttt{config/reference.yaml::zgv\_search\_omega}:
+\(2.40\leq\omega\leq3.60\).
+\item \texttt{config/reference.yaml::eigen\_residual\_tolerance}: \(10^{-10}\).
+\item \texttt{config/reference.yaml::isotropic\_match\_tolerance}: \(10^{-7}\).
+\item \texttt{config/reference.yaml::curvature\_match\_tolerance}: \(10^{-4}\).
+\item \texttt{config/reference.yaml::sensitivity\_match\_tolerance}: \(10^{-4}\).
+\item \texttt{config/reference.yaml::phase\_error\_tolerance}: \(0.05\) rad.
+\end{itemize}
+}
+
+Additional fixed pass/fail thresholds are part of the versioned
+implementation rather than the YAML file.  The complete production list is:
+{\small
+\begin{enumerate}
+\item The generalized matrices must be Hermitian to relative \(10^{-12}\);
+the convergence sweep requires Hermitian defect below \(10^{-12}\), mass
+orthogonality defect below \(10^{-10}\), and normalized eigen residual below
+the configured eigen-residual tolerance.  Final relative
+\(k_0,\omega_0\) errors must each be below the isotropic-match tolerance and
+the curvature error below the curvature-match tolerance.
+
+\item Every selected eigengap must exceed ten times its stated numerical
+uncertainty.  An angular anchor's order-\(p\)/order-\(p+4\) eigenvalue
+discrepancy must also be less than \(0.1\) times the resolved gap, angular
+closure MAC and principal cosine must each be at least \(1-10^{-8}\), and a
+selected cluster may not touch the upper end of the twelve-mode solve.
+The independent branch sweep additionally requires reference-to-tracked MAC
+at least \(0.99\) and gap larger than ten times its maximum eigen residual.
+
+\item The differentiated-mode equation and gauge residual must be at most
+\(10^{-8}\).  Primary relative \(V\) and \(B\) finite-difference errors, and
+the last-two-step \(V_4\) and \(B\) convergence errors, must be below the
+sensitivity-match tolerance.  The step sweep must improve from its coarsest
+row and column.
+
+\item A scaling-stage radial root must have residual no larger than
+\[
+ \max\!\left\{10\,\delta g,\,
+ 5\times10^{-10}\max(\omega/k_0,1)\right\}.
+\]
+The splitting and radial-shift log slopes must each lie within \(0.1\) of
+\(1\).  The frequency-remainder slope must lie within \(0.2\) of \(2\).
+Reversing \(\epsilon\) must exchange the axis and diagonal roles to angular
+tolerance \(10^{-12}\).
+
+\item The critical stage must return eight resolved alternating roots, four
+minima and four saddles, whose Poincar\'e indices sum to zero.  This workflow
+requirement does not claim exhaustive continuum enumeration.  Candidate-grid
+doubling must preserve count and kind, while position, frequency, and Hessian
+differences obey the uncertainty bounds stated above.  The negative-\(\epsilon\)
+run must preserve angles within \(2\times10^{-6}\) and exchange
+minimum/saddle roles.  Hessian separation, ten-times boundary separation,
+coarse/fine winding agreement, the fine \(<\pi/2\) direction increment, and
+annular index closure are all mandatory.
+
+\item A full-wave amplitude must satisfy the order-pair inequality stated in
+the response subsection.  At each anisotropy, the minimum relative branch gap
+over all response surfaces must exceed ten times their maximum relative
+frequency uncertainty.  A critical-point frequency
+and its independently sampled modal-node frequency must differ by no more
+than the node frequency uncertainty plus
+\(64\epsilon_{\rm mach}\max(\omega_{\rm point},\omega_{\rm node},1)\).
+The three-grid complex response, rate, and phase gates in the preceding
+subsection are mandatory.
+
+\item The Green workflow requires at least ten uniform-window samples.  Its
+maximum Bessel-collapse error without fitted alignment is \(0.08\).  The early and late
+slopes must be within \(0.05\) of \(-1/2\) and \(-1\), respectively, and the
+last two grids' early and late slopes must differ by at most \(0.05\).  The
+fixed-Morse relative RMS error, relative maximum error, and cancellation-region
+normalized RMS must not exceed \(0.055\), \(0.17\), and \(0.09\).  The
+crossover-time log slope must be within \(0.10\) of \(-1\), and both
+production phase-discrepancy estimators must pass the configured \(0.05\)
+acceptance threshold.
+
+\item The auxiliary response study requires strictly decreasing quadrature
+and interpolation errors, successive error ratios at most \(0.5\), finest
+relative quadrature error at most \(0.05\), and the finest accumulated
+interpolation phase-discrepancy estimator at most \(0.05\).  Its baseline source/window response
+ratio must equal one with relative and absolute tolerances
+\(5\times10^{-13}\), the robustness sweep must have nonzero range, and the
+widest-window boundary weight must not exceed \(5\times10^{-3}\).
+
+\item The silicon stress test must return eight points and pass the same
+noncritical-boundary and annular-index closure checks.  It remains a
+finite-anisotropy stress test, not a weak-anisotropy proof.
+\end{enumerate}
+}
+
+At least ten samples are required in any direct log--log power-law fit;
+late-time beat fits additionally require at least three samples per half-open
+bin and at least four complete bins.  Changing any fixed threshold changes
+the method and requires regenerating the artifact sidecars.
+
+The committed full-profile discretizations are also fixed in the workflow
+modules.  The isotropic stage uses GLL orders \(12/16\), 81 radial branch
+nodes, and 41 local-curvature nodes.  The sensitivity stage uses order \(10\),
+64 endpoint-free angles, constitutive differencing step \(0.25\), and the
+independent physical finite-difference step \(0.0025\).  The weak-cubic
+critical-point and scaling stages use nested orders \(10/14\); the
+critical-point artifact uses \(\epsilon=0.02\), a \(26\times26\) display
+grid, and Hessian step \(10^{-3}\).  The Green stage uses nested orders
+\(10/14\), \(\epsilon\in\{0.005,0.01,0.02,0.04,0.08\}\), and
+\(t_n=400+25n\) for \(0\leq n\leq504\).  The convergence stage sweeps
+coarse/fine order pairs \(6/10,8/12,10/14,12/16,14/18\), uses an independent
+\(513\times128\) response reference surface, and uses sensitivity steps
+\(0.02,0.01,0.005,0.0025\).  The silicon stress test uses nested orders
+\(12/16\), a \(40\times40\) display grid, and Hessian step
+\(3\times10^{-3}\).  These are full-profile settings; the smoke profile is a
+runtime check and does not replace any committed full-profile artifact.
+
+The executable interface chain is explicit.  The first seven entries below
+construct and track the spectral problem, the next three compute sensitivities
+and critical points, and the final three certify and fit the response.  The
+six trailing constants fix the Green-workflow masks.
+{\footnotesize
+\begin{verbatim}
+gll_nodes_weights
+differentiation_matrix
+build_gll_mesh
+assemble_plate_matrices
+assemble_wavevector_derivatives
+solve_plate_modes
+mass_mac
+RingAnchoredSpectralEvaluator
+radial_frequency_sensitivity
+locate_critical_points
+verify_annular_exhaustion
+integrate_registered_grid_convergence
+assert_phase_accuracy
+fit_power_law
+_EARLY_TAU_WINDOW
+_FIXED_EPSILON
+_MORSE_COMPARISON_START
+_MORSE_COMPARISON_STOP
+_MORSE_COHERENCE_THRESHOLD
+_UNIFORM_TAU_MAXIMUM
+\end{verbatim}
+}
+
+\subsection{Qualified numerical-artifact registry}
+
+The seven versioned artifacts are the sole numerical evidence consumed by
+the figures and manuscript.  Each NPZ array is named as
+\texttt{artifact.key}; each value in the JSON sidecar's historically named
+\texttt{tolerances} namespace is
+\texttt{artifact.tolerances.key}.  That namespace contains a mixture of
+configured limits and measured diagnostics; a measured value is not itself a
+pass threshold.  The hard inequalities are the list above.  The literal
+registry below is complete for the committed schema and sidecars.  Array
+meanings are grouped before it to make the mapping operational rather than
+decorative.
+
+\paragraph{Isotropic baseline.}
+The isotropic artifact stores the sampled symmetric branch, exact ZGV
+coordinates and curvature, its local quadratic comparison, and the selected
+thickness mode and squared-displacement proxy.  Its sidecar binds exact/spectral mismatch,
+nested-order frequency uncertainty, and eigengap.
+
+\paragraph{Angular perturbation.}
+The sensitivity artifact stores \(V(\theta)\), \(B(\theta)\), their
+finite-difference checks, cubic harmonic coefficients, and the physical
+signed shift \(\epsilon V_4\).  Its sidecar binds eigenpair, symmetry,
+harmonic-leakage, and relative derivative errors.
+
+\paragraph{Critical points and scaling.}
+The critical-point artifact stores the eight full-wave roots, Cartesian
+Hessian eigenvalues and Poincar\'e indices, perturbative predictions, and the
+two plotted Cartesian surfaces.  The scaling artifact stores signed
+\(\epsilon\) frequency and radial shifts, their compensated remainders, role
+reversal, and measured log slopes.
+
+\paragraph{Response, convergence, and stress test.}
+The response artifact stores three complex responses: direct,
+uniform-normal-form, and exact-Morse.  It also stores masks, spectra, slopes,
+critical frequencies, and phase errors.  The convergence artifact holds the
+polynomial, tracking, response-grid, finite-difference, and source/window
+sweeps.  The silicon artifact is a finite-anisotropy stress test only.  It is
+not evidence for the weak-anisotropy theorem.
+
+{\footnotesize
+\begin{verbatim}
+isotropic_zgv.kappa
+isotropic_zgv.omega_symmetric
+isotropic_zgv.branch_labels
+isotropic_zgv.kappa0
+isotropic_zgv.omega0
+isotropic_zgv.curvature_a
+isotropic_zgv.local_q
+isotropic_zgv.local_omega
+isotropic_zgv.local_quadratic
+isotropic_zgv.mode_z
+isotropic_zgv.mode_u
+isotropic_zgv.mode_squared_displacement
+isotropic_zgv.tolerances.configured_isotropic_match
+isotropic_zgv.tolerances.maximum_frequency_uncertainty
+isotropic_zgv.tolerances.minimum_relative_eigengap
+isotropic_zgv.tolerances.relative_isotropic_frequency
+
+angular_sensitivity.theta
+angular_sensitivity.V
+angular_sensitivity.B
+angular_sensitivity.V_reconstruction
+angular_sensitivity.harmonic_order
+angular_sensitivity.harmonic_amplitude
+angular_sensitivity.V0
+angular_sensitivity.V4
+angular_sensitivity.V8
+angular_sensitivity.epsilon
+angular_sensitivity.delta_c
+angular_sensitivity.physical_V4_shift
+angular_sensitivity.V_fd
+angular_sensitivity.B_fd
+angular_sensitivity.tolerances.configured_relative_sensitivity
+angular_sensitivity.tolerances.maximum_eigen_residual
+angular_sensitivity.tolerances.minimum_relative_eigengap
+angular_sensitivity.tolerances.mirror_defect
+angular_sensitivity.tolerances.non_cubic_leakage
+angular_sensitivity.tolerances.periodicity_defect
+angular_sensitivity.tolerances.relative_B_error
+angular_sensitivity.tolerances.relative_V_error
+
+critical_points.kx
+critical_points.ky
+critical_points.kappa
+critical_points.theta
+critical_points.omega
+critical_points.hessian_eigenvalues
+critical_points.morse_index
+critical_points.kind
+critical_points.kx_pred
+critical_points.ky_pred
+critical_points.omega_pred
+critical_points.gradient_residual
+critical_points.kx_grid
+critical_points.ky_grid
+critical_points.omega_iso_grid
+critical_points.omega_aniso_grid
+critical_points.tolerances.epsilon
+critical_points.tolerances.maximum_gradient_residual
+critical_points.tolerances.maximum_grid_frequency_uncertainty
+critical_points.tolerances.minimum_hessian_to_uncertainty
+critical_points.tolerances.negative_candidate_grid_frequency_difference
+critical_points.tolerances.negative_candidate_grid_hessian_difference
+critical_points.tolerances.negative_candidate_grid_position_difference
+critical_points.tolerances.negative_maximum_boundary_gradient_uncertainty
+critical_points.tolerances.negative_minimum_boundary_gradient
+critical_points.tolerances.positive_candidate_grid_frequency_difference
+critical_points.tolerances.positive_candidate_grid_hessian_difference
+critical_points.tolerances.positive_candidate_grid_position_difference
+critical_points.tolerances.positive_maximum_boundary_gradient_uncertainty
+critical_points.tolerances.positive_minimum_boundary_gradient
+
+perturbation_scaling.epsilon
+perturbation_scaling.delta_omega_full
+perturbation_scaling.delta_omega_pred
+perturbation_scaling.q_min_full
+perturbation_scaling.q_min_pred
+perturbation_scaling.q_saddle_full
+perturbation_scaling.q_saddle_pred
+perturbation_scaling.omega_min_error
+perturbation_scaling.omega_saddle_error
+perturbation_scaling.compensated_splitting
+perturbation_scaling.compensated_q_min
+perturbation_scaling.compensated_q_saddle
+perturbation_scaling.compensated_frequency_error
+perturbation_scaling.role_reversal_theta_min
+perturbation_scaling.role_reversal_theta_saddle
+perturbation_scaling.slope_splitting
+perturbation_scaling.slope_radial
+perturbation_scaling.slope_remainder
+perturbation_scaling.tolerances.isotropic_axis_radius_bias
+perturbation_scaling.tolerances.isotropic_diagonal_radius_bias
+perturbation_scaling.tolerances.maximum_frequency_uncertainty
+perturbation_scaling.tolerances.maximum_gradient_residual
+perturbation_scaling.tolerances.slope_radial_error
+perturbation_scaling.tolerances.slope_remainder_error
+perturbation_scaling.tolerances.slope_splitting_error
+
+green_crossover.epsilon
+green_crossover.time
+green_crossover.G_full
+green_crossover.G_normal_form
+green_crossover.G_morse
+green_crossover.tau
+green_crossover.J0
+green_crossover.scaled_response
+green_crossover.envelope
+green_crossover.rms_envelope
+green_crossover.local_slope
+green_crossover.fit_window_early
+green_crossover.fit_window_late
+green_crossover.slope_early
+green_crossover.slope_late
+green_crossover.crossover_time
+green_crossover.spectrum_omega
+green_crossover.spectrum
+green_crossover.omega_min
+green_crossover.omega_saddle
+green_crossover.phase_error
+green_crossover.tolerances.bessel_collapse_error_by_epsilon
+green_crossover.tolerances.configured_phase_error
+green_crossover.tolerances.fixed_epsilon_cancellation_fraction
+green_crossover.tolerances.fixed_epsilon_cancellation_region_normalized_rms
+green_crossover.tolerances.fixed_epsilon_morse_relative_max_error
+green_crossover.tolerances.fixed_epsilon_morse_relative_rms_error
+green_crossover.tolerances.maximum_bessel_collapse_error
+green_crossover.tolerances.maximum_phase_error
+green_crossover.tolerances.maximum_relative_frequency_uncertainty_by_epsilon
+green_crossover.tolerances.measured_crossover_log_slope
+green_crossover.tolerances.measured_early_slope_error
+green_crossover.tolerances.measured_late_slope_error
+green_crossover.tolerances.minimum_anisotropic_branch_eigengap_by_epsilon
+green_crossover.tolerances.registered_accumulated_phase_errors
+green_crossover.tolerances.registered_complex_response_errors
+green_crossover.tolerances.registered_early_slope_by_grid
+green_crossover.tolerances.registered_late_slope_by_grid
+green_crossover.tolerances.registered_nested_frequency_errors
+
+convergence.polynomial_order
+convergence.omega0_error
+convergence.kappa0_error
+convergence.curvature_error
+convergence.eigen_residual
+convergence.hermitian_residual
+convergence.mass_orthogonality
+convergence.eigengap
+convergence.angular_resolution
+convergence.radial_resolution
+convergence.quadrature_error
+convergence.interpolation_error
+convergence.phase_error
+convergence.sensitivity_step
+convergence.V4_fd_error
+convergence.B_fd_error
+convergence.tracking_kappa
+convergence.tracking_mac
+convergence.tracking_gap
+convergence.source_width
+convergence.window_width
+convergence.response_sensitivity
+convergence.tolerances.configured_curvature_match
+convergence.tolerances.configured_eigen_residual
+convergence.tolerances.configured_isotropic_match
+convergence.tolerances.configured_phase_error
+convergence.tolerances.final_B_fd_relative_error
+convergence.tolerances.final_V4_fd_relative_error
+convergence.tolerances.final_relative_curvature_error
+convergence.tolerances.final_relative_kappa0_error
+convergence.tolerances.final_relative_omega0_error
+convergence.tolerances.finest_accumulated_phase_error
+convergence.tolerances.finest_interpolation_frequency_error
+convergence.tolerances.finest_quadrature_relative_error
+convergence.tolerances.maximum_eigen_residual
+convergence.tolerances.maximum_hermitian_residual
+convergence.tolerances.maximum_mass_orthogonality
+convergence.tolerances.minimum_eigengap
+convergence.tolerances.minimum_tracking_gap
+convergence.tolerances.minimum_tracking_mac
+
+silicon_stress_test.kx_grid
+silicon_stress_test.ky_grid
+silicon_stress_test.omega_grid
+silicon_stress_test.kx
+silicon_stress_test.ky
+silicon_stress_test.omega
+silicon_stress_test.hessian_eigenvalues
+silicon_stress_test.kind
+silicon_stress_test.tracking_gap
+silicon_stress_test.gradient_residual
+silicon_stress_test.tolerances.maximum_boundary_gradient_uncertainty
+silicon_stress_test.tolerances.maximum_gradient_residual
+silicon_stress_test.tolerances.minimum_boundary_gradient
+silicon_stress_test.tolerances.minimum_tracking_gap
+\end{verbatim}
+}
+
+\subsection{Reconstruction boundary}
+
+An independent reader can reconstruct the calculation from the weak-form
+matrices, the qualified configuration, and the listed interfaces.  The
+numerical evidence is limited to the tracked local branch inside the
+registered annulus and spectral window.  It does not claim completeness of
+the full plate spectrum outside that window, and the finite-silicon run does
+not extend the weak-anisotropy proof beyond its perturbative assumptions.
