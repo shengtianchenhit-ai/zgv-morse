@@ -1,0 +1,772 @@
+% Canonical derivation source for the Green-function decay crossover.
+% This file is a LaTeX fragment and is included by the Supplementary Information.
+
+\section{Bessel--Morse asymptotics of the Green response}
+\label{sec:green-function-asymptotics}
+
+We derive the time-domain response of the ZGV branch with every Fourier,
+modal, and stationary-phase constant retained.  The object propagated below
+is the positive-frequency complex response.  It is not doubled.  The
+physical real response is reconstructed only after the branch integral has
+been evaluated.  This distinction fixes a factor of two that is otherwise
+easy to hide in a loosely defined analytic signal.
+
+Throughout this section \(a>0\), \(k_0>0\), and the time dependence of a
+positive-frequency mode is \(\exp(-\mathrm{i}\omega t)\).  The hypotheses
+on branch simplicity, eigengap, and smoothness are those of
+Theorem~\ref{thm:anisotropic-normal-form}.  All asymptotic statements concern
+the selected positive-frequency branch in a fixed annular spectral window;
+contributions from other branches are separate terms in the complete Green
+function.
+
+\subsection{Fourier convention and normalization-invariant branch projection}
+
+For an in-plane field, use the transform pair
+\begin{equation}
+  \widehat{\mathbf u}(\mathbf k,z,t)
+  =\int_{\mathbb R^2}\mathbf u(\mathbf x,z,t)
+    \mathrm e^{-\mathrm i\mathbf k\cdot\mathbf x}\,\mathrm d^2\mathbf x,
+  \qquad
+  \mathbf u(\mathbf x,z,t)
+  =\mathscr F_2\int_{\mathbb R^2}
+    \widehat{\mathbf u}(\mathbf k,z,t)
+    \mathrm e^{\mathrm i\mathbf k\cdot\mathbf x}\,\mathrm d^2\mathbf k,
+  \qquad
+  \mathscr F_2=(2\pi)^{-2}.
+  \label{eq:green-fourier-convention}
+\end{equation}
+At fixed \(\mathbf k\), let the thickness-discretized or weak-form dynamics
+under an impulsive generalized load be
+\begin{equation}
+  M\ddot{\mathbf U}+K\mathbf U
+  =\mathbf f\,\delta(t),
+  \qquad
+  K\mathbf u=\omega^2M\mathbf u,
+  \qquad
+  N:=\mathbf u^\dagger M\mathbf u>0.
+  \label{eq:impulsive-hermitian-dynamics}
+\end{equation}
+The vector \(\mathbf f=\mathbf f(\mathbf k)\) includes the through-thickness
+source functional, and a linear detector is written
+\(D[\mathbf U]=\mathbf d^\dagger\mathbf U\).  Projecting
+Eq.~\eqref{eq:impulsive-hermitian-dynamics} onto a simple mode gives
+\begin{equation}
+  \ddot q+\omega^2q
+  =\frac{\mathbf u^\dagger\mathbf f}{N}\,\delta(t),
+  \qquad
+  q(t)=H(t)\frac{\mathbf u^\dagger\mathbf f}{\omega N}\sin(\omega t).
+  \label{eq:projected-impulse-oscillator}
+\end{equation}
+Because
+\begin{equation}
+  \frac{\sin(\omega t)}{\omega}
+  =2\operatorname{Re}\left[
+      \frac{\mathrm i}{2\omega}\mathrm e^{-\mathrm i\omega t}
+    \right],
+  \label{eq:positive-frequency-oscillator-split}
+\end{equation}
+the undoubled coefficient of the positive-frequency exponential in the
+detected response is
+\begin{equation}
+  \mathcal P(\mathbf k)
+  :=\frac{\mathrm i}{2\omega}
+    \frac{(\mathbf d^\dagger\mathbf u)
+          (\mathbf u^\dagger\mathbf f)}
+         {\mathbf u^\dagger M\mathbf u}.
+  \label{eq:source-mode-detector-amplitude}
+\end{equation}
+This source--mode--detector amplitude is invariant under an arbitrary
+nonzero complex normalization \(\mathbf u\mapsto c(\mathbf k)\mathbf u\):
+the numerator and denominator both acquire \(|c|^2\), including when the
+scale and phase depend on \(\mathbf k\).  Thus no mass-normalization
+convention enters the observable amplitude.
+
+In the mass-normalized, colocated top-face normal channel,
+\(\mathbf d=\mathbf f=\mathbf e_z(h)\) and
+\(\mathbf u^\dagger M\mathbf u=1\).  The general projection then reduces to
+the phase-invariant overlap used by the numerical implementation,
+\begin{equation}
+  \mathcal P_n(\mathbf k)
+  =\frac{\mathrm i}{2\omega_n}
+    \left|u_{n,z}(h;\mathbf k)\right|^2.
+  \label{eq:normal-impulse-overlap}
+\end{equation}
+
+Let \(G^{+}(t)\) denote the inverse Fourier integral made from the coefficient
+in Eq.~\eqref{eq:source-mode-detector-amplitude}.  For a real load and
+a real detector, the negative-frequency term is its complex conjugate after
+the reciprocal wave-vector partner is included.  Consequently
+\begin{equation}
+  G_{\mathrm{phys}}(t)
+  =G^{+}(t)+G^{+}(t)^*
+  =2\operatorname{Re}G^{+}(t).
+  \label{eq:physical-real-reconstruction}
+\end{equation}
+Equation~\eqref{eq:physical-real-reconstruction}, not an extra factor inside
+\(G^{+}\), defines the physical real response.  Every theorem below is first
+stated for \(G^{+}\), and the physical result follows from this equation.
+
+For reference, a normalized circular Gaussian source of radius \(r_s\),
+\begin{equation}
+  s(\mathbf x)=\frac{1}{\pi r_s^2}
+    \exp\left(-\frac{|\mathbf x|^2}{r_s^2}\right),
+  \qquad
+  \widehat s(k)=\exp\left[-\left(\frac{r_sk}{2}\right)^2\right],
+  \label{eq:gaussian-source-transform}
+\end{equation}
+multiplies \(\mathcal P\) by \(\widehat s(k)\).  The numerical local-branch
+window is the smooth super-Gaussian multiplied by the compact taper used by
+the direct numerical integral,
+\begin{equation}
+  \chi_{\sigma_q}(q)=\exp[-(q/\sigma_q)^8]b_{\sigma_q}(q),
+  \qquad q=k-k_0,
+  \label{eq:green-super-gaussian-window}
+\end{equation}
+although an ordinary Gaussian window
+\(\exp[-q^2/(2\sigma_q^2)]\) gives the same leading asymptotics.  Only
+smoothness, localization inside the annulus, and a nonzero value at the
+stationary set are used in the proof.  Here \(b_{\sigma_q}=1\) on
+\(|q|\leq1.25\sigma_q\), \(b_{\sigma_q}=0\) on
+\(|q|\geq1.5\sigma_q\), and the intervening strip uses the standard flat
+step constructed from \(\exp(-1/x)\).  Hence \(b_{\sigma_q}\) is
+\(C^\infty\), all endpoint derivatives vanish, every local coefficient below
+is unchanged, and the numerical integral satisfies the same no-endpoint
+hypothesis as the theorem.
+
+Define the complete projected amplitude, excluding the Fourier measure and
+the polar Jacobian, by
+\begin{equation}
+  \mathcal A(q,\theta;\varepsilon)
+  :=\chi_{\sigma_q}(q)
+    \exp\left[-\left(\frac{r_s(k_0+q)}{2}\right)^2\right]
+    \frac{\mathrm i}{2\omega}
+    \frac{(\mathbf d^\dagger\mathbf u)
+          (\mathbf u^\dagger\mathbf f_z)}
+         {\mathbf u^\dagger M\mathbf u}.
+  \label{eq:complete-green-amplitude}
+\end{equation}
+Here \(\mathbf f_z\) is the unit through-thickness source functional; any
+additional calibrated source strength can be included multiplicatively.
+For the colocated axisymmetric normal channel in the isotropic plate,
+\begin{equation}
+  \mathcal A(0,\theta;0)=A_0,
+  \qquad A_0\ne0.
+  \label{eq:canonical-nonnodal-amplitude}
+\end{equation}
+In particular, \(A_0\) does not contain \(k_0\), \(\mathscr F_2\), or the
+angular factor \(2\pi\).
+
+\subsection{Local polar integral and radial stationary phase}
+
+Let \(0<\eta<k_0\) be small enough that the selected branch remains simple
+on \(|q|\leq\eta\), and let the window vanish smoothly before the annular
+boundary if a compact cutoff is needed.  The exact local
+positive-frequency complex response is
+\begin{equation}
+  G^{+}(t;\varepsilon)
+  =\mathscr F_2
+    \int_0^{2\pi}\!\int_{-\eta}^{\eta}
+    \mathcal A(q,\theta;\varepsilon)
+    \exp[-\mathrm it\omega(q,\theta;\varepsilon)]
+    (k_0+q)\,\mathrm dq\,\mathrm d\theta.
+  \label{eq:branch-projected-response}
+\end{equation}
+This displays the complete Fourier/polar measure
+\((2\pi)^{-2}(k_0+q)\,\mathrm dq\,\mathrm d\theta\).
+
+For sufficiently small \(|\varepsilon|\),
+Theorem~\ref{thm:anisotropic-normal-form} supplies the unique radial
+stationary graph \(q=q_*(\theta,\varepsilon)\).  Uniform one-dimensional
+stationary phase in \(q\), with the angular variable treated as a compact
+parameter, gives
+\begin{align}
+  G^{+}(t;\varepsilon)
+  ={}&\mathscr F_2\,
+    \mathrm e^{-\mathrm i\pi/4}
+    \left(\frac{2\pi}{t}\right)^{1/2}
+    \int_0^{2\pi}
+    \frac{(k_0+q_*)\mathcal A(q_*,\theta;\varepsilon)}
+         {\sqrt{\omega_{qq}(q_*,\theta;\varepsilon)}}
+    \mathrm e^{-\mathrm it\omega_*(\theta;\varepsilon)}
+    \,\mathrm d\theta
+    +O(t^{-3/2}),
+  \label{eq:radial-stationary-reduction}\\
+  \omega_*(\theta;\varepsilon)
+  ={}&\omega_0+\varepsilon V(\theta)
+    +\varepsilon^2W_2^{\mathrm{eff}}(\theta)
+    +O_{C^2}(\varepsilon^3),                                      \notag\\
+  W_2^{\mathrm{eff}}(\theta)
+  :={}&W_2(\theta)-\frac{B(\theta)^2}{2a}.
+  \label{eq:effective-second-order-green-phase}
+\end{align}
+The last line is exactly the radial-relaxation correction derived in
+Eq.~\eqref{eq:reduced-angular-frequency-second-order}.  Keeping \(W_2\)
+but dropping \(-B^2/(2a)\) would give an incorrect second-order phase and,
+therefore, an incorrect overlap window.
+
+The radial onset time follows by requiring the stationary width
+\((at)^{-1/2}\) to be small compared with the window width \(\sigma_q\):
+\begin{equation}
+  t_{\mathrm{rad}}\asymp\frac{1}{a\sigma_q^2}.
+  \label{eq:radial-stationary-onset-time}
+\end{equation}
+The Fresnel phase in Eq.~\eqref{eq:radial-stationary-reduction} follows from
+the exact continuation
+\begin{equation}
+  \int_{-\infty}^{\infty}
+    \exp\left(-\frac{\mathrm i}{2}atq^2\right)\,\mathrm dq
+  =\mathrm e^{-\mathrm i\pi/4}
+    \sqrt{\frac{2\pi}{at}},
+  \qquad a>0,\quad t>0,
+  \label{eq:radial-fresnel-factor}
+\end{equation}
+where the oscillatory integral is defined by Gaussian continuation:
+\begin{equation}
+  \lim_{\eta\downarrow0}
+  \int_{-\infty}^{\infty}
+    \exp\left[-\left(\eta+\frac{\mathrm i}{2}at\right)q^2\right]
+    \,\mathrm dq
+  =\mathrm e^{-\mathrm i\pi/4}\sqrt{\frac{2\pi}{at}}.
+  \label{eq:regularized-radial-fresnel-factor}
+\end{equation}
+
+\subsection{The joint transition limit and its exact Bessel kernel}
+
+For the [001] cubic family,
+\(V(\theta)=V_0+V_4\cos4\theta\), with \(V_4\) the sensitivity coefficient
+and \(\varepsilon V_4\) the physical frequency shift.  Introduce
+\begin{equation}
+  \tau:=\varepsilon V_4t.
+  \label{eq:green-transition-variable}
+\end{equation}
+The sign of \(\tau\) is retained; the resulting \(J_0\) kernel is even.
+
+\begin{theorem}[Uniform Bessel crossover of the ZGV ring]
+\label{thm:uniform-bessel-crossover}
+Assume that the exact phase is \(C^6\), the amplitude is \(C^4\), the
+radial curvature satisfies \(a>0\), \(V_4\ne0\), and
+Eq.~\eqref{eq:canonical-nonnodal-amplitude} holds.  In the joint limit
+\begin{equation}
+  t\longrightarrow\infty,
+  \qquad
+  \varepsilon\longrightarrow0,
+  \qquad
+  \tau=\varepsilon V_4t\in K,
+  \label{eq:distinguished-joint-limit}
+\end{equation}
+where \(K\subset\mathbb R\) is any fixed compact set,
+\begin{equation}
+  G^{+}(t;\varepsilon)
+  =\mathcal C\,
+    \mathrm e^{-\mathrm i(\omega_0+\varepsilon V_0)t}
+    t^{-1/2}J_0(\varepsilon V_4t)
+    +o(t^{-1/2}),
+  \label{eq:uniform-response}
+\end{equation}
+uniformly for \(\tau\in K\), with the fully determined constant
+\begin{equation}
+  \mathcal C
+  =\mathscr F_2(2\pi)k_0A_0
+    \mathrm e^{-\mathrm i\pi/4}
+    \sqrt{\frac{2\pi}{a}}.
+  \label{eq:uniform-response-prefactor}
+\end{equation}
+No amplitude, phase, carrier-frequency correction, or time shift is fitted
+in Eqs.~\eqref{eq:uniform-response}--\eqref{eq:uniform-response-prefactor}.
+The corresponding physical real response is
+\(G_{\mathrm{phys}}=2\operatorname{Re}G^{+}\).
+\end{theorem}
+
+\paragraph{Proof.}
+Under Eq.~\eqref{eq:distinguished-joint-limit}, one has
+\(\varepsilon=O(t^{-1})\).  Equations~\eqref{eq:radial-shift} and
+\eqref{eq:effective-second-order-green-phase} therefore imply, uniformly in
+\(\theta\),
+\begin{align}
+  q_*&=O(t^{-1}),
+  &t\varepsilon^2W_2^{\mathrm{eff}}&=O(t^{-1}),
+  &tO(\varepsilon^3)&=O(t^{-2}),                                    \notag\\
+  \frac{(k_0+q_*)\mathcal A(q_*,\theta;\varepsilon)}
+       {\sqrt{\omega_{qq}(q_*,\theta;\varepsilon)}}
+  &=\frac{k_0A_0}{\sqrt a}+O(t^{-1}).
+  \label{eq:joint-limit-radial-estimates}
+\end{align}
+Substitution into Eq.~\eqref{eq:radial-stationary-reduction} leaves the
+angular identity
+\begin{align}
+  \int_0^{2\pi}\mathrm e^{-\mathrm i\tau\cos4\theta}\,\mathrm d\theta
+  &=4\int_0^{\pi/2}\mathrm e^{-\mathrm i\tau\cos4\theta}\,\mathrm d\theta
+    =\int_0^{2\pi}\mathrm e^{-\mathrm i\tau\cos\phi}\,\mathrm d\phi
+    =2\pi J_0(\tau).
+  \label{eq:angular-bessel-identity}
+\end{align}
+Here the change \(\phi=4\theta\) covers four identical periods.  Combining
+Eq.~\eqref{eq:angular-bessel-identity} with the radial Fresnel factor gives
+Eq.~\eqref{eq:uniform-response-prefactor} exactly.  The error is uniform in
+absolute size on compact \(\tau\)-sets.  At a zero of \(J_0\), the displayed
+leading term vanishes, so the theorem does not assert a uniform relative
+error after division by \(J_0\).  \(\square\)
+
+\subsection{General angular weights and the Fourier--Bessel selection rule}
+
+Axisymmetry is not required for a uniform angular representation.  Let the
+leading amplitude on the ring have the absolutely convergent Fourier series
+\begin{equation}
+  A(\theta)=\sum_{\ell\in\mathbb Z}A_\ell\mathrm e^{\mathrm i\ell\theta},
+  \qquad
+  A_\ell=\frac{1}{2\pi}\int_0^{2\pi}
+    A(\theta)\mathrm e^{-\mathrm i\ell\theta}\,\mathrm d\theta.
+  \label{eq:angular-amplitude-fourier-series}
+\end{equation}
+The Jacobi--Anger expansion, in the sign convention used here, is
+\begin{equation}
+  \mathrm e^{-\mathrm i\tau\cos4\theta}
+  =\sum_{n\in\mathbb Z}(-\mathrm i)^nJ_n(\tau)
+    \mathrm e^{\mathrm i4n\theta}.
+  \label{eq:fourfold-jacobi-anger}
+\end{equation}
+Define the normalized angular kernel
+\begin{equation}
+  K_A(\tau):=\frac{1}{2\pi}\int_0^{2\pi}A(\theta)
+    \mathrm e^{-\mathrm i\tau\cos4\theta}\,\mathrm d\theta.
+  \label{eq:normalized-weighted-bessel-kernel}
+\end{equation}
+Termwise integration yields the exact selection rule
+\begin{equation}
+  K_A(\tau)
+  =\sum_{n\in\mathbb Z}
+    A_{-4n}(-\mathrm i)^nJ_n(\tau)
+  =\sum_{\substack{\ell\in\mathbb Z\\4\mid\ell}}
+    A_\ell(-\mathrm i)^{-\ell/4}J_{-\ell/4}(\tau).
+  \label{eq:weighted-bessel-series}
+\end{equation}
+Thus only amplitude harmonics divisible by four survive the full-period
+integral at this order.  The canonical law is the \(A_0J_0\) term.  If
+\(A_0=0\) but another selected coefficient is nonzero, the leading uniform
+kernel is the fixed linear combination of compatible higher-order Bessel
+functions prescribed by Eq.~\eqref{eq:weighted-bessel-series}.  It reduces
+to one higher-order Bessel function only when a single compatible harmonic
+pair is present; it is not legitimate to restore a \(J_0\) term by fitting a
+complex constant.
+The numerical weighted-kernel routine evaluates precisely \(K_A\).  The
+factor \(2\pi\) from the unnormalized angular integral already appears once,
+and only once, in \(\mathcal C\) in
+Eq.~\eqref{eq:uniform-response-prefactor}.
+
+For a pure even harmonic of general order \(m\), the same change of variable
+gives
+\begin{equation}
+  \int_0^{2\pi}\mathrm e^{-\mathrm i\tau\cos[m(\theta-\theta_0)]}
+    \,\mathrm d\theta=2\pi J_0(\tau),
+  \qquad m\in2\mathbb N.
+  \label{eq:general-harmonic-bessel-identity}
+\end{equation}
+The independence of the constant from \(m\) will reappear as an exact
+cancellation between Morse-point multiplicity and angular curvature.
+
+\subsection{Ring, overlap, and fixed-anisotropy regimes}
+
+Put
+\begin{equation}
+  \alpha:=\varepsilon V_4,
+  \qquad
+  \omega_c:=\omega_0+\varepsilon V_0,
+  \qquad
+  t_c:=|\alpha|^{-1}.
+  \label{eq:crossover-scales}
+\end{equation}
+Three regimes must be kept distinct.
+
+\paragraph{Pre-crossover ring regime.}
+If
+\begin{equation}
+  t_{\mathrm{rad}}\ll t\ll t_c,
+  \label{eq:pre-crossover-window}
+\end{equation}
+then \(|\tau|\ll1\) and
+\begin{equation}
+  J_0(\tau)=1-\frac{\tau^2}{4}+O(\tau^4).
+  \label{eq:small-bessel-expansion}
+\end{equation}
+The continuous stationary ring has already localized radially but not
+angularly, so the nonnodal response has the Morse--Bott law
+\(|G^{+}|=O(t^{-1/2})\).
+
+\paragraph{Bessel--Morse overlap.}
+For \(|\tau|\gg1\), the large-argument expansion is
+\begin{equation}
+  J_0(\tau)
+  =\sqrt{\frac{2}{\pi|\tau|}}
+    \left[
+      \cos\left(|\tau|-\frac{\pi}{4}\right)
+      +O(|\tau|^{-1})
+    \right].
+  \label{eq:large-bessel-expansion}
+\end{equation}
+The first-order angular phase remains accurate in this late-Bessel regime
+only while its accumulated higher-order error is small.  Let \(M_3\) be a
+uniform bound such that the reduced-phase remainder after the displayed
+second-order term is at most \(M_3|\varepsilon|^3\) in \(C^4\).  The correct
+condition is
+\begin{equation}
+  t\gg t_{\mathrm{rad}},
+  \qquad
+  |\varepsilon V_4|t\gg1,
+  \qquad
+  \varepsilon^2t
+    \lVert W_2^{\mathrm{eff}}\rVert_{L^\infty(0,2\pi)}\ll1,
+  \qquad
+  |\varepsilon|^3tM_3\ll1,
+  \qquad
+  W_2^{\mathrm{eff}}=W_2-\frac{B^2}{2a}.
+  \label{eq:bessel-morse-overlap-window}
+\end{equation}
+When \(V_4\), \(W_2^{\mathrm{eff}}\), and the radial scales are order one,
+this overlap has the familiar form
+\(|\varepsilon|^{-1}\ll t\ll|\varepsilon|^{-2}\).
+The compact-\(\tau\) theorem does not, by itself, justify taking
+\(|\tau|\to\infty\).  The overlap requires a second, growing-parameter
+stationary-phase argument.
+
+\begin{theorem}[Growing-parameter Bessel--Morse overlap]
+\label{thm:growing-bessel-morse-overlap}
+Assume the hypotheses of Theorem~\ref{thm:uniform-bessel-crossover}, with
+the phase and amplitude bounds uniform in a fixed small parameter interval.
+Let \(\varepsilon\to0\) and \(t\to\infty\) so that, with
+\(\lambda:=|\varepsilon V_4|t\),
+\begin{equation}
+  \frac{t}{t_{\mathrm{rad}}}\to\infty,
+  \qquad
+  \lambda\to\infty,
+  \qquad
+  \varepsilon^2t
+    \lVert W_2^{\mathrm{eff}}\rVert_{L^\infty}\to0,
+  \qquad
+  |\varepsilon|^3tM_3\to0.
+  \label{eq:growing-overlap-limit}
+\end{equation}
+Then
+\begin{equation}
+  G^{+}(t;\varepsilon)
+  =\mathcal C\sqrt{\frac{2}{\pi|\alpha|}}
+    \frac{\mathrm e^{-\mathrm i\omega_ct}}{t}
+    \cos\left(|\alpha|t-\frac{\pi}{4}\right)
+    +\mathcal E_{\mathrm{ov}}(t,\varepsilon),
+  \label{eq:bessel-overlap-response}
+\end{equation}
+where, uniformly in this two-parameter regime,
+\begin{equation}
+  \mathcal E_{\mathrm{ov}}
+  =\frac{1}{t\sqrt{|\alpha|}}
+    O\!\left(
+      \lambda^{-1}+|\varepsilon|
+      +\varepsilon^2t
+        \lVert W_2^{\mathrm{eff}}\rVert_{L^\infty}
+      +|\varepsilon|^3tM_3
+    \right)
+    +O(t^{-3/2}).
+  \label{eq:growing-overlap-error}
+\end{equation}
+Consequently Eq.~\eqref{eq:bessel-overlap-response} is a relative
+asymptotic equivalence on subsequences bounded away from the cancellation
+zeros, for example when
+\(\left|\cos(\lambda-\pi/4)\right|\ge c>0\).
+\end{theorem}
+
+\paragraph{Proof.}
+After removing the carrier in
+Eq.~\eqref{eq:radial-stationary-reduction}, define
+\begin{align}
+  \Psi_\varepsilon(\theta)
+  &:=\frac{\omega_*(\theta;\varepsilon)-\omega_c}{|\alpha|}
+    =s\cos4\theta+O_{C^4}(|\varepsilon|),
+    \qquad s:=\operatorname{sign}(\alpha),                         \notag\\
+  \mathcal B_\varepsilon(\theta)
+  &:=\frac{(k_0+q_*)\mathcal A(q_*,\theta;\varepsilon)}
+          {\sqrt{\omega_{qq}(q_*,\theta;\varepsilon)}}
+    =\frac{k_0A_0}{\sqrt a}+O_{C^2}(|\varepsilon|).
+  \label{eq:growing-overlap-normalized-data}
+\end{align}
+The \(C^4\) phase estimate follows from the stated \(C^6\) regularity after
+shrinking the annulus.  The normalized perturbation is order
+\(\varepsilon^2/|\alpha|=|\varepsilon|/|V_4|\).  Hence the eight simple
+critical points of \(s\cos4\theta\) persist, exhaust the angular circle,
+and satisfy
+\begin{equation}
+  \theta_j(\varepsilon)=\frac{j\pi}{4}+O(|\varepsilon|),
+  \qquad
+  |\Psi_\varepsilon''(\theta_j)|=16+O(|\varepsilon|).
+  \label{eq:growing-overlap-critical-data}
+\end{equation}
+One-dimensional stationary phase with large parameter \(\lambda\), applied
+directly to this perturbed phase, gives
+\begin{equation}
+  \int_0^{2\pi}\mathcal B_\varepsilon
+    \mathrm e^{-\mathrm i\lambda\Psi_\varepsilon}\,\mathrm d\theta
+  =\left(\frac{2\pi}{\lambda}\right)^{1/2}
+    \sum_{j=0}^{7}
+    \frac{\mathcal B_\varepsilon(\theta_j)
+      \mathrm e^{-\mathrm i\lambda\Psi_\varepsilon(\theta_j)
+      -\mathrm i\pi\operatorname{sign}
+        (\Psi_\varepsilon''(\theta_j))/4}}
+         {\sqrt{|\Psi_\varepsilon''(\theta_j)|}}
+    +O(\lambda^{-3/2}).
+  \label{eq:growing-angular-stationary-phase}
+\end{equation}
+Expanding the eight coefficients back to their unperturbed values costs
+\(O(|\varepsilon|)\).  Their accumulated phase correction is
+\(O(\varepsilon^2t\lVert W_2^{\mathrm{eff}}\rVert_{L^\infty}
+  +|\varepsilon|^3tM_3)\), as required in
+Eq.~\eqref{eq:growing-overlap-limit}.  Four angular curvatures
+are positive and four are negative.  Multiplying their one-dimensional
+signature factors by the radial factor \(\mathrm e^{-\mathrm i\pi/4}\)
+produces, respectively, the minimum factor \(-\mathrm i\) and the saddle
+factor \(1\).  Summing the two fourfold families gives the leading term in
+Eq.~\eqref{eq:bessel-overlap-response}; the angular remainder and the
+radial \(O(t^{-3/2})\) remainder give
+Eq.~\eqref{eq:growing-overlap-error}.  This proof is independent of the
+compact-\(\tau\) limit. \(\square\)
+
+Away from the cancellation zeros, the envelope is
+\(O(|\alpha|^{-1/2}t^{-1})\).  Pointwise logarithmic slopes through the
+zeros are undefined; an upper, RMS, or carrier-demodulated envelope must be
+used with a declared fitting window.
+
+\paragraph{Bessel constants as a Morse sum.}
+The agreement is stronger than equality of exponents.  Consider the general
+first-order phase
+\begin{equation}
+  \omega=\omega_c+\frac a2q^2
+    +\alpha\cos[m(\theta-\theta_0)],
+  \qquad m\in2\mathbb N,\quad \alpha\ne0.
+  \label{eq:pure-harmonic-overlap-phase}
+\end{equation}
+There are \(m\) points at the lower frequency
+\(\omega_-=\omega_c-|\alpha|\) and \(m\) at the upper frequency
+\(\omega_+=\omega_c+|\alpha|\).  Since \(a>0\), the lower points are
+minima and the upper points are saddles.  To leading order their Cartesian
+Hessians satisfy
+\begin{equation}
+  \sqrt{|\det H_j|}
+  =\frac{m\sqrt{a|\alpha|}}{k_0},
+  \qquad
+  \operatorname{sig}(H_-)=2,
+  \qquad
+  \operatorname{sig}(H_+)=0.
+  \label{eq:overlap-hessian-signatures}
+\end{equation}
+The \(m\)-fold multiplicity of each family cancels the factor \(m\) in
+Eq.~\eqref{eq:overlap-hessian-signatures}.  For constant amplitude \(A_0\),
+ordinary two-dimensional stationary phase therefore gives
+\begin{align}
+  G_{\mathrm{Morse}}^{+}
+  \sim{}&\frac{\mathscr F_2(2\pi)k_0A_0}
+               {t\sqrt{a|\alpha|}}
+    \left[
+      \mathrm e^{-\mathrm i\omega_-t-\mathrm i\pi/2}
+      +\mathrm e^{-\mathrm i\omega_+t}
+    \right].
+  \label{eq:first-order-morse-overlap-sum}
+\end{align}
+On the other hand, substituting Eq.~\eqref{eq:uniform-response-prefactor}
+into Eq.~\eqref{eq:bessel-overlap-response} and expanding the cosine gives
+\begin{align}
+  G_{\mathrm{Bessel}}^{+}
+  \sim{}&\frac{\mathscr F_2(2\pi)k_0A_0}
+               {t\sqrt{a|\alpha|}}
+  \left[
+    \mathrm e^{-\mathrm i\pi/4}
+    \mathrm e^{-\mathrm i\omega_ct}
+    \mathrm e^{\mathrm i(|\alpha|t-\pi/4)}
+    +
+    \mathrm e^{-\mathrm i\pi/4}
+    \mathrm e^{-\mathrm i\omega_ct}
+    \mathrm e^{-\mathrm i(|\alpha|t-\pi/4)}
+  \right]                                                        \notag\\
+  ={}&\frac{\mathscr F_2(2\pi)k_0A_0}
+               {t\sqrt{a|\alpha|}}
+    \left[
+      \mathrm e^{-\mathrm i\omega_-t-\mathrm i\pi/2}
+      +\mathrm e^{-\mathrm i\omega_+t}
+    \right].
+  \label{eq:bessel-morse-overlap}
+\end{align}
+Thus the Fourier constant, both frequencies, the minimum and saddle
+signature phases, and both multiplicities match exactly.  For the cubic
+case \(m=4\), this is the equality between four minima plus four saddles and
+the large-argument asymptotics of the single \(J_0\) kernel.
+
+\subsection{Exact Cartesian Morse theorem at fixed anisotropy}
+
+The overlap calculation still uses the first-order phase.  The ultimate
+fixed-anisotropy result must instead use the exact branch frequency, exact
+critical points, and exact Cartesian Hessians.
+
+\begin{theorem}[Fixed-anisotropy Morse decay]
+\label{thm:fixed-anisotropy-decay}
+Fix a sufficiently small \(\varepsilon\ne0\).  Suppose the exact selected
+branch \(\omega(\mathbf k;\varepsilon)\) and amplitude
+\(\mathcal A(\mathbf k;\varepsilon)\) are smooth on the support of the
+local window, every stationary point \(\mathbf k_j\) there is isolated and
+nondegenerate, and no stationary point lies on the support boundary.  Let
+\begin{equation}
+  \omega_j:=\omega(\mathbf k_j;\varepsilon),
+  \qquad
+  H_j:=\nabla_{\mathbf k}^2\omega(\mathbf k_j;\varepsilon),
+  \qquad
+  \sigma_j:=\operatorname{sig}(H_j)=n_+(H_j)-n_-(H_j),
+  \qquad
+  \mathcal A_j:=\mathcal A(\mathbf k_j;\varepsilon).
+  \label{eq:exact-morse-data}
+\end{equation}
+Then, as \(t\to\infty\) at this fixed \(\varepsilon\),
+\begin{equation}
+  G^{+}(t;\varepsilon)
+  =\frac{2\pi\mathscr F_2}{t}
+    \sum_j
+    \frac{\mathcal A_j
+      \mathrm e^{-\mathrm it\omega_j-\mathrm i\pi\sigma_j/4}}
+         {\sqrt{|\det H_j|}}
+    +O_\varepsilon(t^{-2}).
+  \label{eq:morse-stationary-sum}
+\end{equation}
+Hence a generic nonnodal isolated critical point contributes \(t^{-1}\).
+The constant in the remainder may diverge as \(\varepsilon\to0\), so
+Eq.~\eqref{eq:morse-stationary-sum} is deliberately not a uniform
+coalescing-critical-point formula.  The physical real response is again
+twice the real part of the right-hand side.
+\end{theorem}
+
+\paragraph{Proof and polar-Jacobian cancellation.}
+Apply the two-dimensional stationary-phase theorem in Cartesian
+wave-vector coordinates to Eq.~\eqref{eq:branch-projected-response}.
+For the phase \(-\omega\), the signature factor is
+\(\exp[-\mathrm i\pi\operatorname{sig}(H_j)/4]\), and the Cartesian Fourier
+measure is simply \(\mathscr F_2\,\mathrm d^2\mathbf k\).  This directly
+gives Eq.~\eqref{eq:morse-stationary-sum}.
+
+The same result in polar coordinates makes an important cancellation
+explicit.  At a critical point, let
+\begin{equation}
+  H_j^{(q,\theta)}
+  :=\begin{pmatrix}
+      \omega_{qq}&\omega_{q\theta}\\
+      \omega_{q\theta}&\omega_{\theta\theta}
+    \end{pmatrix}_{(q_j,\theta_j)}.
+  \label{eq:polar-coordinate-phase-hessian}
+\end{equation}
+Equation~\eqref{eq:critical-cartesian-polar-hessian} implies
+\begin{equation}
+  \det H_j^{(q,\theta)}
+  =k_j^2\det H_j,
+  \qquad
+  \frac{k_j\mathcal A_j}
+       {\sqrt{|\det H_j^{(q,\theta)}|}}
+  =\frac{\mathcal A_j}{\sqrt{|\det H_j|}},
+  \qquad k_j>0.
+  \label{eq:polar-jacobian-cancellation}
+\end{equation}
+Thus the polar factor \(k_j\) cancels against the Hessian transformation.
+The amplitude \(\mathcal A_j\) in the Cartesian Morse sum contains the
+modal projection, Gaussian source, and branch window, but it does not
+contain a residual polar Jacobian.  A minimum has signature \(+2\), a saddle
+has signature \(0\), and a maximum has signature \(-2\), giving the factors
+\(-\mathrm i\), \(1\), and \(+\mathrm i\), respectively.  This completes
+the proof. \(\square\)
+
+\subsection{Frequency separation and signed modulation}
+
+For the exact fourfold branch, symmetry groups the eight points into a
+fourfold minimum family and a fourfold saddle family.  Define their exact
+frequencies by \(\omega_{\min}(\varepsilon)\) and
+\(\omega_{\mathrm{sad}}(\varepsilon)\).  Their exact critical-frequency
+separation and its weak-anisotropy expansion are
+\begin{equation}
+  \Delta\omega_{\mathrm{ms}}^{\mathrm{exact}}
+  :=|\omega_{\mathrm{sad}}-\omega_{\min}|,
+  \qquad
+  \Delta\omega_{\mathrm{ms}}^{\mathrm{exact}}
+  =2|\varepsilon V_4|+O(\varepsilon^2).
+  \label{eq:critical-frequency-separation}
+\end{equation}
+Factoring a mean carrier from two equal-weight leading terms produces a
+signed modulation whose angular rate is half the separation:
+\begin{equation}
+  \Omega_{\mathrm{mod}}
+  =\frac{\Delta\omega_{\mathrm{ms}}^{\mathrm{exact}}}{2}
+  =|\varepsilon V_4|+O(\varepsilon^2).
+  \label{eq:signed-modulation-rate}
+\end{equation}
+Here \(\Omega_{\mathrm{mod}}\ge0\) is the magnitude of the angular rate of a
+signed oscillatory modulation, not a signed frequency.  In the first-order
+overlap its signed-cosine period and magnitude/RMS repetition period are
+\begin{equation}
+  T_{\mathrm{signed}}=\frac{2\pi}{\Omega_{\mathrm{mod}}},
+  \qquad
+  T_{|\cdot|}=\frac{\pi}{\Omega_{\mathrm{mod}}}
+  =\frac{2\pi}{\Delta\omega_{\mathrm{ms}}^{\mathrm{exact}}}.
+  \label{eq:modulation-periods}
+\end{equation}
+In the first-order overlap the signature phases make the signed factor
+precisely \(\cos(|\varepsilon V_4|t-\pi/4)\), as shown in
+Eq.~\eqref{eq:bessel-overlap-response}.  Its magnitude repeats twice during
+one signed-cosine period.  Therefore the critical-frequency separation and
+the signed modulation rate differ by a factor of two.  They should be
+reported separately rather than combined under an ambiguous lossless
+continuum ``beat frequency.''  At fixed \(\varepsilon\), unequal exact
+amplitudes or higher-order phase shifts generally turn the pure cosine into
+a two-phasor modulation without changing the exact separation.
+
+\subsection{Nodal channels, noncommuting limits, and theorem boundaries}
+\label{rem:nodal-channels}
+
+The nonzero-amplitude hypotheses are essential rather than cosmetic.
+There are three distinct nodal mechanisms.
+\begin{enumerate}
+  \item If the isotropic angular mean \(A_0\) vanishes, the canonical
+        \(J_0\) term is absent.  Equation~\eqref{eq:weighted-bessel-series}
+        supplies the correct leading Bessel order when another compatible
+        Fourier coefficient is nonzero.
+  \item If \(\mathcal A_j=0\) at an exact Morse point, that point has no
+        \(t^{-1}\) contribution in Eq.~\eqref{eq:morse-stationary-sum}.
+        The first nonzero jet of the amplitude at the point determines the
+        next stationary-phase term; its exponent and phase must be derived
+        for that source/detector channel.
+  \item Even when every local amplitude is nonzero, symmetry-related terms
+        can cancel at discrete times or in a selected detector combination.
+        Such zeros do not change the generic local stationary-phase power.
+\end{enumerate}
+These cases also explain why response-decay fits use a predeclared RMS,
+upper, or demodulated envelope and exclude neighborhoods of cancellation
+zeros.
+
+Finally, the two relevant limits are noncommuting limits:
+\label{rem:noncommuting-limits}
+\begin{align}
+  &\varepsilon\to0\ \text{before the ultimate-time limit}
+    &&\Longrightarrow&&
+    \text{a Morse--Bott ring and }t^{-1/2},                         \notag\\
+  &t\to\infty\ \text{at fixed }\varepsilon\ne0
+    &&\Longrightarrow&&
+    \text{isolated exact Morse points and }t^{-1}.
+  \label{eq:noncommuting-green-limits}
+\end{align}
+Indeed, \(t_c=|\varepsilon V_4|^{-1}\to\infty\) as
+\(\varepsilon\to0\), whereas the coefficient of the separated Morse sum
+scales as \(|\varepsilon V_4|^{-1/2}\) and becomes nonuniform when the
+points merge into a ring.  The uniform \(J_0\) theorem resolves this
+coalescence for \(\varepsilon t=O(1)\); it cannot be extrapolated to
+arbitrarily large time at fixed nonzero \(\varepsilon\), because then
+\(\varepsilon^2tW_2^{\mathrm{eff}}\) eventually becomes order one.
+
+The results of this section require a finite-radius positive-frequency
+ring, nonzero radial curvature, a simple smooth branch with a uniform local
+eigengap, a stationary set separated from the window boundary, and exact
+nondegenerate Hessians in the fixed-anisotropy theorem.  If \(a=0\), if
+\(V_4=0\) without a resolved higher harmonic, if the eigengap closes, or if
+an exact Hessian is singular, a different canonical scaling is required.
+Material damping introduces an additional exponential envelope and lies
+outside the present lossless power-law theorem.  These boundaries prevent
+either Eq.~\eqref{eq:uniform-response} or
+Eq.~\eqref{eq:morse-stationary-sum} from being applied beyond its proved
+regime.

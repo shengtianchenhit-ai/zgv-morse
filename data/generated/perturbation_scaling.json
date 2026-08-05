@@ -1,0 +1,163 @@
+{
+  "arrays": {
+    "compensated_frequency_error": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "compensated_q_min": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "compensated_q_saddle": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "compensated_splitting": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "delta_omega_full": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "delta_omega_pred": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "epsilon": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "omega_min_error": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "omega_saddle_error": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "q_min_full": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "q_min_pred": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "q_saddle_full": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "q_saddle_pred": {
+      "dtype": "float64",
+      "shape": [
+        6
+      ]
+    },
+    "role_reversal_theta_min": {
+      "dtype": "float64",
+      "shape": [
+        4
+      ]
+    },
+    "role_reversal_theta_saddle": {
+      "dtype": "float64",
+      "shape": [
+        4
+      ]
+    },
+    "slope_radial": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "slope_remainder": {
+      "dtype": "float64",
+      "shape": []
+    },
+    "slope_splitting": {
+      "dtype": "float64",
+      "shape": []
+    }
+  },
+  "artifact": "perturbation_scaling",
+  "cache_key": "640386e50488dcb67db850c24b38e6178ed74f81a1fda1ae002a00ac44b8559d",
+  "cache_schema_version": 1,
+  "code_hash": "ac9aa78bf0cbab8626253a93610ee5cddee2a6fa98a14dfdc28ac37c476ec44b",
+  "command": "python -m zgv_morse.workflows --stage scaling --profile full",
+  "config_hash": "b0489b361a19aa32184ceb9331b733fc49aefd6d6485021c645e2b6347cefe90",
+  "dimensionless_convention": "kappa=k*h, Omega=omega*h/c_T",
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "input_artifacts": {
+    "sensitivity": {
+      "artifact": "angular_sensitivity",
+      "cache_key": "c01d7917b7484c84f2047037d208a291fa08054e10b083e8c3383e0602f5544c",
+      "output_sha256": "80eb9090714b3c2ae61593a70280bb25bb3b1aac37cb20826a09405431ba7b8b"
+    }
+  },
+  "metadata_sha256": "c7a9f0a7e34b27674dc59fdc8cd8963dd5fdd462f13fb471c1f7bf01444c7f1e",
+  "output_sha256": "ce9575aede3f98ca6a6ddb51c645929673220fc0ce867be325627e5d7eba1768",
+  "profile": "full",
+  "schema_version": 1,
+  "source_hash": "bd3842d80623e8e4f88d379d46274a2363e65d006cfe0af37438c3bc9636bc82",
+  "stage": "scaling",
+  "tolerances": {
+    "isotropic_axis_radius_bias": 0.0,
+    "isotropic_diagonal_radius_bias": 0.0,
+    "maximum_frequency_uncertainty": 3.956390770554208e-11,
+    "maximum_gradient_residual": 2.0266207793676292e-13,
+    "slope_radial_error": 0.00315027815045843,
+    "slope_remainder_error": 0.00042773493568226684,
+    "slope_splitting_error": 0.004182973314044713
+  },
+  "units": {
+    "compensated_frequency_error": "Omega per epsilon squared",
+    "compensated_q_min": "kappa per epsilon",
+    "compensated_q_saddle": "kappa per epsilon",
+    "compensated_splitting": "Omega per epsilon",
+    "delta_omega_full": "1",
+    "delta_omega_pred": "1",
+    "epsilon": "1",
+    "omega_min_error": "1",
+    "omega_saddle_error": "1",
+    "q_min_full": "1",
+    "q_min_pred": "1",
+    "q_saddle_full": "1",
+    "q_saddle_pred": "1",
+    "role_reversal_theta_min": "rad",
+    "role_reversal_theta_saddle": "rad",
+    "slope_radial": "log-log slope",
+    "slope_remainder": "log-log slope",
+    "slope_splitting": "log-log slope"
+  },
+  "uv_lock_hash": "867d211f8fe1c9b87328e6ce26af9c3ab338e8eec826926465f75de6d4f36fb9"
+}

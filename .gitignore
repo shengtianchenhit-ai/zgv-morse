@@ -1,0 +1,33 @@
+.worktrees/
+.DS_Store
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/*
+!build/paper/
+build/paper/*
+# Keep the compiled manuscripts: they are the release artefacts the README
+# points reviewers at, and rebuilding them needs a full TeX install.
+!build/paper/*.pdf
+dist/
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc

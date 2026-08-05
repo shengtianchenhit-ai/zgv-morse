@@ -1,0 +1,28 @@
+% Shared semantic notation. Computed values are exported separately to
+% paper/generated/results_macros.tex.
+% Suppress engine-generated timestamps, trailer IDs, and PTEX provenance so
+% SOURCE_DATE_EPOCH-controlled builds are byte reproducible.
+\ifdefined\pdfinfoomitdate
+  \pdfinfoomitdate=1
+\fi
+\ifdefined\pdftrailerid
+  \pdftrailerid{}
+\fi
+\ifdefined\pdfsuppressptexinfo
+  \pdfsuppressptexinfo=-1
+\fi
+\newcommand{\ZGV}{ZGV}
+\newcommand{\MorseBott}{Morse--Bott}
+\newcommand{\kvec}{\bm{k}}
+\newcommand{\xvec}{\bm{x}}
+\newcommand{\uvec}{\bm{u}}
+\newcommand{\nvec}{\bm{n}}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\order}{\mathcal{O}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\DeclareMathOperator{\Hess}{Hess}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}

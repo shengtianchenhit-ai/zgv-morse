@@ -1,0 +1,855 @@
+% Canonical derivation source for the weak-anisotropy unfolding of the ZGV ring.
+% This file is a LaTeX fragment and is included by the Supplementary Information.
+
+\section{Weak-anisotropy normal form and Morse splitting}
+\label{sec:anisotropic-morse-derivation}
+
+This section closes the coefficients of the weak-anisotropy normal form
+directly from the Hermitian elastic eigenproblem.  We first derive the
+eigenvalue sensitivity under arbitrary normalization.  We then specialize
+it to the fixed-density plate and differentiate the mode in a fixed mass
+gauge.  A separate tensor calculation shows why the registered cubic family
+has only a constant and a fourfold term at first order.  Finally, a radial
+implicit-function reduction and the exact Cartesian Hessian give the number
+and Morse type of the split critical points.
+
+Throughout, a dagger denotes the Hermitian adjoint and
+\(\lambda=\omega^2\).  The in-plane polar basis is
+\begin{equation}
+  \mathbf n(\theta)=(\cos\theta,\sin\theta,0),
+  \qquad
+  \mathbf t(\theta)=(-\sin\theta,\cos\theta,0),
+  \qquad
+  \mathbf z=(0,0,1).
+  \label{eq:anisotropic-polar-basis}
+\end{equation}
+The radial coordinate is denoted by \(k>0\), and
+\(q=k-k_0\) measures distance from the isotropic ZGV circle.
+
+\subsection{General Hermitian-pencil sensitivity}
+
+Let a real parameter \(p\) enter a Hermitian generalized eigenproblem
+\begin{equation}
+  K(p)\mathbf u(p)=\lambda(p)M(p)\mathbf u(p),
+  \qquad
+  K(p)^\dagger=K(p),
+  \qquad
+  M(p)^\dagger=M(p)>0.
+  \label{eq:general-hermitian-pencil}
+\end{equation}
+Assume that \(\lambda\) is simple and let
+\begin{equation}
+  N:=\mathbf u^\dagger M\mathbf u>0.
+  \label{eq:arbitrary-mass-norm}
+\end{equation}
+No normalization has yet been imposed.  Differentiating
+Eq.~\eqref{eq:general-hermitian-pencil} gives
+\begin{equation}
+  (K_p-\lambda_pM-\lambda M_p)\mathbf u
+  +(K-\lambda M)\mathbf u_p=\mathbf0.
+  \label{eq:differentiated-general-pencil}
+\end{equation}
+Left multiplication by \(\mathbf u^\dagger\) removes the last term because
+\(\mathbf u^\dagger(K-\lambda M)=\mathbf0^\dagger\).  Therefore
+\begin{equation}
+  \lambda_p
+  =\frac{\mathbf u^\dagger(K_p-\lambda M_p)\mathbf u}{N},
+  \qquad
+  \omega_p
+  =\frac{\mathbf u^\dagger(K_p-\lambda M_p)\mathbf u}
+         {2\omega N}.
+  \label{eq:general-frequency-sensitivity}
+\end{equation}
+Both the numerator and denominator acquire the same factor \(|c|^2\) under
+\(\mathbf u\mapsto c\mathbf u\), for any nonzero complex \(c\).  Thus
+Eq.~\eqref{eq:general-frequency-sensitivity} is valid with arbitrary
+normalization and is also phase invariant.  Hermiticity makes its numerator
+real.
+
+The present perturbation changes stiffness but not density.  Moreover, the
+plate mass form is independent of the in-plane wave vector.  Hence the
+fixed-density specialization is
+\begin{align}
+  M_k=M_\varepsilon=0,
+  \qquad&
+  \lambda_k=\frac{\mathbf u^\dagger K_k\mathbf u}{N},
+  \notag\\
+  \lambda_\varepsilon
+  =\frac{\mathbf u^\dagger K_\varepsilon\mathbf u}{N},
+  \qquad&
+  V(k,\theta):=\omega_\varepsilon
+  =\frac{\lambda_\varepsilon}{2\omega}.
+  \label{eq:fixed-mass-first-sensitivities}
+\end{align}
+Here every derivative is taken on the tracked simple branch, and
+\(K_\varepsilon\) is the stiffness derivative per unit \(\varepsilon\).
+
+For completeness, the radial derivative of \(V\) can also be written before
+choosing a normalization.  At fixed mass define
+\begin{align}
+  S_\varepsilon:=\mathbf u^\dagger K_\varepsilon\mathbf u,
+  \qquad&
+  (S_\varepsilon)_k
+  =\mathbf u_k^\dagger K_\varepsilon\mathbf u
+   +\mathbf u^\dagger K_{k\varepsilon}\mathbf u
+   +\mathbf u^\dagger K_\varepsilon\mathbf u_k,
+  \notag\\
+  N_k=\mathbf u_k^\dagger M\mathbf u
+      +\mathbf u^\dagger M\mathbf u_k.&
+  \label{eq:arbitrary-normalization-radial-ingredients}
+\end{align}
+Applying the quotient rule to
+\(V=S_\varepsilon/(2\omega N)\), and using
+\(\omega_k=\lambda_k/(2\omega)\), yields
+\begin{equation}
+  \partial_kV
+  =\frac{(S_\varepsilon)_k-S_\varepsilon N_k/N}{2\omega N}
+   -\frac{S_\varepsilon\lambda_k}{4\omega^3N}.
+  \label{eq:arbitrary-normalization-B}
+\end{equation}
+The combination in the first numerator cancels the derivative of any
+\(k\)-dependent scale or phase of \(\mathbf u\).  Equation
+\eqref{eq:arbitrary-normalization-B} is therefore normalization invariant,
+as required by the left-hand side.
+
+\subsection{Mass gauge, augmented solve, and the complete radial coefficient}
+
+For computation and for a compact reduced-resolvent formula, choose the
+mass-normalized eigenvector and its parallel-transport phase,
+\begin{equation}
+  \mathbf u^\dagger M\mathbf u=1,
+  \qquad
+  \mathbf u^\dagger M\mathbf u_k=0.
+  \label{eq:mass-normalized-parallel-gauge}
+\end{equation}
+The real part of the second condition follows by differentiating the first;
+the phase of \(\mathbf u\) is chosen to set its imaginary part to zero.  Put
+\(A:=K-\lambda M\).  Equation
+\eqref{eq:differentiated-general-pencil}, specialized to \(p=k\), together
+with the gauge is equivalent to the augmented system
+\begin{equation}
+  \begin{pmatrix}
+    K-\lambda M & M\mathbf u\\
+    \mathbf u^\dagger M & 0
+  \end{pmatrix}
+  \begin{pmatrix}\mathbf u_k\\ \alpha\end{pmatrix}
+  =
+  \begin{pmatrix}
+    -(K_k-\lambda_kM)\mathbf u\\ 0
+  \end{pmatrix}.
+  \label{eq:augmented-mode-derivative}
+\end{equation}
+For an exact simple eigenpair the multiplier is \(\alpha=0\).  The augmented
+matrix is nonsingular: a homogeneous solution first gives
+\(\alpha=0\) after left multiplication of its upper row by
+\(\mathbf u^\dagger\); simplicity then gives
+\(\mathbf x=c\mathbf u\), and the lower row forces \(c=0\).
+
+Let \(\{(\lambda_n,\mathbf u_n)\}\) be a complete set of generalized
+eigenpairs with
+\(\mathbf u_m^\dagger M\mathbf u_n=\delta_{mn}\), and let the selected
+mode have index zero.  Taking the inner product of the differentiated
+equation with \(\mathbf u_n\), for \(n\ne0\), gives
+\begin{align}
+  (\lambda_n-\lambda)
+  \mathbf u_n^\dagger M\mathbf u_k
+  &=-\mathbf u_n^\dagger
+       (K_k-\lambda_kM)\mathbf u                                      \notag\\
+  &=-\mathbf u_n^\dagger K_k\mathbf u.
+  \label{eq:mode-derivative-coefficient}
+\end{align}
+The gauge removes the component along \(\mathbf u\), so
+\begin{equation}
+  \mathbf u_k
+  =\sum_{n\ne0}
+    \mathbf u_n
+    \frac{\mathbf u_n^\dagger K_k\mathbf u}{\lambda-\lambda_n}.
+  \label{eq:mode-derivative-modal-sum}
+\end{equation}
+Equivalently, define the reduced resolvent
+\begin{equation}
+  \mathcal R_\lambda
+  :=\sum_{n\ne0}
+    \frac{\mathbf u_n\mathbf u_n^\dagger}{\lambda_n-\lambda}.
+  \label{eq:reduced-resolvent}
+\end{equation}
+Then
+\(
+  \mathbf u_k=-\mathcal R_\lambda
+  (K_k-\lambda_kM)\mathbf u
+\).
+The modal sum and the augmented system are two representations of the same
+gauge-fixed derivative.  On a compact parameter set, a uniform positive
+eigengap together with uniform coercivity and boundedness of the mass matrix
+bounds \(\mathcal R_\lambda\) in the associated operator norms.  Here the
+mass matrix is fixed and positive definite.  Loss of either hypothesis is
+addressed below as a theorem boundary.
+
+In the gauge \eqref{eq:mass-normalized-parallel-gauge}, differentiation of
+\(\lambda_\varepsilon=\mathbf u^\dagger K_\varepsilon\mathbf u\)
+gives the full mixed eigenvalue derivative
+\begin{equation}
+  \lambda_{k\varepsilon}
+  =\mathbf u^\dagger K_{k\varepsilon}\mathbf u
+   +2\operatorname{Re}
+     (\mathbf u^\dagger K_\varepsilon\mathbf u_k).
+  \label{eq:complete-mixed-eigenvalue-derivative}
+\end{equation}
+Consequently the radial coefficient in the frequency normal form is
+\begin{align}
+  B(\theta)
+  :=\left.\partial_k\partial_\varepsilon\omega
+    \right|_{(k_0,\theta,0)}
+  &=\left.
+    \left(
+      \frac{\lambda_{k\varepsilon}}{2\omega}
+      -\frac{\lambda_\varepsilon\lambda_k}{4\omega^3}
+    \right)\right|_{(k_0,\theta,0)}                                  \notag\\
+  &=\left.
+    \left[
+      \frac{\mathbf u^\dagger K_{k\varepsilon}\mathbf u}{2\omega}
+      +\frac{\operatorname{Re}
+        (\mathbf u^\dagger K_\varepsilon\mathbf u_k)}{\omega}
+      -\frac{\lambda_\varepsilon\lambda_k}{4\omega^3}
+    \right]\right|_{(k_0,\theta,0)}.
+  \label{eq:complete-radial-frequency-sensitivity}
+\end{align}
+The three displayed contributions are, respectively, the explicit mixed
+stiffness derivative, the differentiated-mode contribution, and the
+frequency-denominator contribution.  At the exact isotropic ZGV point,
+\(\lambda_k=2\omega\omega_k=0\), so the last contribution evaluates to
+zero there.  It remains part of the general identity and is required away
+from the exact ZGV radius.  In particular, \(B\) is not a fixed-mode strain
+integral.
+
+\subsection{Rotation and complete contraction of the cubic perturbation}
+
+Let \(\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\) be the orthonormal cubic
+axes.  A cubic elasticity tensor can be decomposed exactly as
+\begin{align}
+  C_{ijkl}
+  ={}&C_{12}\delta_{ij}\delta_{kl}
+   +C_{44}(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})
+  \notag\\
+  &+\Delta_C\sum_{\alpha=1}^{3}
+      a_{\alpha i}a_{\alpha j}a_{\alpha k}a_{\alpha l},
+  \qquad
+  \Delta_C=C_{11}-C_{12}-2C_{44}.
+  \label{eq:cubic-tensor-decomposition}
+\end{align}
+Indeed, the \(iiii\), \(iijj\), and \(ijij\) components of the right-hand
+side are \(C_{12}+2C_{44}+\Delta_C=C_{11}\), \(C_{12}\), and
+\(C_{44}\), respectively, and cubic symmetry generates all remaining
+nonzero components.
+
+The registered bulk-preserving family is
+\begin{equation}
+  C_{11}=\lambda+2\mu+\frac{2}{3}\varepsilon\delta,
+  \qquad
+  C_{12}=\lambda-\frac{1}{3}\varepsilon\delta,
+  \qquad
+  C_{44}=\mu.
+  \label{eq:registered-cubic-family}
+\end{equation}
+It has
+\begin{equation}
+  C_{12}^{(1)}=-\frac{\delta}{3},
+  \qquad
+  C_{44}^{(1)}=0,
+  \qquad
+  \Delta_C^{(1)}
+  :=\left.\partial_\varepsilon\Delta_C\right|_0=\delta,
+  \qquad
+  \Delta_C(\varepsilon)=\varepsilon\delta.
+  \label{eq:cubic-family-derivatives}
+\end{equation}
+Thus Eq.~\eqref{eq:cubic-tensor-decomposition} gives
+\begin{equation}
+  C^{(1)}_{ijkl}
+  =-\frac{\delta}{3}\delta_{ij}\delta_{kl}
+   +\delta\sum_{\alpha=1}^{3}
+      a_{\alpha i}a_{\alpha j}a_{\alpha k}a_{\alpha l}.
+  \label{eq:registered-cubic-perturbation-tensor}
+\end{equation}
+The cubic stability inequalities reduce to
+\(\mu>0\), \(2\mu+\varepsilon\delta>0\), and
+\(3\lambda+2\mu>0\).  Thus, for the registered \(\delta>0\), stability
+requires \(\varepsilon>-2\mu/\delta\); the weak signed interval used below is
+chosen as a compact neighbourhood of zero inside this bound.  No assertion is
+made for arbitrarily large negative \(\varepsilon\).
+
+For a [001]-cut plate, take the crystallographic axes to be
+\(\mathbf a_1=\mathbf e_x\),
+\(\mathbf a_2=\mathbf e_y\), and
+\(\mathbf a_3=\mathbf e_z\).  The rotation whose columns are
+\((\mathbf n,\mathbf t,\mathbf z)\) is
+\begin{equation}
+  R(\theta)=
+  \begin{pmatrix}
+    \cos\theta&-\sin\theta&0\\
+    \sin\theta& \cos\theta&0\\
+    0&0&1
+  \end{pmatrix},
+  \qquad
+  \widetilde C^{(1)}_{abcd}(\theta)
+  =R_{ia}R_{jb}R_{kc}R_{ld}C^{(1)}_{ijkl}.
+  \label{eq:cubic-tensor-rotation}
+\end{equation}
+The isotropic sagittal mode propagating along \(\mathbf n\) has displacement
+\begin{equation}
+  \widehat{\mathbf u}(z;\theta)
+  =U(z)\mathbf n+W(z)\mathbf z,
+  \label{eq:isotropic-sagittal-mode}
+\end{equation}
+and strain
+\begin{align}
+  \boldsymbol\epsilon
+  ={}&E\,\mathbf n\mathbf n
+   +Z\,\mathbf z\mathbf z
+   +S(\mathbf n\mathbf z+\mathbf z\mathbf n),
+  \notag\\
+  &E=\mathrm{i}k_0U,
+  \qquad
+  Z=W',
+  \qquad
+  S=\frac{U'+\mathrm{i}k_0W}{2}.
+  \label{eq:sagittal-strain-components}
+\end{align}
+Writing \(c=\cos\theta\) and \(s=\sin\theta\), its six independent
+components in the crystal frame are
+\begin{equation}
+  \epsilon_{xx}=c^2E,
+  \quad
+  \epsilon_{yy}=s^2E,
+  \quad
+  \epsilon_{zz}=Z,
+  \quad
+  \epsilon_{xy}=csE,
+  \quad
+  \epsilon_{xz}=cS,
+  \quad
+  \epsilon_{yz}=sS.
+  \label{eq:rotated-sagittal-strain}
+\end{equation}
+
+Before inserting the special family, the complete cubic strain contraction
+is
+\begin{align}
+  \epsilon_{ij}^*C^{(1)}_{ijkl}\epsilon_{kl}
+  ={}&C_{11}^{(1)}
+      (|\epsilon_{xx}|^2+|\epsilon_{yy}|^2+|\epsilon_{zz}|^2)       \notag\\
+    &+2C_{12}^{(1)}\operatorname{Re}
+      (\epsilon_{xx}^*\epsilon_{yy}
+       +\epsilon_{xx}^*\epsilon_{zz}
+       +\epsilon_{yy}^*\epsilon_{zz})                              \notag\\
+    &+4C_{44}^{(1)}
+      (|\epsilon_{xy}|^2+|\epsilon_{xz}|^2+|\epsilon_{yz}|^2).
+  \label{eq:complete-cubic-strain-contraction}
+\end{align}
+Every normal and shear component in
+Eq.~\eqref{eq:rotated-sagittal-strain} is represented here.  The required
+trigonometric products are
+\begin{equation}
+  c^4+s^4=\frac{3+\cos4\theta}{4},
+  \qquad
+  c^2s^2=\frac{1-\cos4\theta}{8}.
+  \label{eq:fourfold-trigonometric-products}
+\end{equation}
+Substituting Eqs.~\eqref{eq:cubic-family-derivatives},
+\eqref{eq:rotated-sagittal-strain}, and
+\eqref{eq:fourfold-trigonometric-products} into
+Eq.~\eqref{eq:complete-cubic-strain-contraction} gives, term by term,
+\begin{align}
+  \epsilon^*:C^{(1)}:\epsilon
+  =\delta\left[
+      \frac{5}{12}|E|^2
+      +\frac{2}{3}|Z|^2
+      -\frac{2}{3}\operatorname{Re}(E^*Z)
+      +\frac{1}{4}|E|^2\cos4\theta
+    \right].
+  \label{eq:registered-cubic-strain-contraction}
+\end{align}
+The shear strain \(S\) has zero coefficient here precisely because
+\(C_{44}^{(1)}=0\), not because it was excluded from the contraction.
+
+For a mode of arbitrary mass norm
+\begin{equation}
+  N=\int_{-h}^{h}\rho(|U|^2+|W|^2)\,\mathrm dz,
+  \label{eq:sagittal-mode-mass-norm}
+\end{equation}
+the first-order sensitivity is therefore
+\begin{equation}
+  V(\theta)=V_0+V_4\cos4\theta,
+  \label{eq:first-order-cubic-angular-sensitivity}
+\end{equation}
+where
+\begin{align}
+  V_0
+  &=\frac{\delta}{2\omega_0N}
+    \int_{-h}^{h}\left[
+      \frac{5}{12}|E|^2+\frac{2}{3}|Z|^2
+      -\frac{2}{3}\operatorname{Re}(E^*Z)
+    \right]\,\mathrm dz,                                           \label{eq:cubic-vzero}\\
+  V_4
+  &=Q_4\Delta_C^{(1)},
+  \qquad
+  Q_4:=\frac{1}{8\omega_0N}\int_{-h}^{h}|E|^2\,\mathrm dz
+      =\frac{k_0^2}{8\omega_0N}\int_{-h}^{h}|U|^2\,\mathrm dz>0.
+  \label{eq:cubic-vfour}
+\end{align}
+The last inequality holds for the selected finite-wavenumber Lamb mode,
+whose in-plane component is nonzero.  Since
+\(\Delta_C^{(1)}=\delta>0\) in the current family, it follows analytically
+that \(V_4>0\).  The reference spectral evaluation gives
+\(V_4=0.014063828174045103>0\) in the registered dimensionless units.
+The physical angular frequency displacement is
+\begin{equation}
+  \varepsilon V_4
+  =Q_4\Delta_C(\varepsilon),
+  \label{eq:physical-cubic-angular-shift}
+\end{equation}
+so \(\varepsilon\) is applied exactly once.  Cubic symmetry by itself would
+allow \(\cos(8\theta)\) and further multiples of four; the explicit
+first-order tensor contraction proves that they are absent for this linear
+perturbation family.
+
+\subsection{Controlled normal form and radial implicit-function reduction}
+
+We now state the local reduction with its derivative-level remainder.  The
+regularity assumptions are stronger than the minimum needed for the radial
+root because later stationary-phase arguments differentiate the phase and
+amplitude further.
+
+\begin{theorem}[Weak-anisotropy normal form]
+\label{thm:anisotropic-normal-form}
+Let the isotropic plate possess a positive-frequency ZGV circle at
+\(k=k_0>0\), with radial curvature \(a\ne0\).  Assume that, in a closed
+annulus about this circle and for \(|\varepsilon|\leq\varepsilon_0\), the
+tracked generalized eigenvalue is simple, the mass matrix is positive
+definite, and the mass-normalized eigengap obeys
+\begin{equation}
+  \inf_{\theta,q,\varepsilon}
+  \min_{n\ne0}|\lambda_n-\lambda|=g>0.
+  \label{eq:uniform-anisotropic-eigengap}
+\end{equation}
+Assume also that the Hermitian pencil is sufficiently smooth that the
+selected real frequency branch is \(C^6\) in the local variables.  The
+elastic pencil used here is analytic, so this hypothesis is automatic away
+from an eigengap closure.  Then,
+after reducing the annulus if necessary,
+\begin{equation}
+  \omega(q,\theta;\varepsilon)
+  =\omega_0+\frac{a}{2}q^2
+   +\varepsilon\bigl[V(\theta)+qB(\theta)\bigr]
+   +R(q,\theta,\varepsilon),
+  \label{eq:controlled-anisotropic-normal-form}
+\end{equation}
+where \(V=\partial_\varepsilon\omega(k_0,\theta;0)\),
+\(B=\partial_k\partial_\varepsilon\omega(k_0,\theta;0)\), and
+\begin{equation}
+  R=q^3r_{30}+\varepsilon q^2r_{12}+\varepsilon^2r_{02},
+  \label{eq:normal-form-remainder-factorization}
+\end{equation}
+with uniformly bounded periodic \(C^3\) coefficient functions.  In
+particular, with \((x)_+=\max(x,0)\), every derivative used
+in the two-dimensional Morse reduction satisfies
+\begin{equation}
+  \left|
+    \partial_q^i\partial_\theta^jR(q,\theta,\varepsilon)
+  \right|
+  \leq C_{ij}\left(
+    |q|^{3-i}
+    +|\varepsilon|\,|q|^{(2-i)_+}
+    +\varepsilon^2
+  \right),
+  \qquad 0\leq i+j\leq2.
+  \label{eq:derivative-level-c2-remainder}
+\end{equation}
+The same bound with \(i=1\) holds after two angular derivatives, as follows
+directly from Eq.~\eqref{eq:normal-form-remainder-factorization}.  There is a
+unique periodic radial stationary graph
+\(q=q_*(\theta,\varepsilon)\) near zero, and
+\begin{equation}
+  q_*(\theta,\varepsilon)
+  =-\frac{\varepsilon B(\theta)}{a}
+   +O_{C^2}(\varepsilon^2).
+  \label{eq:radial-shift}
+\end{equation}
+If
+\(
+  W_2(\theta):=r_{02}(0,\theta,0)
+  =\tfrac12\partial_\varepsilon^2
+    \omega(k_0,\theta;0)
+\), the frequency restricted to this graph is
+\begin{equation}
+  \omega_*(\theta;\varepsilon)
+  :=\omega(q_*(\theta,\varepsilon),\theta;\varepsilon)
+  =\omega_0+\varepsilon V(\theta)
+   +\varepsilon^2\left[
+      W_2(\theta)-\frac{B(\theta)^2}{2a}
+    \right]
+   +O_{C^2}(\varepsilon^3).
+  \label{eq:reduced-angular-frequency-second-order}
+\end{equation}
+\end{theorem}
+
+\paragraph{Proof.}
+The uniform eigengap and simplicity make the spectral projector and the
+selected eigenvalue smooth.  Taylor expansion first in \(q\) and then in
+\(\varepsilon\), using
+\(
+  \omega_q(0,\theta;0)=0
+\),
+\(
+  \omega_{qq}(0,\theta;0)=a
+\), and isotropic independence of \(\theta\), gives
+Eqs.~\eqref{eq:controlled-anisotropic-normal-form} and
+\eqref{eq:normal-form-remainder-factorization}.  Applying the product rule
+to the three factored terms gives
+Eq.~\eqref{eq:derivative-level-c2-remainder} derivative by derivative.
+
+Radial stationarity is the equation
+\begin{equation}
+  F(q,\theta,\varepsilon)
+  :=\omega_q
+  =aq+\varepsilon B(\theta)+R_q=0.
+  \label{eq:radial-stationarity-equation}
+\end{equation}
+At \((q,\varepsilon)=(0,0)\), one has
+\(F=0\) and \(F_q=a\ne0\).  The parameter-dependent
+implicit-function theorem, applied uniformly on the compact angular circle,
+gives the unique periodic graph.  It first gives \(q_*=O(\varepsilon)\).
+The \(i=1\) bound in
+Eq.~\eqref{eq:derivative-level-c2-remainder} then gives
+\(
+  R_q(q_*,\theta,\varepsilon)=O_{C^2}(\varepsilon^2)
+\).  Solving Eq.~\eqref{eq:radial-stationarity-equation} for \(q_*\) proves
+Eq.~\eqref{eq:radial-shift}.
+
+At \(q_*=O(\varepsilon)\), the three parts of the remainder are
+\begin{equation}
+  q_*^3r_{30}=O_{C^2}(\varepsilon^3),
+  \qquad
+  \varepsilon q_*^2r_{12}=O_{C^2}(\varepsilon^3),
+  \qquad
+  \varepsilon^2r_{02}
+  =\varepsilon^2W_2+O_{C^2}(\varepsilon^3).
+  \label{eq:remainder-on-radial-graph}
+\end{equation}
+Finally,
+\begin{equation}
+  \frac a2q_*^2+\varepsilon q_*B
+  =-\frac{\varepsilon^2B^2}{2a}
+   +O_{C^2}(\varepsilon^3),
+  \label{eq:radial-relaxation-energy}
+\end{equation}
+which proves Eq.~\eqref{eq:reduced-angular-frequency-second-order}.
+\(\square\)
+
+\subsection{Exact Cartesian Hessian and its Schur inertia}
+
+The Morse classification must use the Cartesian Hessian, not the matrix of
+uncorrected polar second partial derivatives.  For any scalar
+\(f(q,\theta)\), with \(k=k_0+q>0\), direct differentiation of
+\(
+  \nabla_{\mathbf k}f
+  =\mathbf n f_q+\mathbf t f_\theta/k
+\)
+gives the Cartesian Hessian in the orthonormal polar basis:
+\begin{equation}
+  \begin{pmatrix}\mathbf n&\mathbf t\end{pmatrix}^{\mathsf T}
+  \nabla_{\mathbf k}^2f
+  \begin{pmatrix}\mathbf n&\mathbf t\end{pmatrix}
+  =
+  \begin{pmatrix}
+    f_{qq}
+      &k^{-1}f_{q\theta}-k^{-2}f_\theta\\[2pt]
+    k^{-1}f_{q\theta}-k^{-2}f_\theta
+      &k^{-1}f_q+k^{-2}f_{\theta\theta}
+  \end{pmatrix}.
+  \label{eq:general-cartesian-polar-hessian}
+\end{equation}
+At a critical point \((q_j,\theta_j)\), both first partial derivatives
+vanish, and the exact matrix is
+\begin{equation}
+  \mathbf H_j
+  =
+  \begin{pmatrix}
+    \omega_{qq}
+      &k_j^{-1}\omega_{q\theta}\\[2pt]
+    k_j^{-1}\omega_{q\theta}
+      &k_j^{-2}\omega_{\theta\theta}
+  \end{pmatrix}_{(q_j,\theta_j)},
+  \qquad k_j=k_0+q_j.
+  \label{eq:critical-cartesian-polar-hessian}
+\end{equation}
+
+Along the radial graph, implicit differentiation gives
+\begin{equation}
+  q_*'=-\frac{\omega_{q\theta}}{\omega_{qq}},
+  \qquad
+  \omega_*'=\omega_\theta,
+  \qquad
+  \omega_*''
+  =\omega_{\theta\theta}
+   -\frac{\omega_{q\theta}^2}{\omega_{qq}}.
+  \label{eq:reduced-angular-schur-derivative}
+\end{equation}
+If \(\omega_{qq}\ne0\), Sylvester's law of inertia applied to
+Eq.~\eqref{eq:critical-cartesian-polar-hessian} gives the exact decomposition
+\begin{equation}
+  \operatorname{inertia}(\mathbf H_j)
+  =\operatorname{inertia}(\omega_{qq})
+   +\operatorname{inertia}\left(
+      \frac{\omega_*''}{k_j^2}
+    \right).
+  \label{eq:hessian-schur-inertia}
+\end{equation}
+Thus the mixed derivative changes the tangential eigenvalue through the
+Schur complement; it cannot be discarded before the inertia is taken.
+
+At a critical point generated by the normal form,
+Eqs.~\eqref{eq:derivative-level-c2-remainder} and
+\eqref{eq:radial-shift} give
+\begin{equation}
+  \mathbf H_j
+  =
+  \begin{pmatrix}
+    a+O(\varepsilon)
+      &\dfrac{\varepsilon B'(\theta_j)}{k_0}+O(\varepsilon^2)\\[8pt]
+    \dfrac{\varepsilon B'(\theta_j)}{k_0}+O(\varepsilon^2)
+      &\dfrac{\varepsilon V''(\theta_j)}{k_0^2}
+       +O(\varepsilon^2)
+  \end{pmatrix}.
+  \label{eq:leading-anisotropic-cartesian-hessian}
+\end{equation}
+Its Schur complement is
+\begin{equation}
+  \frac{1}{k_j^2}\left(
+    \omega_{\theta\theta}
+    -\frac{\omega_{q\theta}^2}{\omega_{qq}}
+  \right)
+  =\frac{\varepsilon V''(\theta_j)}{k_0^2}
+   +O(\varepsilon^2).
+  \label{eq:leading-tangential-schur-complement}
+\end{equation}
+For the reference branch \(a>0\), the radial inertia is positive and the
+sign of \(\varepsilon V''\) determines whether the second direction is
+positive or negative.
+
+\subsection{General even harmonic and the cubic eight-point theorem}
+
+Reciprocity gives
+\(\omega(k,\theta;\varepsilon)
+ =\omega(k,\theta+\pi;\varepsilon)\).
+Therefore the order \(m\) of the first nonconstant angular harmonic must be
+even.  A mirror axis fixes the phase origin of each allowed harmonic, but does
+not by itself remove other harmonics.  We now impose the additional
+pure-leading-harmonic hypothesis
+\begin{equation}
+  V(\theta)=V_0+V_m\cos[m(\theta-\theta_0)],
+  \qquad V_m\ne0.
+  \label{eq:pure-general-even-harmonic}
+\end{equation}
+Its derivative has the \(2m\) simple zeros
+\begin{equation}
+  \theta_j^{(0)}=\theta_0+\frac{j\pi}{m},
+  \qquad j=0,\ldots,2m-1,
+  \label{eq:pure-harmonic-angular-roots}
+\end{equation}
+and
+\begin{equation}
+  V''(\theta_j^{(0)})
+  =-m^2V_m(-1)^j.
+  \label{eq:pure-harmonic-angular-curvature}
+\end{equation}
+Since
+\(
+  \omega_*'=\varepsilon V'+O_{C^1}(\varepsilon^2)
+\), the ordinary implicit-function theorem at each simple zero gives
+\begin{equation}
+  \theta_j=\theta_0+\frac{j\pi}{m}+O(\varepsilon),
+  \qquad
+  k_j=k_0-\frac{\varepsilon B(\theta_j)}{a}
+       +O(\varepsilon^2).
+  \label{eq:general-harmonic-critical-locations}
+\end{equation}
+For \(a>0\), Eq.~\eqref{eq:leading-tangential-schur-complement} shows that
+the points alternate between \(m\) minima and \(m\) saddles.  Reversing the
+sign of \(\varepsilon V_m\) leaves the leading angular locations fixed and
+exchanges their roles.  Their leading frequencies are
+\begin{equation}
+  \omega_j
+  =\omega_0+\varepsilon[V_0+V_m(-1)^j]
+   +O(\varepsilon^2),
+  \qquad
+  \Delta\omega_{\mathrm{ms}}
+  =2|\varepsilon V_m|+O(\varepsilon^2).
+  \label{eq:general-harmonic-frequency-splitting}
+\end{equation}
+The gradient index is \(+1\) at each minimum and \(-1\) at each saddle, so
+the algebraic index sum is
+\begin{equation}
+  m(+1)+m(-1)=0.
+  \label{eq:general-harmonic-index-sum}
+\end{equation}
+
+A fixed higher harmonic must be distinguished from the
+\(O(\varepsilon)\) correction to the roots above.  Suppose instead that
+\begin{equation}
+  V(\theta)=V_0+V_m\cos[m(\theta-\theta_0)]
+             +\mathcal H(\theta).
+  \label{eq:leading-harmonic-plus-remainder}
+\end{equation}
+There is a constant \(c_m>0\) such that the dominance condition
+\begin{equation}
+  \lVert\mathcal H\rVert_{C^2}
+  <c_m|V_m|
+  \label{eq:higher-harmonic-dominance}
+\end{equation}
+preserves the \(2m\) simple zeros and their alternating curvatures.  Their
+locations obey the separate estimate
+\begin{equation}
+  \theta_j
+  =\theta_0+\frac{j\pi}{m}
+   +O\left(
+      \frac{\lVert\mathcal H\rVert_{C^1}}{|V_m|}
+    \right)
+   +O(\varepsilon).
+  \label{eq:higher-harmonic-root-shift}
+\end{equation}
+Without a bound such as Eq.~\eqref{eq:higher-harmonic-dominance}, point-group
+symmetry alone does not fix the number of angular critical points.
+
+\begin{theorem}[Cubic Morse splitting]
+\label{thm:cubic-morse-splitting}
+Assume the hypotheses of Theorem~\ref{thm:anisotropic-normal-form}, take the
+reference radial curvature \(a>0\), and use the [001] cubic family
+\eqref{eq:registered-cubic-family} with \(\delta>0\).  Then, for every
+sufficiently small nonzero \(\varepsilon\), a thin annular neighbourhood of
+the isotropic ZGV circle contains exactly eight critical points of the
+tracked branch.  They satisfy
+\begin{equation}
+  \theta_j=\frac{j\pi}{4}+O(\varepsilon),
+  \qquad
+  k_j=k_0-\frac{\varepsilon B(\theta_j)}{a}
+       +O(\varepsilon^2),
+  \qquad j=0,\ldots,7.
+  \label{eq:cubic-eight-critical-points}
+\end{equation}
+Four are Morse minima and four are Morse saddles.  For
+\(\varepsilon>0\), the odd \(j\) are minima and the even \(j\) are saddles;
+for \(\varepsilon<0\), these roles reverse.  The two critical-frequency
+families are separated by
+\begin{equation}
+  \Delta\omega_{\mathrm{ms}}
+  =2|\varepsilon V_4|+O(\varepsilon^2),
+  \qquad V_4=Q_4\delta>0,
+  \label{eq:cubic-minimum-saddle-separation}
+\end{equation}
+and their total gradient index is zero.
+\end{theorem}
+
+\paragraph{Proof.}
+Equations~\eqref{eq:registered-cubic-strain-contraction}--
+\eqref{eq:cubic-vfour} prove, rather than infer from symmetry, that the
+first-order angular sensitivity is the pure harmonic
+\(V_0+V_4\cos4\theta\) and that \(V_4>0\).  Set \(m=4\) and
+\(\theta_0=0\) in
+Eqs.~\eqref{eq:pure-harmonic-angular-roots}--
+\eqref{eq:general-harmonic-critical-locations}.  This gives eight points.
+At their leading locations,
+\begin{equation}
+  \varepsilon V''(\theta_j)
+  =-16\varepsilon V_4(-1)^j+O(\varepsilon^2).
+  \label{eq:cubic-tangential-curvature-sign}
+\end{equation}
+The radial Schur pivot is positive, while the second pivot has the sign in
+Eq.~\eqref{eq:cubic-tangential-curvature-sign}.  The stated minimum--saddle
+classification and its reversal follow.  Equation
+\eqref{eq:general-harmonic-frequency-splitting} supplies the separation, and
+Eq.~\eqref{eq:general-harmonic-index-sum} supplies the index sum.
+To prove that the count is exact, choose disjoint angular neighbourhoods of
+the eight simple zeros of \(V'\).  On their compact complement,
+\(\lvert V'\rvert\) has a positive lower bound.  After division by the
+nonzero \(\varepsilon\), the \(O_{C^1}(\varepsilon)\) correction in
+\(\omega_*'/\varepsilon\) cannot create a zero there when
+\(\lvert\varepsilon\rvert\) is sufficiently small.  The radial graph is
+unique at every angle by Theorem~\ref{thm:anisotropic-normal-form}; hence no
+additional critical point exists in the reduced annulus.
+\(\square\)
+
+\subsection{Exceptional cases and theorem boundaries}
+
+The condition \(V_m\ne0\) is substantive.  If a nominal coefficient such
+as \(V_4\) vanishes, the following cases must be distinguished.
+\begin{enumerate}
+  \item If a higher harmonic \(V_\ell\cos(\ell\theta)\), with even
+        \(\ell>m\), is the first nonzero nonconstant term at order
+        \(\varepsilon\), the preceding calculation applies with
+        \(m\) replaced by \(\ell\).
+  \item If the whole first-order sensitivity is angularly constant, the
+        second order reduced coefficient is
+        \begin{equation}
+          V_2^{\mathrm{eff}}(\theta)
+          :=W_2(\theta)-\frac{B(\theta)^2}{2a}.
+          \label{eq:effective-second-order-angular-potential}
+        \end{equation}
+        A nonzero nondegenerate harmonic of
+        \(V_2^{\mathrm{eff}}\) splits the ring with tangential curvature of
+        order \(\varepsilon^2\), not order \(\varepsilon\).
+  \item If two or more harmonics compete at the same first nonzero order,
+        the critical-point count is the zero count of their full derivative;
+        it is not determined by one nominal order.  If at a root both
+        \(V'=0\) and \(V''=0\), the point is degenerate and the Morse
+        conclusion does not apply until the next local term is resolved.
+\end{enumerate}
+
+Two independent spectral boundaries are equally important.  If \(a=0\),
+then \(F_q(0,\theta,0)=0\), the radial implicit-function argument fails,
+and the balance between anisotropy and the first nonzero higher radial term
+has a different scaling.  If the eigengap \(g\) closes, the reduced
+resolvent becomes unbounded and a scalar tracked branch is not smooth; a
+matrix-valued degenerate perturbation problem is then required.  The cases
+\(k_0=0\) and \(\omega_0=0\) are also outside the present polar-ring and
+positive-square-root formulation, respectively.
+
+\subsection{Conversion to the dimensionless computational convention}
+
+The code uses
+\begin{equation}
+  \kappa=kh,
+  \qquad
+  \Omega=\frac{\omega h}{c_T},
+  \qquad
+  c_T=\sqrt{\frac{\mu}{\rho}},
+  \qquad
+  q_\kappa=\kappa-\kappa_0=hq.
+  \label{eq:anisotropic-nondimensional-variables}
+\end{equation}
+Writing subscripts \(\omega\) and \(\Omega\) for coefficients in the
+dimensional and dimensionless frequency normal forms, the chain rule gives
+\begin{equation}
+  V_\Omega=\frac{h}{c_T}V_\omega,
+  \qquad
+  B_\Omega=\frac{1}{c_T}B_\omega,
+  \qquad
+  a_\Omega=\frac{1}{hc_T}a_\omega.
+  \label{eq:anisotropic-coefficient-conversion}
+\end{equation}
+Hence
+\begin{equation}
+  q_{\kappa,*}
+  =-\frac{\varepsilon B_\Omega}{a_\Omega}
+   +O(\varepsilon^2)
+  =h\left[-\frac{\varepsilon B_\omega}{a_\omega}
+   +O(\varepsilon^2)\right],
+  \label{eq:dimensionless-radial-shift}
+\end{equation}
+which is exactly the dimensional location multiplied by \(h\).  If the
+dimensional invariant \(\Delta_C^{(1)}\) is retained, then
+\(Q_{4,\Omega}=(h/c_T)Q_{4,\omega}\).  If stiffness is additionally divided
+by \(\mu\), the corresponding coefficient absorbs the factor \(\mu\).
+For the registered reference values
+\(h=\rho=\mu=1\), one has \(c_T=1\), so the numerical and dimensional
+coefficient values coincide in the chosen units.

@@ -1,0 +1,169 @@
+\section{Discussion}
+
+\subsection{Geometry and noncommuting limits}
+
+Within the controlled weak-cubic family and the declared local annulus, the
+essential change is geometric rather than a uniform frequency displacement.
+The local Morse--Bott ring unfolds into isolated Morse minima and saddles.
+The isotropic ZGV critical ring is Morse--Bott: radial localization is
+nondegenerate, but continuous rotation leaves a tangential Hessian zero mode
+(Theorem~\ref{thm:morse-bott-ring}).  Cubic anisotropy lifts that zero mode and
+organizes the local stationary set into alternating Cartesian Morse points
+(Theorem~\ref{thm:cubic-morse-splitting}).  The extra nondegenerate direction
+adds angular stationary phase to the existing radial stationary phase.  This
+explains why the ring and point regimes carry different time exponents without
+describing the change as a phase transition.
+
+The two exponents belong to noncommuting limits.  Write
+\(\alpha=\varepsilon V_4\).  The ring-scale response is proportional to
+\(t^{-1/2}J_0(\alpha t)\), whereas the isolated-point scale in the controlled
+overlap is \(\lvert\alpha\rvert^{-1/2}t^{-1}\).  The latter prefactor follows
+from the tangential Hessian curvature in
+Eq.~\eqref{eq:overlap-hessian-signatures}; point multiplicity cancels the
+fourfold curvature factor but not \(\lvert\alpha\rvert^{-1/2}\).  Its growth as
+\(\alpha\to0\) signals loss of uniformity when the points coalesce back into a
+ring, not divergence of the physical solution.  At
+\(t\sim\lvert\alpha\rvert^{-1}\), both asymptotic scales are of order
+\(\lvert\alpha\rvert^{1/2}\), as summarized in
+Eq.~\eqref{eq:noncommuting-green-limits}.
+
+The joint-limit Bessel law and fixed-anisotropy exact-Morse sum are therefore
+complementary.  The
+uniform Bessel theorem controls compact \(\tau=\alpha t\)
+(Theorem~\ref{thm:uniform-bessel-crossover}); its large-parameter edge is
+matched only through the separately proved growing-\(\lvert\tau\rvert\)
+overlap and Eq.~\eqref{eq:bessel-overlap-response}.  At fixed nonzero
+anisotropy, the exact-Morse theorem instead uses full critical frequencies,
+amplitudes, and Cartesian Hessians (Theorem~\ref{thm:fixed-anisotropy-decay}).
+Its remainder is not uniform as \(\varepsilon\to0\), while a first-order
+Bessel phase is not indefinitely accurate at fixed \(\varepsilon\).  Neither
+formula can be substituted for the other outside the regime it controls.
+
+\subsection{Relation to prior work}
+
+Within the scope of this comparison, both endpoint geometries are established
+results rather than discoveries of the present study.  The isotropic ZGV
+critical ring and its \(t^{-1/2}\) response follow the classical Lamb-wave
+setting \citep{lamb1917waves,prada2008local,prada2008power}.  Directional
+anisotropic shifts were also established \citep{prada2009anisotropy}, and
+isolated anisotropic ZGV points were previously reported.  In particular, the
+four minima and four saddles were previously reported together with their
+interference, and beating responses were already reported for cubic silicon
+\citep{kiefer2023beating,kiefer2025skewing}.  Full-spectrum algorithms for
+locating such points are likewise prior infrastructure
+\citep{kiefer2023computing}.
+
+The distinction of the present calculation is the controlled,
+coefficient-resolved link between those known endpoints.  Morse--Bott
+classification and perturbation are established mathematics
+\citep{bott1954critical,banyaga2013cascades}.  Here transverse nondegeneracy is
+verified on the exact Lamb determinant and independently on the tracked
+elastic branch.  The fourfold coefficient is obtained from the full
+generalized-eigenvalue sensitivity, and the radial coefficient retains the
+differentiated-mode contribution.  Finite differences, compensated radial
+shifts, remainder scaling, sign reversal, Cartesian Hessian inertia, and
+annular index closure then test the reduction.  Thus the local four-plus-four
+result follows from computed coefficients and controlled remainders, not from
+point-group symmetry alone or from fitting the final critical locations.
+
+The asymptotic tools also have clear precedents.  Broken-symmetry uniform
+approximations with Bessel modulation connect continuous families and isolated
+objects in other wave settings \citep{creagh1996broken,brack1999uniform,
+brack2009closed}.  Two-dimensional stationary phase is standard and has been
+used for anisotropic guided-wave radiation
+\citep{velichko2007excitation,chapuis2010focusing,karmazin2013caustics}.
+Accordingly, the contribution is neither a new Bessel identity nor a new
+stationary-phase theorem.  It is their fully normalized Lamb-wave realization
+with an elasticity-derived Bessel argument, an explicit phase-validity window,
+and a constant-and-phase match to the first-order Morse overlap.  Separately,
+the fixed-anisotropy endpoint is compared numerically with the exact-Hessian
+point sum without fitted amplitude, phase, frequency, or time shifts.
+
+\subsection{Scope and boundary statements}
+
+The canonical Bessel law holds only within the specified nonnodal source and
+angular-weight class.  A general source and its angular weight jointly produce
+the Fourier--Bessel series of Eq.~\eqref{eq:weighted-bessel-series}; the leading
+kernel need not reduce to a single \(J_0\) term.  If the ring amplitude
+vanishes, or if a detector is nodal at a particular Morse point, the leading
+contribution changes as described in Supplementary
+Section~\ref{rem:nodal-channels}.
+Cancellation times do not alter the generic exponent, but they do make a
+pointwise relative error or local slope ill conditioned.  The declared
+source-radius and window sweeps support robustness only over their declared
+ranges, not source independence.
+
+The generality of the result has two levels.  At theorem level, any simple,
+uniformly gapped finite-radius branch with nonzero radial curvature and a
+dominant nonzero fourfold perturbation coefficient has the same local
+Morse--Bott-to-Morse structure and exact sufficiently-small four-plus-four
+count under the stated remainder hypotheses.  A pure leading fourfold phase,
+together with the declared nonnodal source and phase-remainder conditions, is
+additionally required for the single-\(J_0\) law and its matched asymptotic
+regimes; generic higher harmonics change the angular canonical integral.  At
+instance level, coefficient values,
+finite-resolution roots, and response comparisons are demonstrated for one
+selected Lamb branch and one cubic perturbation family.  The silicon stress
+test assesses only the search and classification workflow.
+
+The geometric count is also restricted to one simple branch in the declared
+local annulus.  Branch contamination is controlled here by tracking and the
+eigengap gate of Eq.~\eqref{eq:eigengap-rejection}; if the eigengap closes, a
+scalar sensitivity and reduced resolvent no longer suffice.  Degenerate,
+matrix-valued perturbation theory would then be required.  Likewise, zero
+radial curvature, a zero-wavenumber stationary point, or a singular exact
+Hessian would demand a different canonical scaling.  The computed local count
+does not enumerate every Lamb or shear-horizontal branch.
+
+Fourfold symmetry alone does not fix the number of points.  The pure leading
+fourfold term is a result of the declared first-order cubic family.  If the
+coefficient \(V_4\) is zero, higher harmonics or the second-order effective
+angular potential can control the splitting; competing higher harmonics can
+also change the root count.  The coefficient \(B\) is not part of the
+controlled remainder: the explicit \(\varepsilon qB\) term controls the radial
+shift, and \(B\) enters the phase-error and overlap budget through the effective
+second-order phase.  Omitting \(B\) therefore changes both the critical
+locations and temporal validity.  These cases require a new
+coefficient audit rather than extrapolation of the present four-plus-four
+formula.
+
+Neither temporal approximation is indefinitely phase accurate outside its
+declared late-time window.  Compact-\(\tau\) collapse, the growing-parameter
+overlap, and the fixed-anisotropy comparison impose different error
+conditions.  The accumulated inter-resolution phase-discrepancy estimator in
+Eq.~\eqref{eq:phase-error-certificate} restricts the accepted numerical time
+window but does not bound the unknown continuum phase error.  The operational
+crossover time in Fig.~\ref{fig:decay-crossover} is found inside a
+theory-centred bracket and is therefore a consistency diagnostic, not
+independent evidence for inverse-rate scaling; the complex Bessel collapse is
+the primary numerical test.  Critical-frequency features in
+the lossless continuum should not be interpreted as discrete resonances, and
+their exact separation remains twice the defined modulation magnitude.
+
+Finally, the present model is a linear, infinite, homogeneous, lossless plate.
+Damping generally introduces complex dispersion and additional decay; finite
+boundaries introduce reflections and a discrete modal spectrum; layers,
+interfaces, and defects add branches, scattering, and new angular weights.
+Each extension requires renewed branch
+projection, coefficients, and phase-error analysis.  The finite-anisotropy
+silicon stress test is only a robustness check on search, classification, and
+boundary consistency checking.  It supplies no weak-parameter theorem and no
+global point count.  This computation-only study includes no experiments.
+
+\subsection{Nonlinear amplitude equations are a separate problem}
+
+The normal form used here is only a linear spectral reduction, not a nonlinear
+amplitude equation.  Its frequency sensitivities and dispersive exponents
+describe propagation after an impulsive load under the linear constitutive
+model.  They do not contain nonlinear coupling, saturation, drive-dependent
+detuning, mode competition, or pattern selection.  In particular, the local
+Morse geometry can organize the linear spectral input to a later theory, but
+it does not determine nonlinear states or their stability.
+
+Nonlinear amplitude equations are therefore a separate problem.  Such a study
+would require a nonlinear constitutive law, nonlinear traction conditions, a
+multiscale solvability calculation, and declared scalings for forcing,
+damping, and detuning.  Resonant projections and coupling coefficients would
+have to be derived independently, followed by stability analysis.  None of
+those equations or coefficients is obtained from the present Green response,
+and no nonlinear saturation or pattern-selection result is inferred here.

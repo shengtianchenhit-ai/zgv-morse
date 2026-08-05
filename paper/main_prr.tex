@@ -1,0 +1,104 @@
+%% =====================================================================
+%%  Physical Review Research (PRR) submission
+%%  APS REVTeX 4.2 document class, apsrev4-2 bibliography style.
+%%
+%%  This file re-formats paper/main.tex into the APS/PRR layout.
+%%  It reuses every existing section file unchanged (including the
+%%  abstract file); only the class, front matter, and reference style
+%%  differ from the original.
+%%
+%%  Layout notes:
+%%    * [reprint]  = two-column journal look (used here).
+%%      Switch to [preprint] for a single-column, double-spaced draft.
+%%    * All figures are six-panel composites, so the {figure}
+%%      environment is globally promoted to {figure*} (full page
+%%      width) without touching the section sources.
+%% =====================================================================
+%% showkeys is required for \keywords to be typeset; without it REVTeX
+%% silently drops them (and warns in the log).
+\documentclass[aps,prresearch,reprint,superscriptaddress,longbibliography,%
+               nofootinbib,showkeys]{revtex4-2}
+
+%% --- Mathematics and graphics ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+
+%% --- Cross-document references into the Supplemental Material ---
+\usepackage{xr-hyper}
+\usepackage[hidelinks]{hyperref}
+\externaldocument{supplement_prr}[supplement_prr.pdf]
+
+%% Float placement: STYLE_GUIDE 1.3 recommends relaxing the float
+%% parameters, but that remedy targets documents whose figures pile up after
+%% the conclusion.  Here the defaults already interleave all six figures
+%% (pages 3,4,5,7,8,9 with the conclusion on page 14); forcing the relaxed
+%% parameters spread the same content over two extra pages, so they are not
+%% applied.
+
+%% --- Project macros, computed values, and the shared caption registry ---
+\input{shared_macros.tex}
+\input{generated/results_macros.tex}
+\input{figure_captions.tex}
+%% Figures are authored at 183 mm; the REVTeX text block is 510 pt
+%% (180 mm), so placing them at full \textwidth renders them at their
+%% design size.  The former 0.90 factor shrank every figure by a
+%% further 10% and with it all in-figure type (STYLE_GUIDE 3.8).
+\newcommand{\SixPanelFigureWidth}{\textwidth}
+
+%% --- Promote every figure to span both columns (six-panel figures) ---
+\makeatletter
+\renewenvironment{figure}[1][tbp]{\begin{figure*}[#1]}{\end{figure*}}
+\makeatother
+
+\begin{document}
+
+\title{A Coefficient- and Phase-Resolved Bridge across Noncommuting
+Limits of Lamb-Wave ZGV Splitting}
+
+%% ===== Authors and affiliations: FILL IN before submission =========
+\author{Author One}
+\email{author.one@example.edu}
+\affiliation{Department of Mechanical Engineering, Example University,
+City 00000, Country}
+
+\author{Author Two}
+\affiliation{Department of Mechanical Engineering, Example University,
+City 00000, Country}
+%% ===================================================================
+
+%% REVTeX takes the "Dated: " prefix as \date's optional argument, so
+%% clearing both prefix and body suppresses the line entirely; \date{}
+%% alone still typesets an empty "(Dated:)".
+\date[]{}
+
+%% Keywords: PRR prints these under the abstract.  Terms chosen to match
+%% the vocabulary of the paper itself rather than generic field labels.
+%% REVTeX separates keywords with commas; \sep is Elsevier syntax.
+\keywords{Lamb waves, zero-group-velocity resonance, cubic anisotropy,
+Morse--Bott unfolding, guided-wave asymptotics}
+
+%% REVTeX requires the abstract before \maketitle; the original
+%% abstract file already provides the {abstract} environment verbatim.
+\input{sections/00_abstract.tex}
+
+\maketitle
+
+\input{sections/01_introduction.tex}
+\input{sections/02_isotropic_ring.tex}
+\input{sections/03_morse_unfolding.tex}
+\input{sections/04_temporal_crossover.tex}
+\input{sections/05_numerical_verification.tex}
+\input{sections/06_discussion.tex}
+\input{sections/07_methods.tex}
+\input{sections/08_conclusion.tex}
+\input{sections/09_reproducibility_statements.tex}
+
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+
+\end{document}
